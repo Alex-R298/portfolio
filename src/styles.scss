@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Bricolage-Grotesque';
+    src: url('assets/fonts/BricolageGrotesque-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Kalam';
+    src: url('assets/fonts/Kalam-Regular.ttf');
+}
+
+
+.fontBricolageGrotesque{
+    font-family: 'Bricolage-Grotesque', sans-serif;
+}
+
+.fontKalam{
+    font-family: 'Kalam', sans-serif;
+}
+
+@mixin dFlex($ai:center, $jc:space-between) {
+    display: flex;
+    align-items: $ai;
+    justify-content: $jc;
+}

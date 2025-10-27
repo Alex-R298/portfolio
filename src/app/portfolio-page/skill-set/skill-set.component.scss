@@ -1,0 +1,18 @@
+section {
+    width: 1440px;
+    height: 900px;
+    max-width: 100%; // Für kleinere Bildschirme
+    margin: 0 auto; // Zentriert die Section
+    
+    background-image: url('../../../assets/img/skill-set/03_Skills.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    
+}
