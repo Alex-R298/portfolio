@@ -8,12 +8,15 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
-    display: flex;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+.hero-container {
+     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+}
 
     .headline-1 {
         display: flex;
@@ -84,4 +87,24 @@ section {
     line-height: 1.2;
     text-align: center;
     margin: 0;
+}
+
+.socials-links {
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+    margin-left: 72px;
+
+    >a {
+        img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            transition: all 0.125s ease;
+
+            &:hover {
+                background-color: #3355FF;
+            }
+        }
+    }
 }
