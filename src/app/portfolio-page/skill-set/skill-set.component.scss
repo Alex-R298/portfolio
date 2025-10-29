@@ -10,9 +10,147 @@ section {
     background-position: center;
     
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
     
+}
+
+.title-section {
+
+    transform: translate(0px, -9rem);
+    margin-right: 50px;
+
+    p {
+        font-size: 20px;
+        color: white; 
+        margin-bottom: 16px;
+            display: flex;
+    justify-content: flex-end;
+    }
+
+    img {
+        width: 261px;
+        height: 80px; 
+        transform: scaleX(-1);
+    }
+
+    h1 {
+        font-size: 64px;
+        color: white; 
+        position: absolute;
+        // left: 34%;
+        transform: translate(5%, -100%);
+    }
+} 
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+.description-image {
+
+        img {
+            width: 656px;
+            height: 144px;
+        }
+
+        p {
+            position: absolute;
+            transform: translate(2rem, -6.5rem);
+
+            font-size: 18px;
+            width: 600px;
+        }
+    }
+
+
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); // 5 Spalten
+    gap: 10px 10px; // Abstand vertikal und horizontal
+    justify-items: center; // Zentriert Items in ihren Zellen
+        margin-top: 60px;
+
+    }
+    .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: white;
+
+
+
+        img {
+            width: 72px;
+            height: 72px;
+            margin-bottom: 16px;
+            filter: grayscale(100%);
+
+            &:hover {
+                filter: none; // Entfernt den Graustufenfilter beim Hover
+                transform: scale(0.8); // Vergrößert das Bild leicht
+                transition: transform 0.125s, filter 0.125s; // Sanfte Übergänge
+            }
+        }
+
+
+        p {
+            font-size: 18px;
+            margin-top: -10%;
+        }
+    }
+
+    // Die letzten 4 Items sollen zentriert in der zweiten Reihe sein
+    .skill-item:nth-child(n+6) {
+        grid-column: span 1;
+    }
+
+    // Zentriert die zweite Reihe (4 Items)
+    .skill-item:nth-child(6) {
+        grid-column: 1 / 2;
+    }
+ 
+}
+
+.pull-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 12rem;
+    transform: rotate(8deg);
+    margin-left: 30px;
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .pull-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+            align-items: center;
+        
+        img {
+            width: 51px;
+            height: 40px;
+        }
+
+        p {
+        font-size: 40px;
+        color: white;
+        text-align: center;
+        width: 200px;
+         line-height: 1; 
+    }
+}
 }

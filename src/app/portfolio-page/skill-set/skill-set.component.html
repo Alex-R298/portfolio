@@ -1,5 +1,33 @@
-<section>
-    <div>
+<section class="fontBricolageGrotesque">
+    
+        <div class="title-section">
+            <p>MY STACK</p>
+            <img src="../../../assets/img/skill-set/Color option 1.png" alt="">
+            <h1>Skill set</h1>
+        </div>
+        <div class="skills-container">
+        <div class="description-image">
+                <img src="../../../assets/img/skill-set/description.png" alt="">
+                <p>
+                    Here are some of the technologies and tools I work with to create amazing web experiences. 
+                    From front-end frameworks to back-end solutions, I leverage a diverse skill set to bring ideas to life.
+                </p>
+            </div>  
+        <div class="skills">   
+            @for  (item of skills; track $index) {
+              <div class="skill-item">
+                <img src="../../../assets/img/skill-set/skill-icons/{{ item.img }}" alt="">
+                <p>{{ item.title }}</p>
+              </div>
+            }
+        </div>
+        </div>
+        <div class="pull-container fontKalam">
+            <img src="../../../assets/img/skill-set/Default.png" alt="">
+            <div class="pull-text">
+            <img src="../../../assets/img/skill-set/flechha 1.svg" alt="">
+            <p>Pull to <br>peel</p>
+            </div>
+        </div>
         
-    </div>
-</section>
+    </section>
