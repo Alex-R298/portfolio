@@ -1,0 +1,19 @@
+<section>
+    <div class="form-wrapper">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <label for="name">Name:</label>
+            <input [(ngModel)]="contactData.name" type="text" id="name" name="name" required placeholder="First and Last Name">
+
+            <label for="email">Email:</label>
+            <input [(ngModel)]="contactData.email" type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="Your Email Address">
+
+            <label for="message">Message:</label>
+            <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" id="message" name="message" required placeholder="Your Message"></textarea>
+            @if (!message.valid && !message.touched) {
+                <div class="error">Message is required.</div>
+            }
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
