@@ -1,0 +1,60 @@
+:host {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+footer {
+    color: white;
+    width: 100%;
+    max-width: 1440px;
+    padding: 40px 126px;
+    margin: 0 auto;
+
+    .footer-container {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .footer-logo {
+                height: 46px;
+                width: 46px;
+                cursor: pointer;
+
+            &:hover {
+    filter: brightness(0) saturate(100%) invert(84%) sepia(32%) saturate(1844%) hue-rotate(358deg) brightness(103%) contrast(94%);
+}
+        
+            }
+
+            .copyright {
+                margin: 0;
+                font-size: 18px;
+                color: white;
+            }
+        }
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 18rem;
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.125s ease;
+
+            &:hover {
+                color: #F7C518;
+            }
+        }
+    }
+}

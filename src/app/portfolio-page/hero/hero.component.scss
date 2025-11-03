@@ -21,6 +21,7 @@ section {
     .headline-1 {
         display: flex;
         flex-direction: column; // Outer bleibt column
+        margin-top: 10rem;
 
         >span {
             font-size: 18px;
@@ -30,6 +31,15 @@ section {
             padding: 8px 32px;
             width: fit-content;
             border-radius: 40px;
+            cursor: pointer;
+            transition: background-color 0.125s ease; // WICHTIG!
+            position: relative; // Falls z-index Problem
+            z-index: 1;
+
+            &:hover {
+                background-color: #3355FF;
+                text-decoration: none;
+            }
 
         }
 
