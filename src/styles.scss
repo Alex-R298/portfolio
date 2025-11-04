@@ -29,3 +29,93 @@
     align-items: $ai;
     justify-content: $jc;
 }
+
+@mixin reveal-animation(
+    $total-duration: 6.25s, 
+    $timing: ease-in-out,
+    $transition-percent: 2%,
+    $pause-percent: 50%
+) {
+    animation: reveal $total-duration $timing infinite;
+}
+
+@mixin reveal-animation(
+    $total-duration: 6.25s, 
+    $timing: ease-in-out,
+    $transition-percent: 2%,
+    $pause-percent: 50%
+) {
+    animation: reveal $total-duration $timing infinite;
+}
+
+@keyframes reveal {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    2% {
+        clip-path: inset(0 0 0 0);
+    }
+    50% {
+        clip-path: inset(0 0 0 0);
+    }
+    52% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 100% 0 0);
+    }
+}
+
+@mixin reveal-animation-vertical(
+    $total-duration: 6.25s, 
+    $timing: ease-in-out,
+    $transition-percent: 2%,
+    $pause-percent: 50%
+) {
+    animation: revealVertical $total-duration $timing infinite;
+}
+
+@keyframes revealVertical {
+    0% {
+        clip-path: inset(0 0 100% 0); // Versteckt unten (nur oben sichtbar)
+    }
+    2% {
+        clip-path: inset(0 0 0 0); // Komplett sichtbar (von oben nach unten aufgedeckt)
+    }
+    50% {
+        clip-path: inset(0 0 0 0); // Bleibt sichtbar (3s Pause)
+    }
+    52% {
+        clip-path: inset(0 0 100% 0); // Wieder versteckt von unten nach oben
+    }
+    100% {
+        clip-path: inset(0 0 100% 0); // Bleibt versteckt (3s Pause)
+    }
+}
+
+@mixin reveal-animation-reverse(
+    $total-duration: 6.25s, 
+    $timing: ease-in-out,
+    $transition-percent: 2%,
+    $pause-percent: 50%
+) {
+    animation: revealReverse $total-duration $timing infinite;
+}
+
+@keyframes revealReverse {
+    0% {
+        clip-path: inset(0 0 0 100%); // Versteckt links
+    }
+    2% {
+        clip-path: inset(0 0 0 0); // Sichtbar
+    }
+    50% {
+        clip-path: inset(0 0 0 0); // Bleibt sichtbar (3s Pause)
+    }
+    52% {
+        clip-path: inset(0 0 0 100%); // Wieder versteckt links
+    }
+    100% {
+        clip-path: inset(0 0 0 100%); // Bleibt versteckt (3s Pause)
+    }
+}

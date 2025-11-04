@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 section {
     width: 100%;
     height: auto;
@@ -45,6 +47,7 @@ section {
         height: 36px;
         position: absolute;
         transform: translate(-12rem);
+        @include reveal-animation-reverse();
     }
 }
 

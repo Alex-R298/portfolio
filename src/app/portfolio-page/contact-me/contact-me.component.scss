@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 section {
     width: 1440px;
     height: 900px;
@@ -55,6 +57,7 @@ section {
         width: 280px;
         height: 44px;
         object-fit: contain;
+        @include reveal-animation();
     }
 }
 

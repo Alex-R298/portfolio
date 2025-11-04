@@ -22,12 +22,25 @@
             }
         </div>
         </div>
-        <div class="pull-container fontKalam">
-            <img src="../../../assets/img/skill-set/Default.png" alt="">
-            <div class="pull-text">
-            <img src="../../../assets/img/skill-set/flechha 1.svg" alt="">
-            <p>Pull to <br>peel</p>
-            </div>
+        <div class="pull-container fontKalam" [class.peeled]="isPeeled">
+    <img (click)="pullToPeel()" class="pull-card card-final" src="../../../assets/img/skill-set/Final.png" alt="">
+    <img (click)="pullToPeel()" class="pull-card card-transition" src="../../../assets/img/skill-set/Transition.png" alt="">
+    <img (click)="pullToPeel()" class="pull-card card-default" src="../../../assets/img/skill-set/Default.png" alt="">
+    
+    <div class="pull-text">
+        <img src="../../../assets/img/skill-set/flechha 1.svg" alt="">
+        <p>Pull to <br>peel</p>
+    </div>
+
+    <div class="final-text fontBricolageGrotesque">
+        <p>Also, I'm interested<br>in diving into:</p>
+        <div class="interest-images">
+            <img src="../../../assets/img/skill-set/Frame 301.png" alt="">
+            <img src="../../../assets/img/skill-set/Frame 302.png" alt="">
         </div>
+    </div>
+</div>
         
     </section>
+
+    

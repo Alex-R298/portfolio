@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 section {
     width: 1440px;
     height: 900px;
@@ -33,6 +35,7 @@ section {
         width: 261px;
         height: 80px; 
         transform: scaleX(-1);
+        @include reveal-animation-vertical();
     }
 
     h1 {
@@ -124,10 +127,54 @@ section {
     margin-top: 12rem;
     transform: rotate(8deg);
     margin-left: 30px;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: visible;
 
-    img {
+    .pull-card {
+        position: absolute;
         width: 200px;
         height: 200px;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        transition: transform 0.125s ease-in, opacity 0.1s ease-in;
+        transform-origin: top left;
+    }
+
+    .card-default {
+        z-index: 3;
+    }
+
+    .card-transition {
+        z-index: 2;
+    }
+
+    .card-final {
+        z-index: 1;
+    }
+
+    // Wenn peeled - Sticker schnell wegziehen
+    &.peeled {
+        .card-default {
+            transform: translate();
+            opacity: 0;
+        }
+
+        .card-transition {
+            transform: translate();
+            opacity: 0;
+            transition-delay: 0.03s;
+        }
+
+        .pull-text {
+            opacity: 0;
+        }
+
+        .final-text {
+            opacity: 1;
+        }
     }
 
     .pull-text {
@@ -138,7 +185,11 @@ section {
         display: flex;
         flex-direction: column;
         justify-content: center;
-            align-items: center;
+        align-items: center;
+        z-index: 4;
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 0.05s ease-in;
         
         img {
             width: 51px;
@@ -146,11 +197,48 @@ section {
         }
 
         p {
-        font-size: 40px;
-        color: white;
-        text-align: center;
-        width: 200px;
-         line-height: 1; 
+            font-size: 40px;
+            color: white;
+            text-align: center;
+            width: 200px;
+            line-height: 1; 
+        }
     }
-}
+
+    .final-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 4;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.08s ease-in; // Schneller und kein delay
+
+        p {
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1;
+            white-space: nowrap; // Verhindert Umbruch
+        width: auto;
+        }
+
+        .interest-images {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+
+            img {
+                width: 44px;
+                height: 64px;
+            }
+        }
+    }
 }

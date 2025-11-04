@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-skill-set',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './skill-set.component.html',
   styleUrl: './skill-set.component.scss'
 })
 export class SkillSetComponent {
+
+  isPeeled = false;
+
   skills: { img: string, title: string }[] = [
     { img : "CSS.png",
       title: "CSS",
@@ -38,4 +43,9 @@ export class SkillSetComponent {
   }
 ];
 
+pullToPeel() {
+    this.isPeeled = !this.isPeeled;
+  }
 }
+
+
