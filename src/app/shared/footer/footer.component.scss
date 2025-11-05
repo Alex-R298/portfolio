@@ -1,3 +1,7 @@
+@import '../../../styles.scss';
+
+@include icon-animation;
+
 :host {
     position: absolute;
     bottom: 0;
@@ -28,10 +32,9 @@ footer {
                 width: 46px;
                 cursor: pointer;
 
-            &:hover {
-    filter: brightness(0) saturate(100%) invert(84%) sepia(32%) saturate(1844%) hue-rotate(358deg) brightness(103%) contrast(94%);
-}
-        
+                &:hover {
+                    filter: brightness(0) saturate(100%) invert(84%) sepia(32%) saturate(1844%) hue-rotate(358deg) brightness(103%) contrast(94%);
+                }
             }
 
             .copyright {
@@ -44,17 +47,127 @@ footer {
 
     .footer-links {
         display: flex;
-        gap: 18rem;
+        gap: 14rem;
+        align-items: center; // Damit alle Links auf gleicher Höhe bleiben
 
-        a {
+        .legal-img {
+
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+                display: inline-block;
+                display: flex;
+                align-items: center;
+            }
+
+            img {
+                position: relative;
+                width: 80px;
+                height: auto;
+                top: 0px;
+                transform: translateX(-118%);
+                clip-path: inset(0 100% 0 0);
+                transition: clip-path 0.125s ease;
+            }
+
+            &:hover img {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        // Styling für die anderen Links (GitHub, LinkedIn, Email)
+        >a {
             color: white;
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.125s ease;
+            position: relative;
+            display: inline-block;
+            padding: 8px 20px;
+            transition: background-color 0.125s ease, border-radius 0.125s ease;
+
+            img {
+                position: absolute;
+                left: 50%;
+                top: -20px;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                z-index: 10;
+                height: 32px;
+                width: 32px;
+                opacity: 0;
+                transition: opacity 0.125s ease 0s;
+            }
+
+            // GitHub (kürzester Text)
+            &.github-link img {
+                animation: rotateBackGithub 0.2s ease-out forwards;
+            }
+
+            &.github-link:hover img {
+                opacity: 1;
+                transition: opacity 0.125s ease 0.1s;
+                animation: rotateGithub 0.2s ease-out forwards;
+            }
+
+            // LinkedIn (mittlerer Text)
+            &.linkedin-link img {
+                animation: rotateBackLinkedin 0.2s ease-out forwards;
+            }
+
+            &.linkedin-link:hover img {
+                opacity: 1;
+                transition: opacity 0.125s ease 0.1s;
+                animation: rotateLinkedin 0.2s ease-out forwards;
+            }
+
+            // Email (längster Text)
+            &.email-link img {
+                animation: rotateBackEmail 0.2s ease-out forwards;
+            }
+
+            &.email-link:hover img {
+                opacity: 1;
+                transition: opacity 0.125s ease 0.1s;
+                animation: rotateEmail 0.2s ease-out forwards;
+            }
 
             &:hover {
-                color: #F7C518;
+                background-color: #3355FF;
+                border-radius: 40px;
             }
         }
     }
+}
+
+
+@keyframes rotateGithub {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(24px, -50%) rotate(360deg); }
+}
+
+@keyframes rotateBackGithub {
+    from { transform: translate(24px, -50%) rotate(360deg); }
+    to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes rotateLinkedin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(30px, -50%) rotate(360deg); }
+}
+
+@keyframes rotateBackLinkedin {
+    from { transform: translate(30px, -50%) rotate(360deg); }
+    to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes rotateEmail {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(16px, -50%) rotate(360deg); }
+}
+
+@keyframes rotateBackEmail {
+    from { transform: translate(16px, -50%) rotate(360deg); }
+    to { transform: translate(-50%, -50%) rotate(0deg); }
 }

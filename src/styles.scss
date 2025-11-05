@@ -119,3 +119,23 @@
         clip-path: inset(0 0 0 100%); // Bleibt versteckt (3s Pause)
     }
 }
+
+@mixin icon-animation {
+    @keyframes rotate {
+        from {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+            transform: translate(56px, -50%) rotate(360deg);
+        }
+    }
+
+    @keyframes rotateBack {
+        from {
+            transform: translate(56px, -50%) rotate(360deg);
+        }
+        to {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    }
+}
