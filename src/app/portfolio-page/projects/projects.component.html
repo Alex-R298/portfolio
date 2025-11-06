@@ -1,4 +1,5 @@
 <section class="fontBricolageGrotesque">
+    <app-project-card *ngIf="showProjectCard" (close)="closeProjectCard()"></app-project-card>
     <div class="content-wrapper">
         <div class="text-column">
             <p>MY CRAFT</p>
@@ -9,19 +10,34 @@
         </div>
 
         <div class="image-card">
-            <img src="../../../assets/img/projects/29_Join thumbnail.png" alt="Bild 1">
+            <div class="image-wrapper">
+                <img src="../../../assets/img/projects/29_Join thumbnail.png" alt="Bild 1">
+                <div class="project-button">
+                    <button (click)="projectDetails()">Project details</button>
+                </div>
+            </div>
             <h3>Join</h3>
             <p>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.</p>
         </div>
 
         <div class="image-card">
-            <img src="../../../assets/img/projects/28_Project thumbnails.png" alt="Bild 2">
+            <div class="image-wrapper">
+                <img src="../../../assets/img/projects/28_Project thumbnails.png" alt="Bild 2">
+                <div class="project-button">
+                    <button (click)="projectDetails()">Project details</button>
+                </div>
+            </div>
             <h3>Pixel Quest</h3>
             <p>Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.</p>
         </div>
 
         <div class="image-card">
-            <img src="../../../assets/img/projects/Component 30.png" alt="Bild 3">
+            <div class="image-wrapper">
+                <img src="../../../assets/img/projects/Component 30.png" alt="Bild 3">
+                <div class="project-button">
+                    <button (click)="projectDetails()">Project details</button>
+                </div>
+            </div>
             <h3>DABubble</h3>
             <p>This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.</p>
         </div>
