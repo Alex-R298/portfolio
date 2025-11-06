@@ -7,6 +7,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     padding: 20px 72px;
+    z-index: 20;
 
     .nav-container {
         display: flex;

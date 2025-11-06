@@ -1,14 +1,15 @@
 section {
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); // Dunkles Overlay
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed; // Damit es über allem liegt
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    overflow-y: auto;
 
     .project-card {
         width: 1440px;
@@ -17,17 +18,25 @@ section {
         box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
         position: relative;
         z-index: 1001;
+        padding: 2rem 4rem;
+        color: white;
 
-        img {
+        // Hintergrundbild
+        >img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 0; // Ganz nach hinten!
+            pointer-events: none; // Damit es nicht klickbar ist
         }
 
-        button {
+        .go-back {
             position: absolute;
             top: 8rem;
-             left: 4rem;
+            left: 4rem;
             color: black;
             border: none;
             cursor: pointer;
@@ -36,9 +45,10 @@ section {
             font-weight: bold;
             transition: all 0.125s ease;
             display: flex;
-                align-items: center;
+            align-items: center;
+            z-index: 10; // Über dem Hintergrundbild
 
-            img{
+            img {
                 width: 24px;
                 height: 24px;
                 margin-right: 8px;
@@ -46,6 +56,143 @@ section {
 
             &:hover {
                 color: #F87A55;
+            }
+        }
+
+        .content {
+            display: flex;
+            gap: 4rem;
+            margin-top: 12rem;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10; // Über dem Hintergrundbild
+
+            .left-content {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                h1 {
+                    font-size: 48px;
+                    font-weight: bold;
+                    margin: 0;
+                    color: black;
+                }
+
+                h2 {
+                    font-size: 24px;
+                    font-weight: 600;
+                    margin: 1rem 0 0.5rem 0;
+                    color: black;
+                }
+
+                p {
+                    font-size: 18px;
+                    line-height: 1.6;
+                    margin: 0;
+                    color: black;
+                    width: 488px;
+                }
+
+                .duration-section {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    margin-top: 1rem;
+
+                    h3 {
+                        font-size: 20px;
+                        font-weight: 600;
+                        margin: 0;
+                        color: black;
+                    }
+
+                    span {
+                        font-size: 18px;
+                        color: black;
+                    }
+                }
+
+                .skills {
+                    display: flex;
+                    gap: 1rem;
+                    margin-top: 1rem;
+
+                    img {
+                        width: 48px;
+                        height: 48px;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            .right-content {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                .project-image {
+                    width: 560px;
+                    height: 398px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                }
+
+                .action-buttons {
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: flex-end;
+
+                    button {
+                        background-color: transparent;
+                        color: white;
+                        border: none;
+                        padding: 8px 22px;
+                        width: 112px;
+                        font-size: 16px;
+                        border-radius: 40px;
+                        cursor: pointer;
+                        border: 1px solid white;
+                        box-shadow: 4px 4px 0px 0px rgb(255, 255, 255);
+                        transition: all 125ms ease;
+                        align-self: end;
+
+                        &:hover {
+                            background-color: #F87A55;
+                            transform: translate(4px, 4px);
+                            box-shadow: none;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .next-project {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(32rem);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            background-color: transparent;
+            font-weight: bold;
+            transition: all 0.125s ease;
+            display: flex;
+            align-items: center;
+            z-index: 10; // Über dem Hintergrundbild
+
+            img {
+                width: 24px;
+                height: 24px;
+                margin-left: 8px;
+            }
+
+            &:hover {
+                color: #F7C518;
             }
         }
     }

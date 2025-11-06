@@ -1,7 +1,53 @@
-<section>
+
+
+<section class="fontBricolageGrotesque">
     <div class="project-card">
         <app-navbar></app-navbar>
         <img src="../../../assets/img/project-cards/Note book paper.png" alt="">
-        <button class="fontBricolageGrotesque" (click)="closeCard()"> <img src="../../../assets/img/project-cards/Back 1.png" alt=""> Go Back</button> 
+        <button class="go-back fontBricolageGrotesque" (click)="closeCard()">
+            <img src="../../../assets/img/project-cards/Back 1.png" alt=""> Go Back
+        </button>
+
+        <div class="content">
+            <!-- Linke Seite: Text Content -->
+            <div class="left-content">
+                <h1>{{ projectData?.name }}</h1>
+                
+                <h2>Description</h2>
+                <p>{{ projectData?.description }}</p>
+                
+                <h2>Implementation Details</h2>
+                <p>{{ projectData?.implementation }}</p>
+                
+                <div class="duration-section">
+                    <h3>Duration:</h3>
+                    <span>{{ projectData?.duration }}</span>
+                </div>
+                
+                <!-- Skills -->
+                <div class="skills">
+                    <img *ngFor="let skill of projectData?.imgSkills" 
+                         [src]="'../../../assets/img/skill-set/skill-icons/' + skill" 
+                         [alt]="skill">
+                </div>
+            </div>
+
+            <!-- Rechte Seite: Projekt-Bild und Buttons -->
+            <div class="right-content">
+                <img class="project-image" 
+                     [src]="'../../../assets/img/projects/' + projectData?.img" 
+                     alt="">
+                
+                <div class="action-buttons">
+                    <button class="github-btn">GitHub</button>
+                    <button class="live-test-btn">Live Test</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Project Button (unten) -->
+        <button class="next-project fontBricolageGrotesque" (click)="nextProject()">
+            Next Project <img src="../../../assets/img/project-cards/Back 1 (1).png" alt="">
+        </button>
     </div>
 </section>
