@@ -9,7 +9,9 @@
         <div class="content fontBricolageGrotesque">
             <!-- Linke Seite: Text Content -->
             <div class="left-content">
-                <h1>{{ projectData?.name }}</h1>
+                <h1 #titleRef>{{ projectData?.name }}</h1>
+                <img [style.width.px]="projectData?.lineWidth" [style.height.px]="projectData?.lineHeight"
+                    src="../../../assets/img/about-me/Color option 1.png" alt="">
 
                 <h2>Description</h2>
                 <p>{{ projectData?.description }}</p>

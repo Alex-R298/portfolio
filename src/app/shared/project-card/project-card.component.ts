@@ -16,6 +16,8 @@ export class ProjectCardComponent {
   @Output() close = new EventEmitter<void>(); // ← Event zum Parent senden
   @Output() next = new EventEmitter<void>();
 
+  
+
   closeCard() {
     this.close.emit(); // ← Sagt dem Parent: "Schließ mich!"
   }

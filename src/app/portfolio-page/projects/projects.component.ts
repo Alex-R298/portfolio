@@ -25,16 +25,20 @@ export class ProjectsComponent {
       duration:'5 weeks',
       imgSkills:['CSS.png','HTML.png','Js.png','Firebase.png'],
       skillsNames:['CSS','HTML','JavaScript','Firebase'],
-      img:'join.png'
+      img:'join.png',
+      lineWidth: 120,
+      lineHeight: 20
     },
     {
-      name:'El Pollo Loco',
+      name:'Pixel Quest',
       description:'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen. ',
       implementation:'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way.',
       duration:'3 weeks',
       imgSkills:['CSS.png','HTML.png','Js.png'],
       skillsNames:['CSS','HTML','JavaScript'],
-      img:'pixel-game.png'
+      img:'pixel-game.png',
+      lineWidth: 340,
+      lineHeight: 20
     },
     // {
     //   name:'DABubble',
