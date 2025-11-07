@@ -84,6 +84,10 @@ section {
         display: block;
     }
 
+    .img-bounce {
+        animation: img-bounce 2s ease-in-out infinite;
+    }
+
     // Gradient Shadow von unten
     &::before {
         content: '';
@@ -127,6 +131,18 @@ section {
                 transform: translate(4px, 4px);
                 box-shadow: none;
             }
+
+            &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+            
+            &:hover {
+                background-color: transparent;
+                transform: none;
+                box-shadow: 2px 2px 0px 0px rgb(255, 255, 255);
+            }
+        }
         }
     }
 
@@ -136,9 +152,14 @@ section {
             opacity: 1;
         }
 
-        // Bild Zoom
-        img {
+        // Bild Zoom - für normale Bilder
+        img:not(.img-bounce) {
             transform: scale(1.10);
+        }
+
+        // Bild Zoom UND Bounce stoppen - für bounce Bilder
+        .img-bounce {
+            animation: img-bounce-hover 0.125s ease forwards;
         }
 
         // Button erscheint
@@ -192,5 +213,23 @@ section {
                 grid-row: 4;
             }
         }
+    }
+}
+
+@keyframes img-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes img-bounce-hover {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(0) scale(1.10);
     }
 }

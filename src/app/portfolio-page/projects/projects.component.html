@@ -11,7 +11,7 @@
 
         <div class="image-card">
             <div class="image-wrapper">
-                <img src="../../../assets/img/projects/29_Join thumbnail.png" alt="Bild 1">
+                <img class="img-bounce" src="../../../assets/img/projects/29_Join thumbnail.png" alt="Bild 1">
                 <div class="project-button">
                     <button (click)="projectDetails(projects[0])">Project details</button>
                 </div>
@@ -22,7 +22,7 @@
 
         <div class="image-card">
             <div class="image-wrapper">
-                <img src="../../../assets/img/projects/28_Project thumbnails.png" alt="Bild 2">
+                <img src="../../../assets/img/projects/pixel-quest.png" alt="Bild 2">
                 <div class="project-button">
                     <button (click)="projectDetails(projects[1])">Project details</button>
                 </div>
@@ -35,7 +35,8 @@
             <div class="image-wrapper">
                 <img src="../../../assets/img/projects/Component 30.png" alt="Bild 3">
                 <div class="project-button">
-                    <button (click)="projectDetails(projects[2])">Project details</button>
+                    <!-- <button (click)="projectDetails(projects[2])">Project details</button> -->
+                    <button [disabled]="true">Coming Soon</button>
                 </div>
             </div>
             <h3>DABubble</h3>

@@ -24,24 +24,26 @@ export class ProjectsComponent {
       implementation:'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way.',
       duration:'5 weeks',
       imgSkills:['CSS.png','HTML.png','Js.png','Firebase.png'],
-      img:'Component 301.png'
+      skillsNames:['CSS','HTML','JavaScript','Firebase'],
+      img:'join.png'
     },
     {
       name:'El Pollo Loco',
       description:'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen. ',
       implementation:'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way.',
       duration:'3 weeks',
-      imgSkills:['CSS.png','HTML.png','Js.png','Firebase.png'],
-      img:'28_Project thumbnails.png'
+      imgSkills:['CSS.png','HTML.png','Js.png'],
+      skillsNames:['CSS','HTML','JavaScript'],
+      img:'pixel-game.png'
     },
-    {
-      name:'DABubble',
-      description:'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
-      implementation:'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
-      duration:'4 weeks',
-      imgSkills:['CSS.png','HTML.png','Ts.png','Angular.png'],
-      img:'Component 30.png'
-    },
+    // {
+    //   name:'DABubble',
+    //   description:'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
+    //   implementation:'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+    //   duration:'4 weeks',
+    //   imgSkills:['CSS.png','HTML.png','Ts.png','Angular.png'],
+    //   img:'Component 30.png'
+    // },
   ]
 
   projectDetails(project: any) {
