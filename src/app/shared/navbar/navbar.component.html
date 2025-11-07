@@ -4,18 +4,26 @@
             <img src="../../../assets/img/header/portfolio-logo (2) (1).png" alt="Logo">
         </a>
         <div class="nav-links">
-            <a href="#about">About me <img  src="../../../assets/img/header/1.png" alt=""></a>
-            <a href="#skills">Skills <img  src="../../../assets/img/header/2.png" alt=""></a>
-            <a href="#projects">Projects <img src="../../../assets/img/header/4.png" alt=""></a>
-            <a href="#contact">Contact <img src="../../../assets/img/header/3.png" alt=""></a>
+            <a (click)="closeNav()" href="#about_me">About me <img src="../../../assets/img/header/1.png" alt=""></a>
+            <a (click)="closeNav()" href="#skill_set">Skills <img src="../../../assets/img/header/2.png" alt=""></a>
+            <a (click)="closeNav()" href="#projects">Projects <img src="../../../assets/img/header/4.png" alt=""></a>
+            <a (click)="closeNav()" href="#contact_me">Contact <img src="../../../assets/img/header/3.png" alt=""></a>
         </div>
         <div class="language-switch">
-            <span>EN</span>
+            <span [class.active]="!isGerman" (click)="toggleLanguage()">
+                EN
+                <img src="../../../assets/img/header/Toggle_EN.png" alt="">
+            </span>
+
             <label class="switch">
-                <input type="checkbox" id="languageToggle">
+                <input type="checkbox" [checked]="isGerman" (change)="toggleLanguage()">
                 <span class="slider"></span>
             </label>
-            <span>DE</span>
+
+            <span [class.active]="isGerman" (click)="toggleLanguage()">
+                DE
+                <img src="../../../assets/img/header/Toggle_DE.png" alt="">
+            </span>
         </div>
     </div>
 </nav>

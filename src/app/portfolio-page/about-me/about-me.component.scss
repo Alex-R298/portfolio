@@ -8,7 +8,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; 
+    gap: 40px;
 }
 
 .about-me-images {
@@ -23,13 +23,13 @@ section {
     position: absolute;
     width: 400px;
     left: 0;
-    
-    > img {
+
+    >img {
         width: 560px;
         height: 152px;
         display: block;
     }
-    
+
     .card-content {
         position: absolute;
         top: 50%;
@@ -39,37 +39,39 @@ section {
         width: 80%;
         z-index: 10;
         display: flex;
-    align-items: center;
-    justify-content: center;
-        
-        > img {
+        align-items: center;
+        justify-content: center;
+
+        >img {
             width: 40px;
             height: 40px;
         }
-        
-        > p {
+
+        >p {
             font-size: 24px;
             color: white;
             margin-left: 20px;
         }
     }
-    
+
     &:nth-child(1) {
         z-index: 2;
         bottom: 11rem;
+
         .card-content {
             transform: translate(-50%, -76%) rotate(-4deg); // Rotation hinzugefügt
         }
     }
-    
+
     &:nth-child(2) {
         z-index: 1;
         top: 72px;
     }
-    
+
     &:nth-child(3) {
         z-index: 0;
         top: 172px;
+
         .card-content {
             transform: translate(-50%, -60%) rotate(4deg); // Rotation hinzugefügt
         }
@@ -83,23 +85,23 @@ section {
     padding: 20px;
     max-width: 600px;
 
-    > h1 {
+    >h1 {
         font-size: 64px;
         margin-top: 14px;
     }
 
-    > p {
+    >p {
         font-size: 20px;
     }
 
-    > img {
+    >img {
         width: 303px;
         height: 20px;
         margin-bottom: 42px;
         @include reveal-animation();
     }
 
-    > button {
+    >a {
         background-color: transparent;
         color: black;
         border: none;
@@ -113,7 +115,10 @@ section {
         border: 1px solid black;
         box-shadow: 4px 4px 0px 0px rgb(0, 0, 0);
         transition: all 0.125s ease;
-        
+        text-decoration: none; // NEU!
+        display: inline-block; // NEU!
+        text-align: center; // NEU! Zentriert den Text
+
         &:hover {
             background-color: #F87A55;
             transform: translate(4px, 4px);
@@ -121,4 +126,3 @@ section {
         }
     }
 }
-

@@ -9,36 +9,28 @@
 
             <div class="frontend-row">
                 <div class="hl-font">
-    <div class="letters-wrapper">
-        <span 
-            *ngFor="let item of frontendLetters; let i = index"
-            (mouseenter)="over(i, 'frontend')"
-            (mouseleave)="out(i, 'frontend')"
-            [attr.data-original]="item.original"
-            class="letter">
-            {{ item.char }}
-        </span>
-    </div>
-</div>
+                    <div class="letters-wrapper">
+                        <span *ngFor="let item of frontendLetters; let i = index" (mouseenter)="over(i, 'frontend')"
+                            (mouseleave)="out(i, 'frontend')" [attr.data-original]="item.original" class="letter">
+                            {{ item.char }}
+                        </span>
+                    </div>
+                </div>
                 <img src="../../../assets/img/hero-section/Polaroid.png" alt="">
             </div>
         </div>
         <div class="headline-2">
             <div class="hl-font">
                 <div class="letters-wrapper">
-                    <span 
-                        *ngFor="let item of developerLetters; let i = index"
-                        (mouseenter)="over(i, 'developer')"
-                        (mouseleave)="out(i, 'developer')"
-                        [attr.data-original]="item.original"
-                        class="letter">
+                    <span *ngFor="let item of developerLetters; let i = index" (mouseenter)="over(i, 'developer')"
+                        (mouseleave)="out(i, 'developer')" [attr.data-original]="item.original" class="letter">
                         {{ item.char }}
                     </span>
                 </div>
             </div>
-            <button>
+            <a href="#contact_me">
                 <span>Get in Touch</span>
-            </button>
+            </a>
         </div>
     </div>
 

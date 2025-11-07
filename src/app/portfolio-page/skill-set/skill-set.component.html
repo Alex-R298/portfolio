@@ -17,7 +17,7 @@
             @for  (item of skills; track $index) {
               <div class="skill-item">
                 <img src="../../../assets/img/skill-set/skill-icons/{{ item.img }}" alt="">
-                <p>{{ item.title }}</p>
+                <p [innerHTML]="item.title"></p>
               </div>
             }
         </div>
