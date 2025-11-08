@@ -107,6 +107,20 @@ section {
             gap: 68px;
             align-items: flex-end;
 
+            .polaroid {
+                width: 171px;
+                height: 171px;
+                position: absolute;
+                transform: translate(39.7rem, -55px) rotate(8deg);
+                filter: grayscale(100%);
+                transition: filter 0.125s ease;
+                z-index: 1;
+
+                &:hover {
+                    filter: grayscale(0%);
+                }
+            }
+
             >img {
                 width: 200px;
                 height: auto;
