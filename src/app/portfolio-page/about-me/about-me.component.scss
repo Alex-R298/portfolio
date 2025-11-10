@@ -19,10 +19,15 @@ section {
     align-self: center;
 }
 
+
 .image-card {
     position: absolute;
     width: 400px;
     left: 0;
+
+    .card-mobile {
+    display: none;
+}
 
     >img {
         width: 560px;
@@ -124,5 +129,43 @@ section {
             transform: translate(4px, 4px);
             box-shadow: none;
         }
+    }
+}
+
+@media (max-width: 425px) {
+    section {
+        flex-direction: column-reverse;
+        height: 976px;
+
+    }
+
+    .image-card{
+
+        left: 7rem;
+        img {
+            display: none;
+        } 
+        
+        .card-mobile {
+            display: block;
+            width: 343px;
+            height: auto;
+
+            
+        }
+
+        .card-content {
+        left: 50% !important;
+        top: 80% !important;
+        img {
+            width: 30px;
+            height: 30px;
+            display: block !important;
+        }
+    }
+    }
+
+    .about-me-text {
+            max-width: 375px
     }
 }
