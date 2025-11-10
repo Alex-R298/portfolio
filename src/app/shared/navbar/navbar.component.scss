@@ -107,6 +107,7 @@ nav {
             }
         }
 
+
         .language-switch {
     display: flex;
     align-items: center;
@@ -213,5 +214,14 @@ nav {
                 }
             }
         }
+    }
+}
+
+// Nur die ersten zwei Links schwarz im dark-mode
+nav.dark-mode .nav-links {
+    a:nth-child(1),
+    a:nth-child(2) {
+        color: black !important;
+        font-weight: 600;
     }
 }

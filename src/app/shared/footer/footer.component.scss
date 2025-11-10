@@ -10,6 +10,31 @@
     z-index: 10;
 }
 
+:host-context(body.legal-page) .footer-links a {
+    color: black;
+    font-weight: 600;
+    &.github-link img,
+    &.linkedin-link img,
+    &.email-link img {
+        filter: brightness(0); // Macht das Bild komplett schwarz
+    }
+
+    &:hover {
+        color: white;
+    }
+}
+
+// ODER nur für den Legal Notice Link
+:host-context(body.legal-page) .legal-img a {
+    color: black !important;
+    font-weight: 600 !important;
+}
+
+:host-context(body.legal-page) .copyright {
+    color: black !important;
+    font-weight: 600 !important;
+}
+
 footer {
     color: white;
     width: 100%;
