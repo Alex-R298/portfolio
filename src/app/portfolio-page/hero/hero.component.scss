@@ -107,25 +107,73 @@ section {
             gap: 68px;
             align-items: flex-end;
 
-            .polaroid {
-                width: 171px;
-                height: 171px;
-                position: absolute;
-                transform: translate(39.7rem, -55px) rotate(8deg);
-                filter: grayscale(100%);
-                transition: filter 0.125s ease;
-                z-index: 1;
+            .polaroid-container {
+                position: relative;
+                display: inline-block;
 
                 &:hover {
-                    filter: grayscale(0%);
-                }
-            }
+                    .polaroid {
+                        filter: grayscale(0%);
+                    }
 
-            >img {
-                width: 200px;
-                height: auto;
-                transform: rotate(8deg);
-                margin-bottom: 18px;
+                    .text-polaroid {
+                        opacity: 0;
+                    }
+
+                    .hover-polaroid {
+                        opacity: 1;
+                    }
+                }
+
+                .polaroid-frame {
+                    width: 200px;
+                    height: auto;
+                    transform: rotate(8deg);
+                    display: block;
+                    position: relative;
+                }
+
+                .polaroid {
+                    width: 171px;
+                    height: 171px;
+                    position: absolute;
+                    top: 15px;
+                    left: 17px;
+                    transform: rotate(8deg);
+                    filter: grayscale(100%);
+                    transition: filter 0.125s ease;
+                    z-index: 1;
+                }
+
+                .text-polaroid {
+                    position: absolute;
+                    top: 12.3rem;
+                    left: -0.5rem;
+                    transform: rotate(8deg);
+                    font-size: 24px;
+                    font-weight: bold;
+                    transition: opacity 0.125s ease;
+                    z-index: 2;
+                    opacity: 1;
+                    pointer-events: none;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .hover-polaroid {
+                    font-size: 24px;
+                    font-weight: bold;
+                    opacity: 0;
+                    position: absolute;
+                    top: 12.3rem;
+                    left: -0.5rem;
+                    transform: rotate(8deg);
+                    transition: opacity 0.125s ease;
+                    z-index: 2;
+                    pointer-events: none;
+                    width: 100%;
+                    text-align: center;
+                }
             }
         }
     }
@@ -150,8 +198,8 @@ section {
             box-shadow: 4px 4px 0px 0px rgb(255, 255, 255);
             transition: all 0.125s ease;
             margin-right: 1.4rem;
-            text-decoration: none; // NEU! Entfernt Unterstreichung
-            display: inline-block; // NEU! Damit padding richtig funktioniert
+            text-decoration: none;
+            display: inline-block;
 
             &:hover {
                 background-color: #F87A55;
@@ -174,7 +222,7 @@ section {
 
     .letters-wrapper {
         display: inline-flex;
-        min-width: 550px; // Breite für "Frontend"
+        min-width: 550px;
         justify-content: center;
     }
 
@@ -190,7 +238,6 @@ section {
     }
 }
 
-// Spezielle Breite für DEVELOPER - AUSSERHALB von .hl-font!
 .headline-2 .hl-font .letters-wrapper {
     min-width: 700px;
 }
@@ -213,5 +260,148 @@ section {
                 background-color: #3355FF;
             }
         }
+    }
+}
+
+// RESPONSIVE: 375px - 425px
+@media (max-width: 425px) {
+    section {
+        height: 812px;
+    }
+
+    .hero-container {
+        padding: 0 1rem;
+        gap: 0;
+        align-items: flex-start !important;
+
+        // Polaroid Container für Mobile (wenn direkt in hero-container)
+        > .polaroid-container {
+            position: relative;
+            display: inline-block;
+            margin: 1.5rem auto 0 auto;
+            width: fit-content;
+
+            &:hover {
+                .polaroid {
+                    filter: grayscale(0%);
+                }
+
+                .text-polaroid {
+                    opacity: 0;
+                }
+
+                .hover-polaroid {
+                    opacity: 1;
+                }
+            }
+
+            .polaroid-frame {
+                width: 200px;
+                height: auto;
+                transform: rotate(8deg);
+                display: block;
+                position: relative;
+            }
+
+            .polaroid {
+                width: 171px;
+                height: 171px;
+                position: absolute;
+                top: 15px;
+                left: 17px;
+                transform: rotate(8deg);
+                filter: grayscale(100%);
+                transition: filter 0.125s ease;
+                z-index: 1;
+            }
+
+            .text-polaroid {
+                position: absolute;
+                top: 12.3rem;
+                left: -0.5rem;
+                transform: rotate(8deg);
+                font-size: 24px;
+                font-weight: bold;
+                transition: opacity 0.125s ease;
+                z-index: 2;
+                opacity: 1;
+                pointer-events: none;
+                width: 100%;
+                text-align: center;
+            }
+
+            .hover-polaroid {
+                font-size: 24px;
+                font-weight: bold;
+                opacity: 0;
+                position: absolute;
+                top: 12.3rem;
+                left: -0.5rem;
+                transform: rotate(8deg);
+                transition: opacity 0.125s ease;
+                z-index: 2;
+                pointer-events: none;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .headline-1 {
+        margin-top: 3rem !important;
+        width: 100%;
+        align-items: flex-start !important;
+
+        .hello-container {
+            margin: 0 0 16px 0 !important;
+            margin-left: 0 !important;
+        }
+
+        .frontend-row {
+            justify-content: flex-start !important;
+            align-items: flex-start !important;
+            
+            .hl-font {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .headline-2 {
+        align-items: flex-start !important;
+        margin-left: 0 !important;
+        gap: 0 !important;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .hl-font {
+            width: 100%;
+            justify-content: flex-start !important;
+            
+            .letters-wrapper {
+                justify-content: flex-start !important;
+            }
+        }
+
+        >a {
+            margin-right: 0 !important;
+            align-self: flex-end !important;
+            margin-top: 16px;
+        }
+    }
+
+    .hl-font {
+        font-size: 64px !important;
+        justify-content: flex-start !important;
+
+        .letters-wrapper {
+            min-width: auto !important;
+            justify-content: flex-start !important;
+        }
+    }
+
+    .socials-links {
+        display: none !important;
     }
 }

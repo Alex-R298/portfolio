@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 
 
 @Component({
@@ -9,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
-export class HeroComponent implements OnInit {
+export class HeroComponent implements OnInit, OnDestroy {
 
+  isMobile = signal(false);
   frontendLetters: { char: string, original: string }[] = [];
   developerLetters: { char: string, original: string }[] = [];
 
@@ -24,6 +25,20 @@ export class HeroComponent implements OnInit {
       char: char, 
       original: char 
     }));
+
+    // Initial check
+    this.checkScreenSize();
+    
+    // Event Listener für Resize
+    window.addEventListener('resize', this.checkScreenSize.bind(this));
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.checkScreenSize.bind(this));
+  }
+
+  checkScreenSize() {
+    this.isMobile.set(window.innerWidth <= 425);
   }
 
   over(index: number, type: 'frontend' | 'developer') {
