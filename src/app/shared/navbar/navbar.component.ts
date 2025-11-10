@@ -14,7 +14,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   isMobile = signal(false);
   isMenuOpen = signal(false);
-  isGerman: boolean = true; // false = EN, true = DE
+  isClosing = signal(false); // Neues Signal für Schließ-Animation
+  isGerman: boolean = true;
 
   ngOnInit() {
     this.checkScreenSize();
@@ -27,18 +28,32 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   checkScreenSize() {
     this.isMobile.set(window.innerWidth <= 425);
-    // Menu schließen wenn von Mobile zu Desktop gewechselt wird
     if (!this.isMobile()) {
       this.isMenuOpen.set(false);
+      this.isClosing.set(false);
     }
   }
 
   toggleMenu() {
-    this.isMenuOpen.set(!this.isMenuOpen());
+    if (this.isMenuOpen()) {
+      this.closeMenuWithAnimation();
+    } else {
+      this.isMenuOpen.set(true);
+      this.isClosing.set(false);
+    }
+  }
+
+  closeMenuWithAnimation() {
+    this.isClosing.set(true);
+
+    setTimeout(() => {
+      this.isMenuOpen.set(false);
+      this.isClosing.set(false);
+    }, 300);
   }
 
   closeNav() {
-    this.isMenuOpen.set(false);
+    this.closeMenuWithAnimation();
     this.navClose.emit();
   }
 
