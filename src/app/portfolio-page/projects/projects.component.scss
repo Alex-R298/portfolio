@@ -69,106 +69,106 @@ section {
     }
 
     .image-wrapper {
-    width: 560px;
-    height: 398px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    cursor: default;
+        width: 560px;
+        height: 398px;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        cursor: default;
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.125s ease;
-        display: block;
-    }
-
-    .img-bounce {
-        animation: img-bounce 2s ease-in-out infinite;
-    }
-
-    // Gradient Shadow von unten
-    &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 50%; // Bis zur Mitte
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-        opacity: 0;
-        transition: opacity 0.125s ease;
-        z-index: 1;
-    }
-
-    // Button Container
-    .project-button {
-        position: absolute;
-        bottom: 50px;
-        left: 80%;
-        transform: translateX(-50%) translateY(100px);
-        opacity: 0;
-        transition: all 0.125s ease;
-        z-index: 2;
-
-        >button {
-            background-color: transparent;
-            color: white;
-            border: none;
-            padding: 8px 22px;
-            width: 148px;
-            font-size: 16px;
-            border-radius: 40px;
-            cursor: pointer;
-            border: 1px solid white;
-            box-shadow: 4px 4px 0px 0px rgb(255, 255, 255);
-            transition: all 125ms ease;
-            align-self: end;
-
-            &:hover {
-                background-color: #F87A55;
-                transform: translate(4px, 4px);
-                box-shadow: none;
-            }
-
-            &:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            pointer-events: none;
-            
-            &:hover {
-                background-color: transparent;
-                transform: none;
-                box-shadow: 2px 2px 0px 0px rgb(255, 255, 255);
-            }
-        }
-        }
-    }
-
-    &:hover {
-        // Shadow erscheint
-        &::before {
-            opacity: 1;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.125s ease;
+            display: block;
         }
 
-        // Bild Zoom - für normale Bilder
-        img:not(.img-bounce) {
-            transform: scale(1.10);
-        }
-
-        // Bild Zoom UND Bounce stoppen - für bounce Bilder
         .img-bounce {
-            animation: img-bounce-hover 0.125s ease forwards;
+            animation: img-bounce 2s ease-in-out infinite;
         }
 
-        // Button erscheint
+        // Gradient Shadow von unten
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+            opacity: 0;
+            transition: opacity 0.125s ease;
+            z-index: 1;
+        }
+
+        // Button Container
         .project-button {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
+            position: absolute;
+            bottom: 50px;
+            left: 80%;
+            transform: translateX(-50%) translateY(100px);
+            opacity: 0;
+            transition: all 0.125s ease;
+            z-index: 2;
+
+            >button {
+                background-color: transparent;
+                color: white;
+                border: none;
+                padding: 8px 22px;
+                width: 148px;
+                font-size: 16px;
+                border-radius: 40px;
+                cursor: pointer;
+                border: 1px solid white;
+                box-shadow: 4px 4px 0px 0px rgb(255, 255, 255);
+                transition: all 125ms ease;
+                align-self: end;
+
+                &:hover {
+                    background-color: #F87A55;
+                    transform: translate(4px, 4px);
+                    box-shadow: none;
+                }
+
+                &:disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                    pointer-events: none;
+                    
+                    &:hover {
+                        background-color: transparent;
+                        transform: none;
+                        box-shadow: 2px 2px 0px 0px rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            // Shadow erscheint
+            &::before {
+                opacity: 1;
+            }
+
+            // Bild Zoom - für normale Bilder
+            img:not(.img-bounce) {
+                transform: scale(1.10);
+            }
+
+            // Bild Zoom UND Bounce stoppen - für bounce Bilder
+            .img-bounce {
+                animation: img-bounce-hover 0.125s ease forwards;
+            }
+
+            // Button erscheint
+            .project-button {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
         }
     }
-}
 
     >h3 {
         font-size: 24px;
@@ -184,17 +184,40 @@ section {
         color: black;
         margin: 0;
     }
+
+    // Button unter dem Text - initial versteckt für Desktop
+    > .project-button-mobile {
+        display: none;
+    }
 }
 
 // Responsive Design
-@media (max-width: 768px) {
+@media (max-width: 425px) {
+    section {
+        padding: 4rem 1rem;
+    }
+
     .content-wrapper {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        gap: 3rem;
 
         .text-column {
             grid-column: 1;
             grid-row: 1;
+
+            > p {
+                width: 100%;
+                font-size: 18px;
+            }
+
+            > h1 {
+                font-size: 48px;
+            }
+
+            > img {
+                width: 200px;
+            }
         }
 
         .image-card {
@@ -211,6 +234,80 @@ section {
             &:nth-child(4) {
                 grid-column: 1;
                 grid-row: 4;
+            }
+
+            .image-wrapper {
+                width: 100%;
+                max-width: 343px;
+                height: 244px;
+
+                // Hover-Effekte deaktivieren
+                &::before {
+                    display: none;
+                }
+
+                // Button im Bild verstecken
+                .project-button {
+                    display: none !important;
+                }
+
+                &:hover {
+                    img:not(.img-bounce) {
+                        transform: none;
+                    }
+
+                    .img-bounce {
+                        animation: img-bounce 2s ease-in-out infinite;
+                    }
+                }
+            }
+
+            > h3 {
+                font-size: 20px;
+            }
+
+            > p {
+                width: 100%;
+                max-width: 343px;
+                font-size: 18px;
+            }
+
+            // Button unter dem Text - sichtbar für Mobile
+            > .project-button-mobile {
+                display: block;
+                align-self: flex-end;
+
+                > button {
+                    background-color: transparent;
+                    color: black;
+                    border: none;
+                    padding: 8px 22px;
+                    width: 148px;
+                    font-size: 16px;
+                    border-radius: 40px;
+                    cursor: pointer;
+                    border: 1px solid black;
+                    box-shadow: 4px 4px 0px 0px rgb(0, 0, 0);
+                    transition: all 125ms ease;
+
+                    &:hover {
+                        background-color: #F87A55;
+                        transform: translate(4px, 4px);
+                        box-shadow: none;
+                    }
+
+                    &:disabled {
+                        opacity: 0.5;
+                        cursor: not-allowed;
+                        pointer-events: none;
+                        
+                        &:hover {
+                            background-color: transparent;
+                            transform: none;
+                            box-shadow: 4px 4px 0px 0px rgb(0, 0, 0);
+                        }
+                    }
+                }
             }
         }
     }

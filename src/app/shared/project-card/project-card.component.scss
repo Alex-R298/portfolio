@@ -1,6 +1,5 @@
 @import '../../../styles.scss';
 
-
 section {
     width: 100%;
     height: 100vh;
@@ -32,8 +31,8 @@ section {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 0; // Ganz nach hinten!
-            pointer-events: none; // Damit es nicht klickbar ist
+            z-index: 0;
+            pointer-events: none;
         }
 
         .go-back {
@@ -49,7 +48,7 @@ section {
             transition: all 0.125s ease;
             display: flex;
             align-items: center;
-            z-index: 10; // Über dem Hintergrundbild
+            z-index: 10;
 
             img {
                 width: 24px;
@@ -68,7 +67,7 @@ section {
             margin-top: 12rem;
             justify-content: space-between;
             position: relative;
-            z-index: 10; // Über dem Hintergrundbild
+            z-index: 10;
 
             .left-content {
                 flex: 1;
@@ -142,7 +141,6 @@ section {
                         width: 24px;
                         height: 24px;
                         object-fit: contain;
-
                     }
 
                     span {
@@ -189,7 +187,6 @@ section {
                             box-shadow: none;
                         }
                     }
-
                 }
             }
         }
@@ -208,7 +205,7 @@ section {
             transition: all 0.125s ease;
             display: flex;
             align-items: center;
-            z-index: 10; // Über dem Hintergrundbild
+            z-index: 10;
 
             img {
                 width: 24px;
@@ -218,6 +215,161 @@ section {
 
             &:hover {
                 color: #F7C518;
+            }
+        }
+    }
+}
+
+// RESPONSIVE
+@media (max-width: 425px) {
+    section {
+        align-items: flex-start;
+        padding: 0;
+        overflow-y: scroll;
+    }
+
+    .project-card {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 100vh;
+        padding: 0rem 1rem 5rem 1rem !important;
+        margin: 0;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+
+        // Hintergrundbild rotiert und oben
+        > img {
+            position: absolute !important;
+            top: 0 !important;
+            left: 100% !important;
+            transform: rotate(90deg) !important;
+            transform-origin: top left !important;
+            width: 100vw !important;
+            height: 100% !important;
+            max-height: 375px !important;
+            object-fit: cover;
+        }
+
+        .go-back {
+            position: absolute !important;
+            top: auto !important;
+            bottom: 2rem !important;
+            left: 1rem !important;
+            font-size: 16px;
+            z-index: 100;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .content {
+            flex-direction: column !important;
+            gap: 2rem !important;
+            margin-top: 8rem !important;
+            justify-content: flex-start !important;
+
+            .left-content {
+                margin-left: 0 !important;
+                width: 100%;
+
+                h1 {
+                    font-size: 48px !important;
+                }
+
+                > img {
+                    position: relative !important;
+                    top: auto !important;
+                    width: 200px !important;
+                    margin-bottom: 1rem;
+                }
+
+                h2 {
+                    font-size: 20px !important;
+                }
+
+                p {
+                    font-size: 18px !important;
+                    width: 100% !important;
+                }
+
+                .duration-section {
+                    h3 {
+                        font-size: 18px !important;
+                    }
+
+                    span {
+                        font-size: 18px !important;
+                    }
+                }
+
+                .skills {
+                    .skill-item {
+                        img {
+                            width: 20px;
+                            height: 20px;
+                        }
+
+                        span {
+                            font-size: 18px !important;
+                        }
+                    }
+                }
+            }
+
+            .right-content {
+                width: 100%;
+                margin-bottom: 2rem;
+
+                .project-image {
+                    width: 100% !important;
+                    max-width: 343px;
+                    height: 244px !important;
+                    object-fit: cover;
+                }
+
+                .action-buttons {
+                    justify-content: space-between !important;
+                    width: 100%;
+                    max-width: 343px;
+
+                    button {
+                        width: auto !important;
+                        padding: 8px 22px;
+                        font-size: 16px;
+                        color: black !important;
+                        border-color: black !important;
+                        box-shadow: 4px 4px 0px 0px rgb(0, 0, 0) !important;
+
+                        &:hover {
+                            background-color: #F87A55;
+                            transform: translate(4px, 4px);
+                            box-shadow: none !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .next-project {
+            position: absolute !important;
+            bottom: 2rem !important;
+            right: 1rem !important;
+            left: auto !important;
+            transform: none !important;
+            font-size: 16px;
+            color: black !important;
+            z-index: 100;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+
+            &:hover {
+                color: #F87A55 !important;
             }
         }
     }

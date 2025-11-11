@@ -70,6 +70,10 @@ section {
         }
     }
 
+    .description-mobile {
+        display: none;
+    }
+
 
 
 .skills {
@@ -241,6 +245,161 @@ section {
             img {
                 width: 44px;
                 height: 64px;
+            }
+        }
+    }
+}
+// RESPONSIVE
+// RESPONSIVE
+@media (max-width: 425px) {
+    section {
+        height: 80rem;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: normal;
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .title-section {
+        transform: none;
+        margin-right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        position: relative;
+        margin-top: 42px;
+
+        p {
+            font-size: 18px;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 180px;
+            height: auto;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: scaleX(-1);
+        }
+
+        h1 {
+            font-size: 48px;
+            position: static;
+            transform: none;
+            text-align: right;
+            z-index: 1;
+        }
+    }
+
+    .skills-container {
+        width: 100%;
+        align-items: center;
+
+        .description-image {
+            width: 100%;
+            height: 212px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            > img:not(.description-mobile) {
+                display: none;
+            }
+
+            .description-mobile {
+                display: block !important;
+                width: 100%;
+                max-width: 343px;
+                height: auto;
+                position: relative;
+            }
+
+            p {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 18px;
+                width: 90%;
+                max-width: 310px;
+                margin: 0;
+            }
+        }
+
+        .skills {
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 20px 10px;
+            margin-top: 2rem;
+            width: 100%;
+            max-width: 343px;
+        }
+
+        .skill-item {
+            img {
+                width: 56px;
+                height: 56px;
+                filter: none;
+                &:hover {
+                    transform: none;
+                }
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+        .skill-item:nth-child(n+6) {
+            grid-column: auto;
+        }
+
+        .skill-item:nth-child(6) {
+            grid-column: auto;
+        }
+    }
+
+    .pull-container {
+        margin-top: 2rem;
+        margin-left: auto;
+        margin-right: 1rem;
+        align-self: flex-end;
+        width: 180px;
+        height: 180px;
+
+        .pull-card {
+            width: 180px;
+            height: 180px;
+        }
+
+        .pull-text {
+            img {
+                width: 40px;
+                height: 32px;
+            }
+
+            p {
+                font-size: 32px;
+                width: 180px;
+            }
+        }
+
+        .final-text {
+            p {
+                font-size: 18px;
+            }
+
+            .interest-images {
+                gap: 10px;
+
+                img {
+                    width: 36px;
+                    height: 52px;
+                }
             }
         }
     }
