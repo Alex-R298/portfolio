@@ -28,7 +28,7 @@ section {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 56%;
             height: 100%;
             object-fit: cover;
             z-index: 0;
@@ -243,9 +243,9 @@ section {
             position: absolute !important;
             top: 0 !important;
             left: 100% !important;
-            transform: rotate(90deg) !important;
+            transform: rotate(90deg);
             transform-origin: top left !important;
-            width: 100vw !important;
+            width: 62rem !important;
             height: 100% !important;
             max-height: 375px !important;
             object-fit: cover;
@@ -258,6 +258,11 @@ section {
             left: 1rem !important;
             font-size: 16px;
             z-index: 100;
+            color: white !important;
+
+            &:hover {
+                color: #F87A55 !important;
+            }
 
             img {
                 width: 20px;
@@ -274,6 +279,7 @@ section {
             .left-content {
                 margin-left: 0 !important;
                 width: 100%;
+                gap: 0.5rem !important;
 
                 h1 {
                     font-size: 48px !important;
@@ -281,9 +287,7 @@ section {
 
                 > img {
                     position: relative !important;
-                    top: auto !important;
-                    width: 200px !important;
-                    margin-bottom: 1rem;
+                    top: -1rem !important;
                 }
 
                 h2 {
@@ -331,17 +335,12 @@ section {
                 }
 
                 .action-buttons {
-                    justify-content: space-between !important;
                     width: 100%;
                     max-width: 343px;
 
                     button {
                         width: auto !important;
-                        padding: 8px 22px;
-                        font-size: 16px;
-                        color: black !important;
-                        border-color: black !important;
-                        box-shadow: 4px 4px 0px 0px rgb(0, 0, 0) !important;
+                        
 
                         &:hover {
                             background-color: #F87A55;
@@ -360,7 +359,6 @@ section {
             left: auto !important;
             transform: none !important;
             font-size: 16px;
-            color: black !important;
             z-index: 100;
 
             img {

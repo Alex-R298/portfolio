@@ -114,3 +114,75 @@ section {
         }
     }
 }
+
+// RESPONSIVE
+@media (max-width: 425px) {
+    section {
+        padding: 0 1rem;
+    }
+
+    .section-wrapper {
+        gap: 40px;
+        margin-bottom: 5rem;
+    }
+
+    .text-content {
+        h1 {
+            font-size: 48px;
+        }
+    }
+
+    .cards-container {
+        flex-direction: column;
+        height: auto;
+        gap: 0;
+        align-items: center;
+    }
+
+    .card {
+        width: 327px;
+        height: auto;
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        pointer-events: none;
+
+        img {
+            width: 327px;
+        height: 343px;
+        }
+
+        &.card-1 {
+            transform: rotate(1deg);
+            z-index: 3;
+            top: -8px;
+            left: 0;
+
+            &:hover {
+                transform: none !important;
+            }
+        }
+
+        &.card-2 {
+            transform: rotate(4deg);
+            z-index: 2;
+            left: 0;
+            top: -16px;
+
+            &:hover {
+                transform: none !important;
+            }
+        }
+
+        &.card-3 {
+            transform: rotate(-4deg);
+            z-index: 4;
+            left: 0;
+
+            &:hover {
+                transform: none !important;
+            }
+        }
+    }
+}
