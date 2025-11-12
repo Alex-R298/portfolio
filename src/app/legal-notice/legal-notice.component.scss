@@ -26,6 +26,33 @@ section {
     padding: 4rem 2rem 16rem; 
     background-color: white;
     margin-left: 9.3rem;
+    position: relative;
+
+    .go-back {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        color: black;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        background-color: transparent;
+        font-weight: bold;
+        transition: all 0.125s ease;
+        display: none;
+        align-items: center;
+        z-index: 10;
+
+        img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        &:hover {
+            color: #F87A55;
+        }
+    }
 
     h3 {
         font-size: 18px;
@@ -43,5 +70,44 @@ section {
         font-size: 18px;
         line-height: 1.6;
         margin-bottom: 1rem;
+    }
+}
+
+// RESPONSIVE
+@media (max-width: 425px) {
+    section {
+        height: 271px;
+        padding: 3rem 1rem;
+
+        h1 {
+            font-size: 48px;
+            margin-left: 0;
+        }
+    }
+
+    .legal-content {
+        width: 100%;
+        padding: 4rem 1rem 14rem;
+        margin-left: 0;
+
+        .go-back {
+            display: flex;
+            top: 1rem;
+            left: 1rem;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            font-size: 18px;
+        }
     }
 }

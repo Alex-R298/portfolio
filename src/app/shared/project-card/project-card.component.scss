@@ -23,7 +23,6 @@ section {
         padding: 2rem 4rem;
         color: white;
 
-        // Hintergrundbild
         >img {
             position: absolute;
             top: 0;
@@ -220,7 +219,7 @@ section {
     }
 }
 
-// RESPONSIVE
+// RESPONSIVE: 375px - 425px (Mobile)
 @media (max-width: 425px) {
     section {
         align-items: flex-start;
@@ -238,7 +237,6 @@ section {
         display: flex;
         flex-direction: column;
 
-        // Hintergrundbild rotiert und oben
         > img {
             position: absolute !important;
             top: 0 !important;
@@ -247,7 +245,6 @@ section {
             transform-origin: top left !important;
             width: 62rem !important;
             height: 100% !important;
-            max-height: 375px !important;
             object-fit: cover;
         }
 
@@ -340,7 +337,7 @@ section {
 
                     button {
                         width: auto !important;
-                        
+                        font-size: 16px;
 
                         &:hover {
                             background-color: #F87A55;
@@ -368,6 +365,326 @@ section {
 
             &:hover {
                 color: #F87A55 !important;
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 426px - 768px (Tablet)
+@media (min-width: 426px) and (max-width: 768px) {
+    section {
+        align-items: flex-start;
+        padding: 2rem 0;
+        overflow-y: scroll;
+    }
+
+    .project-card {
+        width: 100% !important;
+        max-width: 700px;
+        height: auto !important;
+        min-height: 90vh;
+        padding: 2rem 2rem 4rem 2rem !important;
+
+        > img {
+            width: 100% !important;
+            height: 300px !important;
+            object-fit: cover;
+        }
+
+        .go-back {
+            top: 1.5rem !important;
+            left: 2rem !important;
+            font-size: 16px;
+            color: white !important;
+
+            img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        .content {
+            flex-direction: column !important;
+            gap: 2.5rem !important;
+            margin-top: 20rem !important;
+
+            .left-content {
+                margin-left: 0 !important;
+                width: 100%;
+                gap: 1rem !important;
+
+                h1 {
+                    font-size: 56px !important;
+                }
+
+                > img {
+                    position: relative !important;
+                    top: auto !important;
+                }
+
+                h2 {
+                    font-size: 22px !important;
+                }
+
+                p {
+                    font-size: 18px !important;
+                    width: 100% !important;
+                }
+
+                .duration-section {
+                    h3 {
+                        font-size: 18px !important;
+                    }
+
+                    span {
+                        font-size: 18px !important;
+                    }
+                }
+
+                .skills {
+                    .skill-item {
+                        img {
+                            width: 22px;
+                            height: 22px;
+                        }
+
+                        span {
+                            font-size: 18px !important;
+                        }
+                    }
+                }
+            }
+
+            .right-content {
+                width: 100%;
+
+                .project-image {
+                    width: 100% !important;
+                    max-width: 600px;
+                    height: 380px !important;
+                }
+
+                .action-buttons {
+                    justify-content: center !important;
+
+                    button {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .next-project {
+            position: absolute !important;
+            bottom: 1.5rem !important;
+            right: 2rem !important;
+            left: auto !important;
+            transform: none !important;
+            font-size: 16px;
+
+            img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+@media (min-width: 769px) and (max-width: 1024px) {
+    .project-card {
+        width: 100% !important;
+        max-width: 950px;
+        height: 800px !important;
+        padding: 2rem 3rem !important;
+
+        > img {
+            width: 50% !important;
+        }
+
+        .go-back {
+            top: 6rem !important;
+            left: 3rem !important;
+            font-size: 18px;
+
+            img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        .content {
+            gap: 2.5rem !important;
+            margin-top: 10rem !important;
+
+            .left-content {
+                margin-left: 2rem !important;
+                gap: 1.2rem !important;
+
+                h1 {
+                    font-size: 56px !important;
+                }
+
+                > img {
+                    top: 3.8rem !important;
+                }
+
+                h2 {
+                    font-size: 22px !important;
+                }
+
+                p {
+                    font-size: 18px !important;
+                    width: 100% !important;
+                    max-width: 400px;
+                }
+
+                .duration-section {
+                    h3 {
+                        font-size: 18px !important;
+                    }
+
+                    span {
+                        font-size: 18px !important;
+                    }
+                }
+
+                .skills {
+                    .skill-item {
+                        img {
+                            width: 22px;
+                            height: 22px;
+                        }
+
+                        span {
+                            font-size: 18px !important;
+                        }
+                    }
+                }
+            }
+
+            .right-content {
+                .project-image {
+                    width: 480px !important;
+                    height: 340px !important;
+                }
+
+                .action-buttons {
+                    button {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .next-project {
+            bottom: 2.5rem !important;
+            transform: translateX(26rem) !important;
+            font-size: 18px;
+
+            img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 1025px - 1440px (Small Desktop)
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .project-card {
+        width: 100% !important;
+        max-width: 1200px;
+        height: 860px !important;
+        padding: 2rem 3.5rem !important;
+
+        > img {
+            width: 54% !important;
+        }
+
+        .go-back {
+            top: 7rem !important;
+            left: 3.5rem !important;
+            font-size: 18px;
+
+            img {
+                width: 23px;
+                height: 23px;
+            }
+        }
+
+        .content {
+            gap: 3rem !important;
+            margin-top: 11rem !important;
+
+            .left-content {
+                margin-left: 3rem !important;
+                gap: 1.3rem !important;
+
+                h1 {
+                    font-size: 60px !important;
+                }
+
+                > img {
+                    top: 4rem !important;
+                }
+
+                h2 {
+                    font-size: 23px !important;
+                }
+
+                p {
+                    font-size: 18px !important;
+                    width: 100% !important;
+                    max-width: 450px;
+                }
+
+                .duration-section {
+                    h3 {
+                        font-size: 19px !important;
+                    }
+
+                    span {
+                        font-size: 18px !important;
+                    }
+                }
+
+                .skills {
+                    .skill-item {
+                        img {
+                            width: 23px;
+                            height: 23px;
+                        }
+
+                        span {
+                            font-size: 18px !important;
+                        }
+                    }
+                }
+            }
+
+            .right-content {
+                .project-image {
+                    width: 520px !important;
+                    height: 370px !important;
+                }
+
+                .action-buttons {
+                    button {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .next-project {
+            bottom: 2.8rem !important;
+            transform: translateX(29rem) !important;
+            font-size: 18px;
+
+            img {
+                width: 23px;
+                height: 23px;
             }
         }
     }

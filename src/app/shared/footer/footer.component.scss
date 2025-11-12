@@ -11,23 +11,26 @@
 }
 
 :host-context(body.legal-page) .footer-links a {
-    color: black;
-    font-weight: 600;
+    color: black !important;
+    font-weight: 600 !important;
     &.github-link img,
     &.linkedin-link img,
     &.email-link img {
-        filter: brightness(0); // Macht das Bild komplett schwarz
+        filter: brightness(0);
     }
 
     &:hover {
-        color: white;
+        color: white !important;
     }
 }
 
-// ODER nur für den Legal Notice Link
 :host-context(body.legal-page) .legal-img a {
     color: black !important;
     font-weight: 600 !important;
+
+    &:hover {
+        color: black !important;
+    }
 }
 
 :host-context(body.legal-page) .copyright {
@@ -72,12 +75,14 @@ footer {
 
     .footer-links {
         display: flex;
-        gap: 14rem;
-        align-items: center; // Damit alle Links auf gleicher Höhe bleiben
+        gap: clamp(2rem, 14vw, 14rem);
+        align-items: center;
+
+        .social-row {
+            display: contents;
+        }
 
         .legal-img {
-
-
             a {
                 color: white;
                 text-decoration: none;
@@ -102,8 +107,8 @@ footer {
             }
         }
 
-        // Styling für die anderen Links (GitHub, LinkedIn, Email)
-        >a {
+        >a,
+        .social-row a {
             color: white;
             text-decoration: none;
             font-size: 18px;
@@ -125,7 +130,6 @@ footer {
                 transition: opacity 0.125s ease 0s;
             }
 
-            // GitHub (kürzester Text)
             &.github-link img {
                 animation: rotateBackGithub 0.2s ease-out forwards;
             }
@@ -136,7 +140,6 @@ footer {
                 animation: rotateGithub 0.2s ease-out forwards;
             }
 
-            // LinkedIn (mittlerer Text)
             &.linkedin-link img {
                 animation: rotateBackLinkedin 0.2s ease-out forwards;
             }
@@ -147,7 +150,6 @@ footer {
                 animation: rotateLinkedin 0.2s ease-out forwards;
             }
 
-            // Email (längster Text)
             &.email-link img {
                 animation: rotateBackEmail 0.2s ease-out forwards;
             }
@@ -165,7 +167,6 @@ footer {
         }
     }
 }
-
 
 @keyframes rotateGithub {
     from { transform: translate(-50%, -50%) rotate(0deg); }
@@ -195,4 +196,228 @@ footer {
 @keyframes rotateBackEmail {
     from { transform: translate(16px, -50%) rotate(360deg); }
     to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+// RESPONSIVE: 375px - 425px (Mobile)
+@media (max-width: 425px) {
+    footer {
+        padding: 0 1rem 40px;
+
+        .footer-container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0;
+
+            .footer-left {
+                flex-direction: row;
+                align-items: center;
+                gap: 0;
+
+                .footer-logo {
+                    height: 40px;
+                    width: 40px;
+                }
+
+                .copyright {
+                    position: absolute;
+                    right: 1rem;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .footer-links {
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: stretch;
+
+            .legal-img {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                position: relative;
+
+                a {
+                    font-size: 18px;
+                    position: relative;
+                }
+
+                img {
+                    position: absolute !important;
+                    opacity: 0 !important;
+                    left: 50% !important;
+                    top: -58% !important;
+                    transform: translate(-50%, 0) !important;
+                    width: 80px !important;
+                    clip-path: inset(0 0 0 0) !important;
+                    transition: opacity 0.125s ease !important;
+                    margin-top: 4px !important;
+                }
+
+                &:hover img {
+                    opacity: 1 !important;
+                }
+            }
+
+            .social-row {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 40px;
+
+                a {
+                    font-size: 18px;
+                    padding: 6px 16px;
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 426px - 768px (Tablet)
+@media (min-width: 426px) and (max-width: 768px) {
+    footer {
+        padding: 0 2rem 50px;
+
+        .footer-container {
+            margin-bottom: 1.2rem;
+
+            .footer-left {
+                gap: 0.8rem;
+
+                .footer-logo {
+                    height: 44px;
+                    width: 44px;
+                }
+
+                .copyright {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .footer-links {
+            gap: clamp(1.5rem, 8vw, 8rem);
+
+            .legal-img {
+                a {
+                    font-size: 18px;
+                }
+
+                img {
+                    width: 75px;
+                }
+            }
+
+            >a,
+            .social-row a {
+                font-size: 18px;
+                padding: 7px 18px;
+
+                img {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+@media (min-width: 769px) and (max-width: 1024px) {
+    footer {
+        padding: 0 3rem 55px;
+
+        .footer-container {
+            margin-bottom: 1.3rem;
+
+            .footer-left {
+                gap: 0.9rem;
+
+                .footer-logo {
+                    height: 44px;
+                    width: 44px;
+                }
+
+                .copyright {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .footer-links {
+            gap: clamp(1.8rem, 10vw, 10rem);
+
+            .legal-img {
+                a {
+                    font-size: 18px;
+                }
+
+                img {
+                    width: 76px;
+                }
+            }
+
+            >a,
+            .social-row a {
+                font-size: 18px;
+                padding: 7px 18px;
+
+                img {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 1025px - 1440px (Small Desktop)
+@media (min-width: 1025px) and (max-width: 1440px) {
+    footer {
+        padding: 0 4rem 58px;
+
+        .footer-container {
+            margin-bottom: 1.4rem;
+
+            .footer-left {
+                gap: 0.95rem;
+
+                .footer-logo {
+                    height: 45px;
+                    width: 45px;
+                }
+
+                .copyright {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .footer-links {
+            gap: clamp(2rem, 12vw, 12rem);
+
+            .legal-img {
+                a {
+                    font-size: 18px;
+                }
+
+                img {
+                    width: 78px;
+                }
+            }
+
+            >a,
+            .social-row a {
+                font-size: 18px;
+                padding: 7px 19px;
+
+                img {
+                    height: 31px;
+                    width: 31px;
+                }
+            }
+        }
+    }
 }

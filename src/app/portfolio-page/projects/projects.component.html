@@ -1,25 +1,26 @@
 <section class="fontBricolageGrotesque">
-    <app-project-card *ngIf="showProjectCard" [projectData]="selectedProject" (close)="closeProjectCard()" (next)="nextProject()"></app-project-card>
+    <app-project-card *ngIf="showProjectCard" [projectData]="selectedProject" (close)="closeProjectCard()"
+        (next)="nextProject()"></app-project-card>
     <div class="content-wrapper">
         <div class="text-column">
             <p>MY CRAFT</p>
             <h1>Projects</h1>
             <img src="../../../assets/img/projects/Color option 1.png" alt="">
-            <p>Encourage people to take a look and interact with your projects.
-            Highlight your approach to creating responsive, user-friendly projects with efficient code.</p>
+            <p>Lass andere deine Projekte entdecken und ausprobieren.
+                Zeig, wie du responsive und nutzerfreundliche Anwendungen mit sauberem Code baust.</p>
         </div>
 
         <div class="image-card">
             <div class="image-wrapper">
                 <img class="img-bounce" src="../../../assets/img/projects/29_Join thumbnail.png" alt="Bild 1">
                 <div class="project-button">
-                    <button (click)="projectDetails(projects[0])">Project details</button>
+                    <button (click)="projectDetails(projects[0])">Projektdetails</button>
                 </div>
             </div>
-            <h3>Join</h3>
-            <p>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.</p>
+            <h3>{{ projects[0].name }}</h3>
+            <p>{{ projects[0].description }}</p>
             <div class="project-button-mobile">
-                <button (click)="projectDetails(projects[0])">Project details</button>
+                <button (click)="projectDetails(projects[0])">Projektdetails</button>
             </div>
         </div>
 
@@ -27,13 +28,13 @@
             <div class="image-wrapper">
                 <img src="../../../assets/img/projects/pixel-quest.png" alt="Bild 2">
                 <div class="project-button">
-                    <button (click)="projectDetails(projects[1])">Project details</button>
+                    <button (click)="projectDetails(projects[1])">Projektdetails</button>
                 </div>
             </div>
-            <h3>Pixel Quest</h3>
-            <p>Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.</p>
+            <h3>{{ projects[1].name }}</h3>
+            <p>{{ projects[1].description }}</p>
             <div class="project-button-mobile">
-                <button (click)="projectDetails(projects[1])">Project details</button>
+                <button (click)="projectDetails(projects[1])">Projektdetails</button>
             </div>
         </div>
 
@@ -41,13 +42,14 @@
             <div class="image-wrapper">
                 <img src="../../../assets/img/projects/Component 30.png" alt="Bild 3">
                 <div class="project-button">
-                    <button [disabled]="true">Coming Soon</button>
+                    <button [disabled]="true">Demnächst</button>
                 </div>
             </div>
             <h3>DABubble</h3>
-            <p>This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.</p>
+            <p>Diese App ist ein Slack-Clone. Sie revolutioniert Team-Kommunikation und Zusammenarbeit mit ihrer
+                intuitiven Oberfläche, Echtzeit-Messaging und robuster Channel-Organisation.</p>
             <div class="project-button-mobile">
-                <button [disabled]="true">Coming Soon</button>
+                <button [disabled]="true">Demnächst</button>
             </div>
         </div>
     </div>

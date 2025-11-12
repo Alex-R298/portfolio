@@ -88,7 +88,6 @@ section {
             animation: img-bounce 2s ease-in-out infinite;
         }
 
-        // Gradient Shadow von unten
         &::before {
             content: '';
             position: absolute;
@@ -102,7 +101,6 @@ section {
             z-index: 1;
         }
 
-        // Button Container
         .project-button {
             position: absolute;
             bottom: 50px;
@@ -118,7 +116,7 @@ section {
                 border: none;
                 padding: 8px 22px;
                 width: 148px;
-                font-size: 16px;
+                font-size: 18px;
                 border-radius: 40px;
                 cursor: pointer;
                 border: 1px solid white;
@@ -147,22 +145,18 @@ section {
         }
 
         &:hover {
-            // Shadow erscheint
             &::before {
                 opacity: 1;
             }
 
-            // Bild Zoom - für normale Bilder
             img:not(.img-bounce) {
                 transform: scale(1.10);
             }
 
-            // Bild Zoom UND Bounce stoppen - für bounce Bilder
             .img-bounce {
                 animation: img-bounce-hover 0.125s ease forwards;
             }
 
-            // Button erscheint
             .project-button {
                 opacity: 1;
                 transform: translateX(-50%) translateY(0);
@@ -185,16 +179,15 @@ section {
         margin: 0;
     }
 
-    // Button unter dem Text - initial versteckt für Desktop
     > .project-button-mobile {
         display: none;
     }
 }
 
-// Responsive Design
+// RESPONSIVE: 375px - 425px (Mobile)
 @media (max-width: 425px) {
     section {
-        padding: 4rem 1rem;
+        padding: 4rem 2rem;
     }
 
     .content-wrapper {
@@ -241,12 +234,10 @@ section {
                 max-width: 343px;
                 height: 244px;
 
-                // Hover-Effekte deaktivieren
                 &::before {
                     display: none;
                 }
 
-                // Button im Bild verstecken
                 .project-button {
                     display: none !important;
                 }
@@ -272,7 +263,6 @@ section {
                 font-size: 18px;
             }
 
-            // Button unter dem Text - sichtbar für Mobile
             > .project-button-mobile {
                 display: block;
                 align-self: flex-end;
@@ -308,6 +298,236 @@ section {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 426px - 768px (Tablet)
+@media (min-width: 426px) and (max-width: 768px) {
+    section {
+        padding: 6rem 3rem;
+    }
+
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 4rem;
+
+        .text-column {
+            grid-column: 1;
+            grid-row: 1;
+
+            > p {
+                width: 100%;
+                max-width: 600px;
+                font-size: 18px;
+            }
+
+            > h1 {
+                font-size: 56px;
+            }
+
+            > img {
+                width: 230px;
+            }
+        }
+
+        .image-card {
+            &:nth-child(2) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            &:nth-child(3) {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            &:nth-child(4) {
+                grid-column: 1;
+                grid-row: 4;
+            }
+
+            .image-wrapper {
+                width: 100%;
+                max-width: 600px;
+                height: 380px;
+
+                &::before {
+                    display: none;
+                }
+
+                .project-button {
+                    display: none !important;
+                }
+
+                &:hover {
+                    img:not(.img-bounce) {
+                        transform: none;
+                    }
+
+                    .img-bounce {
+                        animation: img-bounce 2s ease-in-out infinite;
+                    }
+                }
+            }
+
+            > h3 {
+                font-size: 22px;
+            }
+
+            > p {
+                width: 100%;
+                max-width: 600px;
+                font-size: 18px;
+            }
+
+            > .project-button-mobile {
+                display: block;
+                align-self: flex-end;
+
+                > button {
+                    background-color: transparent;
+                    color: black;
+                    border: none;
+                    padding: 8px 22px;
+                    width: 148px;
+                    font-size: 16px;
+                    border-radius: 40px;
+                    cursor: pointer;
+                    border: 1px solid black;
+                    box-shadow: 4px 4px 0px 0px rgb(0, 0, 0);
+                    transition: all 125ms ease;
+
+                    &:hover {
+                        background-color: #F87A55;
+                        transform: translate(4px, 4px);
+                        box-shadow: none;
+                    }
+
+                    &:disabled {
+                        opacity: 0.5;
+                        cursor: not-allowed;
+                        pointer-events: none;
+                        
+                        &:hover {
+                            background-color: transparent;
+                            transform: none;
+                            box-shadow: 4px 4px 0px 0px rgb(0, 0, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        padding: 10rem 4rem;
+    }
+
+    .content-wrapper {
+        gap: 25px;
+
+        .text-column {
+            > p {
+                width: 100%;
+                max-width: 450px;
+                font-size: 18px;
+            }
+
+            > h1 {
+                font-size: 56px;
+            }
+
+            > img {
+                width: 230px;
+            }
+        }
+
+        .image-card {
+            .image-wrapper {
+                width: 100%;
+                max-width: 480px;
+                height: 340px;
+
+                .project-button {
+                    bottom: 40px;
+                    left: 78%;
+
+                    > button {
+                        width: 140px;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            > h3 {
+                font-size: 22px;
+            }
+
+            > p {
+                width: 100%;
+                max-width: 480px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 1025px - 1440px (Small Desktop)
+@media (min-width: 1025px) and (max-width: 1440px) {
+    section {
+        padding: 12rem 6rem;
+    }
+
+    .content-wrapper {
+        gap: 28px;
+
+        .text-column {
+            > p {
+                width: 100%;
+                max-width: 500px;
+                font-size: 18px;
+            }
+
+            > h1 {
+                font-size: 60px;
+            }
+
+            > img {
+                width: 245px;
+            }
+        }
+
+        .image-card {
+            .image-wrapper {
+                width: 100%;
+                max-width: 520px;
+                height: 370px;
+
+                .project-button {
+                    bottom: 45px;
+                    left: 79%;
+
+                    > button {
+                        width: 145px;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            > h3 {
+                font-size: 23px;
+            }
+
+            > p {
+                width: 100%;
+                max-width: 520px;
+                font-size: 18px;
             }
         }
     }

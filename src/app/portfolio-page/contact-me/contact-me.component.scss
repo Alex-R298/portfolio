@@ -65,3 +65,154 @@ section {
 app-contact-form {
     flex: 1;
 }
+
+// RESPONSIVE: 375px - 425px (Mobile)
+@media (max-width: 425px) {
+    section {
+        height: auto;
+        min-height: 1300px;
+        padding: 2rem 0;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 1rem;
+        margin-bottom: 50px;
+    }
+
+    .text-content {
+        width: 100%;
+
+        p {
+            font-size: 18px;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+    app-contact-form {
+        width: 100%;
+    }
+}
+
+// RESPONSIVE: 426px - 768px (Tablet)
+@media (min-width: 426px) and (max-width: 768px) {
+    section {
+        height: auto;
+        min-height: 1200px;
+        padding: 3rem 0;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        gap: 50px;
+        padding: 0 2rem;
+        margin-bottom: 60px;
+        align-items: center;
+    }
+
+    .text-content {
+        width: 100%;
+        max-width: 600px;
+        align-items: center;
+        text-align: center;
+
+        p {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 56px;
+            text-align: center;
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+    app-contact-form {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        height: 850px;
+    }
+
+    .content-wrapper {
+        gap: 40px;
+        padding: 0 3rem;
+        margin-bottom: 80px;
+    }
+
+    .text-content {
+        width: 100%;
+        max-width: 450px;
+
+        p {
+            font-size: 18px;
+        }
+
+        h1 {
+            font-size: 56px;
+        }
+
+        img {
+            width: 240px;
+            height: 38px;
+            margin-top: 22px;
+        }
+    }
+
+    app-contact-form {
+        flex: 1;
+    }
+}
+
+// RESPONSIVE: 1025px - 1440px (Small Desktop)
+@media (min-width: 1025px) and (max-width: 1440px) {
+    section {
+        height: 880px;
+    }
+
+    .content-wrapper {
+        gap: 50px;
+        padding: 0 5rem;
+        margin-bottom: 90px;
+    }
+
+    .text-content {
+        width: 100%;
+        max-width: 500px;
+
+        p {
+            font-size: 18px;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+        img {
+            width: 260px;
+            height: 42px;
+            margin-top: 24px;
+        }
+    }
+
+    app-contact-form {
+        flex: 1;
+    }
+}

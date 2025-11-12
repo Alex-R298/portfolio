@@ -115,7 +115,7 @@ section {
     }
 }
 
-// RESPONSIVE
+// RESPONSIVE: 375px - 425px (Mobile)
 @media (max-width: 425px) {
     section {
         padding: 0 1rem;
@@ -127,8 +127,23 @@ section {
     }
 
     .text-content {
+        align-items: flex-start;
+
+        p {
+            font-size: 18px;
+            text-align: left;
+        }
+
         h1 {
             font-size: 48px;
+            text-align: left;
+        }
+
+        img {
+            width: 80px;
+            height: 28px;
+            position: relative;
+            transform: none;
         }
     }
 
@@ -150,7 +165,7 @@ section {
 
         img {
             width: 327px;
-        height: 343px;
+            height: 343px;
         }
 
         &.card-1 {
@@ -160,7 +175,7 @@ section {
             left: 0;
 
             &:hover {
-                transform: none !important;
+                transform: rotate(1deg) !important;
             }
         }
 
@@ -171,7 +186,7 @@ section {
             top: -16px;
 
             &:hover {
-                transform: none !important;
+                transform: rotate(4deg) !important;
             }
         }
 
@@ -181,7 +196,217 @@ section {
             left: 0;
 
             &:hover {
-                transform: none !important;
+                transform: rotate(-4deg) !important;
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 426px - 768px (Tablet)
+@media (min-width: 426px) and (max-width: 768px) {
+    section {
+        padding: 0 2rem;
+    }
+
+    .section-wrapper {
+        gap: 50px;
+        margin-bottom: 7rem;
+    }
+
+    .text-content {
+        align-items: center;
+
+        p {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 56px;
+            text-align: center;
+        }
+
+        img {
+            width: 90px;
+            height: 32px;
+            position: relative;
+            transform: none;
+            align-self: center;
+        }
+    }
+
+    .cards-container {
+        flex-direction: column;
+        height: auto;
+        gap: 0;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        pointer-events: none;
+
+        img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 512 / 320;
+        }
+
+        &.card-1 {
+            transform: rotate(2deg);
+            z-index: 3;
+            top: -10px;
+
+            &:hover {
+                transform: rotate(2deg) !important;
+            }
+        }
+
+        &.card-2 {
+            transform: rotate(4deg);
+            z-index: 2;
+            top: -20px;
+
+            &:hover {
+                transform: rotate(4deg) !important;
+            }
+        }
+
+        &.card-3 {
+            transform: rotate(-3deg);
+            z-index: 4;
+            top: 0;
+
+            &:hover {
+                transform: rotate(-3deg) !important;
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        padding: 0 3rem;
+    }
+
+    .section-wrapper {
+        gap: 55px;
+        margin-bottom: 8rem;
+    }
+
+    .text-content {
+        p {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 56px;
+        }
+
+        img {
+            width: 90px;
+            height: 32px;
+            transform: translate(-10rem);
+        }
+    }
+
+    .cards-container {
+        height: 380px;
+    }
+
+    .card {
+        width: 440px;
+        height: 275px;
+
+        &.card-1 {
+            transform: translateX(-510px) rotate(-4deg);
+
+            &:hover {
+                transform: translateX(-510px) rotate(-4deg) scale(1.01);
+            }
+        }
+
+        &.card-2 {
+            transform: translateX(-220px);
+
+            &:hover {
+                transform: translateX(-220px) scale(1.01);
+            }
+        }
+
+        &.card-3 {
+            transform: translateX(70px) rotate(4deg);
+
+            &:hover {
+                transform: translateX(70px) rotate(4deg) scale(1.01);
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 1025px - 1440px (Small Desktop)
+@media (min-width: 1025px) and (max-width: 1440px) {
+    section {
+        padding: 0 5rem;
+    }
+
+    .section-wrapper {
+        gap: 58px;
+        margin-bottom: 9rem;
+    }
+
+    .text-content {
+        p {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+        img {
+            width: 95px;
+            height: 34px;
+            transform: translate(-11rem);
+        }
+    }
+
+    .cards-container {
+        height: 390px;
+    }
+
+    .card {
+        width: 480px;
+        height: 300px;
+
+        &.card-1 {
+            transform: translateX(-550px) rotate(-4deg);
+
+            &:hover {
+                transform: translateX(-550px) rotate(-4deg) scale(1.01);
+            }
+        }
+
+        &.card-2 {
+            transform: translateX(-240px);
+
+            &:hover {
+                transform: translateX(-240px) scale(1.01);
+            }
+        }
+
+        &.card-3 {
+            transform: translateX(80px) rotate(4deg);
+
+            &:hover {
+                transform: translateX(80px) rotate(4deg) scale(1.01);
             }
         }
     }

@@ -191,7 +191,7 @@ section {
             color: white;
             border: none;
             padding: 8px 22px;
-            font-size: 16px;
+            font-size: 18px;
             border-radius: 40px;
             cursor: pointer;
             border: 1px solid white;
@@ -263,7 +263,7 @@ section {
     }
 }
 
-// RESPONSIVE: 375px - 425px
+// RESPONSIVE: 375px - 425px (Mobile)
 @media (max-width: 425px) {
     section {
         height: 812px;
@@ -274,7 +274,6 @@ section {
         gap: 0;
         align-items: flex-start !important;
 
-        // Polaroid Container für Mobile (wenn direkt in hero-container)
         > .polaroid-container {
             position: relative;
             display: inline-block;
@@ -355,6 +354,7 @@ section {
         .hello-container {
             margin: 0 0 16px 0 !important;
             margin-left: 0 !important;
+            font-size: 18px;
         }
 
         .frontend-row {
@@ -388,6 +388,7 @@ section {
             margin-right: 0 !important;
             align-self: flex-end !important;
             margin-top: 16px;
+            font-size: 16px;
         }
     }
 
@@ -403,5 +404,243 @@ section {
 
     .socials-links {
         display: none !important;
+    }
+}
+
+// RESPONSIVE: 426px - 768px (Tablet)
+@media (min-width: 426px) and (max-width: 768px) {
+    section {
+        height: 1024px;
+        padding: 0 2rem;
+    }
+
+    .hero-container {
+        gap: 1rem;
+
+        > .polaroid-container {
+            position: relative;
+            display: inline-block;
+            margin: 2rem auto 0 auto;
+            width: fit-content;
+
+            &:hover {
+                .polaroid {
+                    filter: grayscale(0%);
+                }
+
+                .text-polaroid {
+                    opacity: 0;
+                }
+
+                .hover-polaroid {
+                    opacity: 1;
+                }
+            }
+
+            .polaroid-frame {
+                width: 200px;
+                height: auto;
+                transform: rotate(8deg);
+                display: block;
+                position: relative;
+            }
+
+            .polaroid {
+                width: 171px;
+                height: 171px;
+                position: absolute;
+                top: 15px;
+                left: 17px;
+                transform: rotate(8deg);
+                filter: grayscale(100%);
+                transition: filter 0.125s ease;
+                z-index: 1;
+            }
+
+            .text-polaroid {
+                position: absolute;
+                top: 12.3rem;
+                left: -0.5rem;
+                transform: rotate(8deg);
+                font-size: 24px;
+                font-weight: bold;
+                transition: opacity 0.125s ease;
+                z-index: 2;
+                opacity: 1;
+                pointer-events: none;
+                width: 100%;
+                text-align: center;
+            }
+
+            .hover-polaroid {
+                font-size: 24px;
+                font-weight: bold;
+                opacity: 0;
+                position: absolute;
+                top: 12.3rem;
+                left: -0.5rem;
+                transform: rotate(8deg);
+                transition: opacity 0.125s ease;
+                z-index: 2;
+                pointer-events: none;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .headline-1 {
+        margin-top: 4rem !important;
+        align-items: center !important;
+
+        .hello-container {
+            margin: 0 0 20px 0 !important;
+            margin-left: 0 !important;
+            font-size: 18px;
+        }
+
+        .frontend-row {
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 40px;
+        }
+    }
+
+    .headline-2 {
+        align-items: center !important;
+        margin-left: 0 !important;
+        gap: 20px !important;
+
+        .hl-font {
+            justify-content: center !important;
+            
+            .letters-wrapper {
+                justify-content: center !important;
+            }
+        }
+
+        >a {
+            margin-right: 0 !important;
+            margin-top: 0;
+            font-size: 16px;
+        }
+    }
+
+    .hl-font {
+        font-size: 80px !important;
+
+        .letters-wrapper {
+            min-width: auto !important;
+        }
+    }
+
+    .socials-links {
+        display: none !important;
+    }
+}
+
+// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        height: 900px;
+        padding: 0 3rem;
+    }
+
+    .hero-container {
+        gap: 1.5rem;
+    }
+
+    .headline-1 {
+        margin-top: 6rem !important;
+
+        .hello-container {
+            margin-left: 1rem !important;
+            font-size: 18px;
+        }
+
+        .frontend-row {
+            gap: 50px;
+        }
+    }
+
+    .headline-2 {
+        margin-left: 6rem !important;
+
+        >a {
+            margin-right: 0.7rem !important;
+            font-size: 16px;
+        }
+    }
+
+    .hl-font {
+        font-size: 90px !important;
+
+        .letters-wrapper {
+            min-width: 450px !important;
+        }
+    }
+
+    .headline-2 .hl-font .letters-wrapper {
+        min-width: 580px !important;
+    }
+
+    .socials-links {
+        margin-left: 50px !important;
+
+        >a img {
+            width: 40px !important;
+            height: 40px !important;
+        }
+    }
+}
+
+// RESPONSIVE: 1025px - 1440px (Small Desktop)
+@media (min-width: 1025px) and (max-width: 1440px) {
+    section {
+        height: 900px;
+        padding: 0 4rem;
+    }
+
+    .headline-1 {
+        margin-top: 8rem !important;
+
+        .hello-container {
+            margin-left: 1.5rem !important;
+            font-size: 18px;
+        }
+
+        .frontend-row {
+            gap: 55px;
+        }
+    }
+
+    .headline-2 {
+        margin-left: 8rem !important;
+
+        >a {
+            margin-right: 1rem !important;
+            font-size: 16px;
+        }
+    }
+
+    .hl-font {
+        font-size: 100px !important;
+
+        .letters-wrapper {
+            min-width: 480px !important;
+        }
+    }
+
+    .headline-2 .hl-font .letters-wrapper {
+        min-width: 620px !important;
+    }
+
+    .socials-links {
+        margin-left: 60px !important;
+
+        >a img {
+            width: 42px !important;
+            height: 42px !important;
+        }
     }
 }
