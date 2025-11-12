@@ -186,6 +186,7 @@ section {
         img {
             width: 51px;
             height: 40px;
+            flex-shrink: 0;
         }
 
         p {
@@ -193,7 +194,8 @@ section {
             color: white;
             text-align: center;
             width: 200px;
-            line-height: 1; 
+            line-height: 1;
+            margin: 0;
         }
     }
 
@@ -201,11 +203,12 @@ section {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) rotate(-8deg);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 10px;
         z-index: 4;
         pointer-events: none;
         opacity: 0;
@@ -216,10 +219,10 @@ section {
             color: white;
             font-weight: bold;
             text-align: center;
-            margin-bottom: 20px;
             line-height: 1;
             white-space: nowrap;
             width: auto;
+            margin: 0;
         }
 
         .interest-images {
@@ -362,6 +365,9 @@ section {
         }
 
         .pull-text {
+            transform: translate(-50%, -50%) rotate(-8deg);
+            gap: 4px;
+
             img {
                 width: 40px;
                 height: 32px;
@@ -370,12 +376,17 @@ section {
             p {
                 font-size: 32px;
                 width: 180px;
+                margin: 0;
             }
         }
 
         .final-text {
+            transform: translate(-50%, -50%) rotate(-8deg);
+            gap: 8px;
+
             p {
                 font-size: 18px;
+                margin: 0;
             }
 
             .interest-images {
@@ -509,6 +520,9 @@ section {
         }
 
         .pull-text {
+            transform: translate(-50%, -50%) rotate(-8deg);
+            gap: 5px;
+
             img {
                 width: 48px;
                 height: 38px;
@@ -517,12 +531,17 @@ section {
             p {
                 font-size: 38px;
                 width: 190px;
+                margin: 0;
             }
         }
 
         .final-text {
+            transform: translate(-50%, -50%) rotate(-8deg);
+            gap: 9px;
+
             p {
                 font-size: 18px;
+                margin: 0;
             }
 
             .interest-images {
@@ -611,6 +630,9 @@ section {
         }
 
         .pull-text {
+            transform: translate(-50%, -50%) rotate(-8deg);
+            gap: 5px;
+
             img {
                 width: 48px;
                 height: 38px;
@@ -619,13 +641,17 @@ section {
             p {
                 font-size: 38px;
                 width: 190px;
+                margin: 0;
             }
         }
 
         .final-text {
+            transform: translate(-50%, -50%) rotate(-8deg);
+            gap: 9px;
+
             p {
                 font-size: 18px;
-                margin-bottom: 18px;
+                margin: 0;
             }
 
             .interest-images {
@@ -713,6 +739,9 @@ section {
         }
 
         .pull-text {
+            transform: translate(-50%, -50%) rotate(-8deg);
+            gap: 5px;
+
             img {
                 width: 49px;
                 height: 39px;
@@ -721,13 +750,17 @@ section {
             p {
                 font-size: 39px;
                 width: 195px;
+                margin: 0;
             }
         }
 
         .final-text {
+            transform: translate(-50%, -50%) rotate(-8deg);
+            gap: 10px;
+
             p {
                 font-size: 18px;
-                margin-bottom: 19px;
+                margin: 0;
             }
 
             .interest-images {
