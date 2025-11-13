@@ -263,6 +263,7 @@ section {
     }
 }
 
+
 // RESPONSIVE: 375px - 425px (Mobile)
 @media (max-width: 425px) {
     section {
@@ -415,7 +416,6 @@ section {
     }
 
     .hero-container {
-        gap: 1rem;
 
         > .polaroid-container {
             position: relative;
@@ -491,23 +491,21 @@ section {
 
     .headline-1 {
         margin-top: 4rem !important;
-        align-items: center !important;
+        margin-right: 88px;
 
         .hello-container {
-            margin: 0 0 20px 0 !important;
-            margin-left: 0 !important;
+            margin: 0 0 16px 0 !important;
+            margin-left: 6px !important;
             font-size: 18px;
         }
 
         .frontend-row {
             justify-content: center !important;
-            align-items: center !important;
             gap: 40px;
         }
     }
 
     .headline-2 {
-        align-items: center !important;
         margin-left: 0 !important;
         gap: 20px !important;
 
@@ -527,16 +525,19 @@ section {
     }
 
     .hl-font {
-        font-size: 80px !important;
+        font-size: 70px !important;
 
         .letters-wrapper {
             min-width: auto !important;
         }
     }
+}
 
+@media (max-width: 820px) {
     .socials-links {
         display: none !important;
     }
+    
 }
 
 // RESPONSIVE: 769px - 1024px (Tablet Landscape)
@@ -546,15 +547,11 @@ section {
         padding: 0 3rem;
     }
 
-    .hero-container {
-        gap: 1.5rem;
-    }
-
     .headline-1 {
         margin-top: 6rem !important;
 
         .hello-container {
-            margin-left: 1rem !important;
+            margin-left: 2.5rem !important;
             font-size: 18px;
         }
 
@@ -642,5 +639,11 @@ section {
             width: 42px !important;
             height: 42px !important;
         }
+    }
+}
+
+@media (max-width: 398px) {
+    .hl-font {  // ← War .h1-font - FALSCH!
+        font-size: 50px !important;
     }
 }

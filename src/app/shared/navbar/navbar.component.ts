@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   checkScreenSize() {
-    this.isMobile.set(window.innerWidth <= 425);
+    this.isMobile.set(window.innerWidth <= 820);
     if (!this.isMobile()) {
       this.isMenuOpen.set(false);
       this.isClosing.set(false);

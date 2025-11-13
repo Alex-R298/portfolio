@@ -469,66 +469,8 @@ nav.dark-mode .nav-links {
     }
 }
 
-// RESPONSIVE: 375px - 425px (Mobile)
-@media (max-width: 425px) {
-    nav {
-        padding: 20px 1rem;
-
-        .nav-container {
-            gap: 1rem;
-
-            .nav-logo img {
-                height: 40px;
-                width: 40px;
-            }
-
-            .menu-icon img {
-                width: 28px;
-                height: 28px;
-            }
-        }
-    }
-
-    .mobile-menu {
-        height: 100vh;
-
-        .mobile-menu-header {
-            .nav-logo img {
-                height: 40px;
-                width: 40px;
-            }
-
-            .close-icon img {
-                width: 28px;
-                height: 28px;
-            }
-        }
-
-        .mobile-menu-content {
-            gap: 2.5rem;
-
-            .mobile-nav-links {
-                gap: 3rem;
-
-                a {
-                    font-size: 18px;
-                }
-            }
-
-            .mobile-socials {
-                gap: 1.2rem;
-
-                a img {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-        }
-    }
-}
-
-// RESPONSIVE: 426px - 768px (Tablet)
-@media (min-width: 426px) and (max-width: 768px) {
+// RESPONSIVE: bis 820px (Mobile Menu aktiv)
+@media (max-width: 820px) {
     nav {
         padding: 20px 2rem;
 
@@ -567,6 +509,11 @@ nav.dark-mode .nav-links {
                 height: 44px;
                 width: 44px;
             }
+
+            .close-icon img {
+                width: 30px;
+                height: 30px;
+            }
         }
 
         .mobile-menu-content {
@@ -590,8 +537,8 @@ nav.dark-mode .nav-links {
     }
 }
 
-// RESPONSIVE: 769px - 1024px (Tablet Landscape)
-@media (min-width: 769px) and (max-width: 1024px) {
+// RESPONSIVE: 821px - 1024px (Tablet Landscape - Desktop Menu)
+@media (min-width: 821px) and (max-width: 1024px) {
     nav {
         padding: 20px 3rem;
 

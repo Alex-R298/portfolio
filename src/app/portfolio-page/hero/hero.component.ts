@@ -38,7 +38,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   checkScreenSize() {
-    this.isMobile.set(window.innerWidth <= 425);
+    this.isMobile.set(window.innerWidth <= 768);
   }
 
   over(index: number, type: 'frontend' | 'developer') {
