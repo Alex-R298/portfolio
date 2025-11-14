@@ -170,7 +170,7 @@ section {
     }
 
     .pull-text {
-        position: absolute;
+        position: relative;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -203,7 +203,7 @@ section {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) rotate(-8deg);
+        transform: translate(-50%, -50%) rotate(0deg);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -365,7 +365,6 @@ section {
         }
 
         .pull-text {
-            transform: translate(-50%, -50%) rotate(-8deg);
             gap: 4px;
 
             img {
@@ -381,7 +380,6 @@ section {
         }
 
         .final-text {
-            transform: translate(-50%, -50%) rotate(-8deg);
             gap: 8px;
 
             p {
@@ -520,7 +518,6 @@ section {
         }
 
         .pull-text {
-            transform: translate(-50%, -50%) rotate(-8deg);
             gap: 5px;
 
             img {
@@ -536,7 +533,6 @@ section {
         }
 
         .final-text {
-            transform: translate(-50%, -50%) rotate(-8deg);
             gap: 9px;
 
             p {
@@ -630,7 +626,6 @@ section {
         }
 
         .pull-text {
-            transform: translate(-50%, -50%) rotate(-8deg);
             gap: 5px;
 
             img {
@@ -646,7 +641,6 @@ section {
         }
 
         .final-text {
-            transform: translate(-50%, -50%) rotate(-8deg);
             gap: 9px;
 
             p {
@@ -739,7 +733,6 @@ section {
         }
 
         .pull-text {
-            transform: translate(-50%, -50%) rotate(-8deg);
             gap: 5px;
 
             img {
@@ -755,7 +748,6 @@ section {
         }
 
         .final-text {
-            transform: translate(-50%, -50%) rotate(-8deg);
             gap: 10px;
 
             p {
