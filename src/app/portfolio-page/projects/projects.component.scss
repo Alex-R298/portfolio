@@ -69,8 +69,8 @@ section {
     }
 
     .image-wrapper {
-        width: 560px;
-        height: 398px;
+        width: 100%;
+        aspect-ratio: 16 / 11;
         border-radius: 20px;
         overflow: hidden;
         position: relative;
@@ -134,7 +134,7 @@ section {
                     opacity: 0.5;
                     cursor: not-allowed;
                     pointer-events: none;
-                    
+
                     &:hover {
                         background-color: transparent;
                         transform: none;
@@ -173,13 +173,13 @@ section {
 
     >p {
         font-size: 18px;
-        width: 560px;
+        width: 100%;
         line-height: 1.6;
         color: black;
         margin: 0;
     }
 
-    > .project-button-mobile {
+    >.project-button-mobile {
         display: none;
     }
 }
@@ -199,16 +199,16 @@ section {
             grid-column: 1;
             grid-row: 1;
 
-            > p {
+            >p {
                 width: 100%;
                 font-size: 18px;
             }
 
-            > h1 {
+            >h1 {
                 font-size: 48px;
             }
 
-            > img {
+            >img {
                 width: 200px;
             }
         }
@@ -232,7 +232,11 @@ section {
             .image-wrapper {
                 width: 100%;
                 max-width: 343px;
-                height: 244px;
+                aspect-ratio: 13 / 10;
+
+                img {
+                    @include reveal-animation(none);
+                }
 
                 &::before {
                     display: none;
@@ -248,26 +252,26 @@ section {
                     }
 
                     .img-bounce {
-                        animation: img-bounce 2s ease-in-out infinite;
+                        animation: none !important;
                     }
                 }
             }
 
-            > h3 {
+            >h3 {
                 font-size: 20px;
             }
 
-            > p {
+            >p {
                 width: 100%;
                 max-width: 343px;
                 font-size: 18px;
             }
 
-            > .project-button-mobile {
+            >.project-button-mobile {
                 display: block;
                 align-self: flex-end;
 
-                > button {
+                >button {
                     background-color: transparent;
                     color: black;
                     border: none;
@@ -290,7 +294,7 @@ section {
                         opacity: 0.5;
                         cursor: not-allowed;
                         pointer-events: none;
-                        
+
                         &:hover {
                             background-color: transparent;
                             transform: none;
@@ -303,37 +307,40 @@ section {
     }
 }
 
-// RESPONSIVE: 426px - 768px (Tablet)
+// RESPONSIVE: 426px - 768px (Kleine Tablets)
 @media (min-width: 426px) and (max-width: 768px) {
     section {
-        padding: 6rem 3rem;
+        padding: 6rem 2rem;
     }
 
     .content-wrapper {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 4rem;
+        gap: 3.5rem;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
 
         .text-column {
-            grid-column: 1;
-            grid-row: 1;
+            width: 100%;
+            max-width: 500px;
 
-            > p {
+            >p {
                 width: 100%;
-                max-width: 600px;
                 font-size: 18px;
             }
 
-            > h1 {
-                font-size: 56px;
+            >h1 {
+                font-size: 52px;
             }
 
-            > img {
-                width: 230px;
+            >img {
+                width: 220px;
             }
         }
 
         .image-card {
+            width: 100%;
+            max-width: 500px;
+
             &:nth-child(2) {
                 grid-column: 1;
                 grid-row: 2;
@@ -351,8 +358,7 @@ section {
 
             .image-wrapper {
                 width: 100%;
-                max-width: 600px;
-                height: 380px;
+                aspect-ratio: 11 / 8;
 
                 &::before {
                     display: none;
@@ -373,21 +379,20 @@ section {
                 }
             }
 
-            > h3 {
-                font-size: 22px;
+            >h3 {
+                font-size: 21px;
             }
 
-            > p {
+            >p {
                 width: 100%;
-                max-width: 600px;
                 font-size: 18px;
             }
 
-            > .project-button-mobile {
+            >.project-button-mobile {
                 display: block;
                 align-self: flex-end;
 
-                > button {
+                >button {
                     background-color: transparent;
                     color: black;
                     border: none;
@@ -410,7 +415,7 @@ section {
                         opacity: 0.5;
                         cursor: not-allowed;
                         pointer-events: none;
-                        
+
                         &:hover {
                             background-color: transparent;
                             transform: none;
@@ -423,62 +428,128 @@ section {
     }
 }
 
-// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+// RESPONSIVE: 769px - 1024px (Große Tablets)
 @media (min-width: 769px) and (max-width: 1024px) {
     section {
-        padding: 10rem 4rem;
+        padding: 6rem 3rem;
     }
 
     .content-wrapper {
-        gap: 25px;
+        gap: 4rem;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
 
         .text-column {
-            > p {
+            width: 100%;
+            max-width: 600px;
+
+            >p {
                 width: 100%;
-                max-width: 450px;
                 font-size: 18px;
             }
 
-            > h1 {
+            >h1 {
                 font-size: 56px;
             }
 
-            > img {
-                width: 230px;
+            >img {
+                width: 240px;
             }
         }
 
         .image-card {
+            width: 100%;
+            max-width: 600px;
+
+            &:nth-child(2) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            &:nth-child(3) {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            &:nth-child(4) {
+                grid-column: 1;
+                grid-row: 4;
+            }
+
             .image-wrapper {
                 width: 100%;
-                max-width: 480px;
-                height: 340px;
+                aspect-ratio: 16 / 11;
+
+                &::before {
+                    display: none;
+                }
 
                 .project-button {
-                    bottom: 40px;
-                    left: 78%;
+                    display: none !important;
+                }
 
-                    > button {
-                        width: 140px;
-                        font-size: 16px;
+                &:hover {
+                    img:not(.img-bounce) {
+                        transform: none;
+                    }
+
+                    .img-bounce {
+                        animation: img-bounce 2s ease-in-out infinite;
                     }
                 }
             }
 
-            > h3 {
+            >h3 {
                 font-size: 22px;
             }
 
-            > p {
+            >p {
                 width: 100%;
-                max-width: 480px;
                 font-size: 18px;
+            }
+
+            >.project-button-mobile {
+                display: block;
+                align-self: flex-end;
+
+                >button {
+                    background-color: transparent;
+                    color: black;
+                    border: none;
+                    padding: 8px 22px;
+                    width: 148px;
+                    font-size: 18px;
+                    border-radius: 40px;
+                    cursor: pointer;
+                    border: 1px solid black;
+                    box-shadow: 4px 4px 0px 0px rgb(0, 0, 0);
+                    transition: all 125ms ease;
+
+                    &:hover {
+                        background-color: #F87A55;
+                        transform: translate(4px, 4px);
+                        box-shadow: none;
+                    }
+
+                    &:disabled {
+                        opacity: 0.5;
+                        cursor: not-allowed;
+                        pointer-events: none;
+
+                        &:hover {
+                            background-color: transparent;
+                            transform: none;
+                            box-shadow: 4px 4px 0px 0px rgb(0, 0, 0);
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-// RESPONSIVE: 1025px - 1440px (Small Desktop)
+// RESPONSIVE: 1025px - 1440px (Desktop)
 @media (min-width: 1025px) and (max-width: 1440px) {
     section {
         padding: 12rem 6rem;
@@ -488,45 +559,43 @@ section {
         gap: 28px;
 
         .text-column {
-            > p {
+            >p {
                 width: 100%;
-                max-width: 500px;
+                max-width: 520px;
                 font-size: 18px;
             }
 
-            > h1 {
+            >h1 {
                 font-size: 60px;
             }
 
-            > img {
-                width: 245px;
+            >img {
+                width: 250px;
             }
         }
 
         .image-card {
             .image-wrapper {
                 width: 100%;
-                max-width: 520px;
-                height: 370px;
+                aspect-ratio: 16 / 11;
 
                 .project-button {
                     bottom: 45px;
                     left: 79%;
 
-                    > button {
+                    >button {
                         width: 145px;
                         font-size: 16px;
                     }
                 }
             }
 
-            > h3 {
+            >h3 {
                 font-size: 23px;
             }
 
-            > p {
+            >p {
                 width: 100%;
-                max-width: 520px;
                 font-size: 18px;
             }
         }
@@ -534,9 +603,12 @@ section {
 }
 
 @keyframes img-bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -546,6 +618,7 @@ section {
     0% {
         transform: translateY(0) scale(1);
     }
+
     100% {
         transform: translateY(0) scale(1.10);
     }

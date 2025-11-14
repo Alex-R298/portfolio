@@ -399,71 +399,75 @@ section {
     }
 }
 
-// RESPONSIVE: 426px - 768px (Tablet)
-@media (min-width: 426px) and (max-width: 768px) {
+// RESPONSIVE: 426px - 1152px (Tablet) - Wie Mobile aber 4 Spalten
+@media (min-width: 426px) and (max-width: 1152px) {
     section {
-        height: auto;
-        min-height: 900px;
+        height: 74rem;
         flex-direction: column;
-        padding: 3rem 2rem;
-        gap: 3rem;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: normal;
+        padding: 3rem 2rem;
+        gap: 2rem;
     }
 
     .title-section {
         transform: none;
         margin-right: 0;
         width: 100%;
+        max-width: 600px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end;
         position: relative;
-        margin-top: 2rem;
-        text-align: center;
+        margin-top: 42px;
 
         p {
             font-size: 20px;
-            justify-content: center;
+            justify-content: flex-end;
             margin-bottom: 12px;
         }
 
         img {
             width: 220px;
             height: auto;
-            position: relative;
+            position: absolute;
+            right: 0;
+            bottom: 0;
             transform: scaleX(-1);
-            margin-bottom: 1rem;
         }
 
         h1 {
             font-size: 56px;
             position: static;
             transform: none;
-            text-align: center;
+            text-align: right;
+            z-index: 1;
         }
     }
 
     .skills-container {
         width: 100%;
+        max-width: 600px;
         align-items: center;
 
         .description-image {
             width: 100%;
             max-width: 600px;
+            height: auto;
             position: relative;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
 
-            > img {
-                width: 100%;
-                max-width: 600px;
-                height: auto;
+            > img:not(.description-mobile) {
+                display: none;
             }
 
             .description-mobile {
-                display: none;
+                display: block !important;
+                width: 100%;
+                max-width: 600px;
+                position: relative;
             }
 
             p {
@@ -474,6 +478,7 @@ section {
                 font-size: 18px;
                 width: 90%;
                 max-width: 540px;
+                margin: 0;
             }
         }
 
@@ -489,6 +494,10 @@ section {
             img {
                 width: 64px;
                 height: 64px;
+                filter: none;
+                &:hover {
+                    transform: none;
+                }
             }
 
             p {
@@ -506,9 +515,11 @@ section {
     }
 
     .pull-container {
-        margin-top: 3rem;
-        margin-left: 0;
-        transform: rotate(8deg);
+        margin-top: -7rem;
+        margin-left: auto;
+        margin-right: 3rem;
+        align-self: flex-end;
+        right: calc((100vw - 560px) / 2);
         width: 190px;
         height: 190px;
 
@@ -552,116 +563,8 @@ section {
     }
 }
 
-// RESPONSIVE: 769px - 1024px (Tablet Landscape)
-@media (min-width: 769px) and (max-width: 1024px) {
-    section {
-        height: 850px;
-        padding: 30px 3rem;
-        gap: 0;
-    }
-
-    .title-section {
-        transform: translate(0px, -7rem);
-        margin-right: 30px;
-
-        p {
-            font-size: 20px;
-            margin-bottom: 14px;
-        }
-
-        img {
-            width: 220px;
-            height: 68px;
-        }
-
-        h1 {
-            font-size: 56px;
-            transform: translate(3%, -100%);
-        }
-    }
-
-    .skills-container {
-        .description-image {
-            img {
-                width: 550px;
-                height: 120px;
-            }
-
-            p {
-                transform: translate(1.5rem, -5.5rem);
-                font-size: 18px;
-                width: 520px;
-            }
-        }
-
-        .skills {
-            grid-template-columns: repeat(5, 1fr);
-            gap: 8px 8px;
-            margin-top: 50px;
-        }
-
-        .skill-item {
-            img {
-                width: 64px;
-                height: 64px;
-                margin-bottom: 14px;
-            }
-
-            p {
-                font-size: 18px;
-                max-width: 110px;
-            }
-        }
-    }
-
-    .pull-container {
-        margin-top: 10rem;
-        margin-left: 25px;
-        width: 190px;
-        height: 190px;
-
-        .pull-card {
-            width: 190px;
-            height: 190px;
-        }
-
-        .pull-text {
-            gap: 5px;
-
-            img {
-                width: 48px;
-                height: 38px;
-            }
-
-            p {
-                font-size: 38px;
-                width: 190px;
-                margin: 0;
-            }
-        }
-
-        .final-text {
-            gap: 9px;
-
-            p {
-                font-size: 18px;
-                margin: 0;
-            }
-
-            .interest-images {
-                gap: 13px;
-
-                img {
-                    width: 40px;
-                    height: 58px;
-                }
-            }
-        }
-    }
-}
-
-// RESPONSIVE: 1025px - 1440px (Small Desktop)
-@media (min-width: 1025px) and (max-width: 1440px) {
+// RESPONSIVE: 1153px - 1440px (Desktop)
+@media (min-width: 1153px) and (max-width: 1440px) {
     section {
         height: 880px;
         padding: 35px 4rem;

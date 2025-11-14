@@ -127,23 +127,21 @@ section {
     }
 
     .text-content {
-        align-items: flex-start;
 
         p {
             font-size: 18px;
-            text-align: left;
         }
 
         h1 {
             font-size: 48px;
-            text-align: left;
         }
 
         img {
             width: 80px;
             height: 28px;
-            position: relative;
-            transform: none;
+            position: absolute;
+        transform: none;
+        right: 11rem;
         }
     }
 
@@ -202,8 +200,8 @@ section {
     }
 }
 
-// RESPONSIVE: 426px - 768px (Tablet)
-@media (min-width: 426px) and (max-width: 768px) {
+// RESPONSIVE: 426px - 1024px (Tablet) - Kommt jetzt schon bei 1024px!
+@media (min-width: 426px) and (max-width: 1024px) {
     section {
         padding: 0 2rem;
     }
@@ -211,10 +209,10 @@ section {
     .section-wrapper {
         gap: 50px;
         margin-bottom: 7rem;
+        align-items: center;
     }
 
     .text-content {
-        align-items: center;
 
         p {
             font-size: 20px;
@@ -223,15 +221,14 @@ section {
 
         h1 {
             font-size: 56px;
-            text-align: center;
         }
 
         img {
             width: 90px;
             height: 32px;
-            position: relative;
-            transform: none;
-            align-self: center;
+            position: absolute;
+            right: 12rem;
+        transform: translateX(-1rem);
         }
     }
 
@@ -262,6 +259,7 @@ section {
             transform: rotate(2deg);
             z-index: 3;
             top: -10px;
+            left: 0;
 
             &:hover {
                 transform: rotate(2deg) !important;
@@ -272,7 +270,7 @@ section {
             transform: rotate(4deg);
             z-index: 2;
             top: -20px;
-
+            left: 0;
             &:hover {
                 transform: rotate(4deg) !important;
             }
@@ -282,70 +280,10 @@ section {
             transform: rotate(-3deg);
             z-index: 4;
             top: 0;
+            left: 0;
 
             &:hover {
                 transform: rotate(-3deg) !important;
-            }
-        }
-    }
-}
-
-// RESPONSIVE: 769px - 1024px (Tablet Landscape)
-@media (min-width: 769px) and (max-width: 1024px) {
-    section {
-        padding: 0 3rem;
-    }
-
-    .section-wrapper {
-        gap: 55px;
-        margin-bottom: 8rem;
-    }
-
-    .text-content {
-        p {
-            font-size: 20px;
-        }
-
-        h1 {
-            font-size: 56px;
-        }
-
-        img {
-            width: 90px;
-            height: 32px;
-            transform: translate(-10rem);
-        }
-    }
-
-    .cards-container {
-        height: 380px;
-    }
-
-    .card {
-        width: 440px;
-        height: 275px;
-
-        &.card-1 {
-            transform: translateX(-510px) rotate(-4deg);
-
-            &:hover {
-                transform: translateX(-510px) rotate(-4deg) scale(1.01);
-            }
-        }
-
-        &.card-2 {
-            transform: translateX(-220px);
-
-            &:hover {
-                transform: translateX(-220px) scale(1.01);
-            }
-        }
-
-        &.card-3 {
-            transform: translateX(70px) rotate(4deg);
-
-            &:hover {
-                transform: translateX(70px) rotate(4deg) scale(1.01);
             }
         }
     }
@@ -380,11 +318,16 @@ section {
 
     .cards-container {
         height: 390px;
+        left: 42px;
     }
 
     .card {
         width: 480px;
         height: 300px;
+
+        img {
+            width: 74%;
+        }
 
         &.card-1 {
             transform: translateX(-550px) rotate(-4deg);
@@ -408,6 +351,20 @@ section {
             &:hover {
                 transform: translateX(80px) rotate(4deg) scale(1.01);
             }
+        }
+    }
+}
+
+@media (max-width: 378px) {
+    .cards-container {
+        
+        .card {
+            width: 260px;
+
+            img {
+            width: 256px;
+            height: 300px;
+        }
         }
     }
 }
