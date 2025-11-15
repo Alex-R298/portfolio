@@ -318,38 +318,38 @@ section {
 
     .cards-container {
         height: 390px;
-        left: 42px;
+        left: 0;
     }
 
     .card {
-        width: 480px;
-        height: 300px;
+        width: 420px; // Kleiner gemacht
+        height: 262px; // Proportional angepasst
 
         img {
-            width: 74%;
+            width: 100%;
         }
 
         &.card-1 {
-            transform: translateX(-550px) rotate(-4deg);
+            transform: translateX(-460px) rotate(-4deg); // Angepasst
 
             &:hover {
-                transform: translateX(-550px) rotate(-4deg) scale(1.01);
+                transform: translateX(-460px) rotate(-4deg) scale(1.01);
             }
         }
 
         &.card-2 {
-            transform: translateX(-240px);
+            transform: translateX(-210px); // Angepasst
 
             &:hover {
-                transform: translateX(-240px) scale(1.01);
+                transform: translateX(-210px) scale(1.01);
             }
         }
 
         &.card-3 {
-            transform: translateX(80px) rotate(4deg);
+            transform: translateX(50px) rotate(4deg); // Viel weniger nach rechts
 
             &:hover {
-                transform: translateX(80px) rotate(4deg) scale(1.01);
+                transform: translateX(50px) rotate(4deg) scale(1.01);
             }
         }
     }
