@@ -23,7 +23,10 @@ export class ContactFormComponent {
   showPrivacyError = false;
   formSubmitted = false;
   nameError = '';
+  namePlaceholderError = '';
   emailError = '';
+  emailPlaceholderError = '';
+  messageError = '';
   mailTest = true;
 
   post = {
@@ -42,51 +45,73 @@ export class ContactFormComponent {
     this.validateName();
     this.validateEmail();
     
-    if (ngForm.form.valid && this.privacyAccepted && !this.nameError && !this.emailError && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-            ngForm.resetForm();
-            this.privacyAccepted = false;
-            this.showPrivacyError = false;
-            this.formSubmitted = false;
-            this.nameError = '';
-            this.emailError = '';
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
-    } else if (ngForm.form.valid && this.privacyAccepted && !this.nameError && !this.emailError && this.mailTest) {
-      ngForm.resetForm();
-      this.privacyAccepted = false;
-      this.showPrivacyError = false;
-      this.formSubmitted = false;
-      this.nameError = '';
-      this.emailError = '';
+    if (this.isFormValid(ngForm)) {
+      this.submitForm(ngForm);
     }
+  }
+
+  isFormValid(ngForm: NgForm): boolean {
+    return ngForm.form.valid && this.privacyAccepted && !this.nameError && !this.emailError;
+  }
+
+  submitForm(ngForm: NgForm) {
+    if (!this.mailTest) {
+      this.sendEmail(ngForm);
+    } else {
+      this.resetFormData(ngForm);
+    }
+  }
+
+  sendEmail(ngForm: NgForm) {
+    this.http.post(this.post.endPoint, this.post.body(this.contactData))
+      .subscribe({
+        next: (response) => {
+          this.resetFormData(ngForm);
+        },
+        error: (error) => {
+          console.error(error);
+        },
+        complete: () => console.info('send post complete'),
+      });
+  }
+
+  resetFormData(ngForm: NgForm) {
+    ngForm.resetForm();
+    this.privacyAccepted = false;
+    this.showPrivacyError = false;
+    this.formSubmitted = false;
+    this.nameError = '';
+    this.namePlaceholderError = '';
+    this.emailError = '';
+    this.emailPlaceholderError = '';
+    this.messageError = '';
   }
 
   validateName() {
     const nameParts = this.contactData.name.trim().split(/\s+/);
     if (this.contactData.name.trim() === '') {
-      this.nameError = 'Oops! it seems your name is missing';
+      this.namePlaceholderError = 'Oops! it seems your name is missing';
+      this.nameError = '';
     } else if (nameParts.length < 2) {
       this.nameError = 'Please enter your first and last name';
+      this.namePlaceholderError = '';
     } else {
       this.nameError = '';
+      this.namePlaceholderError = '';
     }
   }
 
   validateEmail() {
     const emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
     if (this.contactData.email.trim() === '') {
-      this.emailError = 'Hoppla! your email is required';
+      this.emailPlaceholderError = 'Hoppla! your email is required';
+      this.emailError = '';
     } else if (!emailPattern.test(this.contactData.email)) {
       this.emailError = 'Please enter a valid email address';
+      this.emailPlaceholderError = '';
     } else {
       this.emailError = '';
+      this.emailPlaceholderError = '';
     }
   }
 
@@ -96,6 +121,24 @@ export class ContactFormComponent {
     } else {
       this.showPrivacyError = false;
     }
+  }
+
+  onNameChange() {
+    this.nameError = '';
+    this.namePlaceholderError = '';
+    this.formSubmitted = false;
+    this.onInputChange();
+  }
+
+  onEmailChange() {
+    this.emailError = '';
+    this.emailPlaceholderError = '';
+    this.formSubmitted = false;
+    this.onInputChange();
+  }
+
+  onMessageChange() {
+    this.onInputChange();
   }
 
   onPrivacyChange() {

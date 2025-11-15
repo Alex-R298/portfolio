@@ -3,31 +3,41 @@
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div class="form-group">
                 <label for="name">Wie heißt du?</label>
-                <input 
-                    #nameField="ngModel"
-                    [(ngModel)]="contactData.name" 
-                    (ngModelChange)="onInputChange()"
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    required 
-                    [class.error-input]="nameError && formSubmitted"
-                    [placeholder]="(nameError && formSubmitted) ? nameError : 'Dein Name'">
+                <div class="input-wrapper">
+                    <input 
+                        #nameField="ngModel"
+                        [(ngModel)]="contactData.name" 
+                        (ngModelChange)="onNameChange()"
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        [class.error-input]="namePlaceholderError && formSubmitted"
+                        [placeholder]="(namePlaceholderError && formSubmitted) ? namePlaceholderError : 'Dein Name'">
+                    @if (nameError && formSubmitted) {
+                        <span class="error-message">{{ nameError }}</span>
+                    }
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="email">Wie lautet deine E-Mail?</label>
-                <input 
-                    #emailField="ngModel"
-                    [(ngModel)]="contactData.email" 
-                    (ngModelChange)="onInputChange()"
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    required 
-                    [class.error-input]="emailError && formSubmitted"
-                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" 
-                    [placeholder]="(emailError && formSubmitted) ? emailError : 'deineemail@email.com'">
+                <div class="input-wrapper">
+                    <input 
+                        #emailField="ngModel"
+                        [(ngModel)]="contactData.email" 
+                        (ngModelChange)="onEmailChange()"
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        [class.error-input]="emailPlaceholderError && formSubmitted"
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" 
+                        [placeholder]="(emailPlaceholderError && formSubmitted) ? emailPlaceholderError : 'deineemail@email.com'">
+                    @if (emailError && formSubmitted) {
+                        <span class="error-message">{{ emailError }}</span>
+                    }
+                </div>
             </div>
 
             <div class="form-group">
@@ -36,12 +46,12 @@
                     #messageField="ngModel" 
                     minlength="4" 
                     [(ngModel)]="contactData.message" 
-                    (ngModelChange)="onInputChange()"
+                    (ngModelChange)="onMessageChange()"
                     id="message" 
                     name="message" 
                     required 
-                    [class.error-input]="messageField.invalid && formSubmitted"
-                    [placeholder]="messageField.invalid && formSubmitted ? 'What do you need to develop?' : 'Hallo Alex, ich interessiere mich für...'"></textarea>
+                    [class.error-input]="messageField.invalid && formSubmitted && contactData.message === ''"
+                    [placeholder]="(messageField.invalid && formSubmitted && contactData.message === '') ? 'What do you need to develop?' : 'Hallo Alex, ich interessiere mich für...'"></textarea>
             </div>
 
             <div class="checkbox">

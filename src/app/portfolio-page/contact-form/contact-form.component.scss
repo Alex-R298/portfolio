@@ -45,6 +45,23 @@
                 }
             }
 
+            .input-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                position: relative;
+
+                .error-message {
+                    color: #FF3A00;
+                    font-size: 14px;
+                    white-space: nowrap;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
             input,
             textarea {
                 padding: 0px 0px 10px 20px;
@@ -56,6 +73,7 @@
                 outline: none;
                 font-family: inherit;
                 transition: all 125ms ease;
+                width: 100%;
 
                 &::placeholder {
                     color: rgba(255, 255, 255, 0.6);
