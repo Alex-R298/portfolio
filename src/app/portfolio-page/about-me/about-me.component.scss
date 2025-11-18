@@ -136,7 +136,7 @@ section {
     section {
         flex-direction: column-reverse;
         height: auto;
-        padding: 2rem 1rem;
+        padding: 2rem 0.5rem;
         gap: 0;
     }
 
@@ -178,8 +178,8 @@ section {
             }
 
             >p {
-                font-size: 20px;
-                margin-left: 15px;
+                font-size: 18px;
+                margin-left: 8px;
             }
         }
 
@@ -234,6 +234,32 @@ section {
             margin-right: 0;
             display: block;
             font-size: 16px;
+        }
+    }
+}
+
+
+
+// Noch kleinere Handys (320px)
+@media (max-width: 372px) {
+    .image-card {
+        width: 100% !important;
+        max-width: 280px !important;
+
+        &:nth-child(2) {
+            top: 132px !important;
+        }
+
+        &:nth-child(3) {
+            top: 202px !important;
+        }
+
+        .card-mobile {
+            max-width: 280px !important;
+        }
+
+        .card-content {
+            width: 100% !important;
         }
     }
 }

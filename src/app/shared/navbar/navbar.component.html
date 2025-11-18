@@ -7,10 +7,10 @@
         @if (!isMobile()) {
         <!-- DESKTOP NAVIGATION -->
         <div class="nav-links">
-            <a (click)="closeNav()" href="#about_me">Über mich <img src="../../../assets/img/header/1.png" alt=""></a>
-            <a (click)="closeNav()" href="#skill_set">Fähigkeiten<img src="../../../assets/img/header/2.png" alt=""></a>
-            <a (click)="closeNav()" href="#projects">Projekte <img src="../../../assets/img/header/4.png" alt=""></a>
-            <a (click)="closeNav()" href="#contact_me">Kontakt <img src="../../../assets/img/header/3.png" alt=""></a>
+            <a (click)="closeNav()" href="#about_me">{{ ts.t('Über mich') }} <img src="../../../assets/img/header/1.png" alt=""></a>
+            <a (click)="closeNav()" href="#skill_set">{{ ts.t('Fähigkeiten') }}<img src="../../../assets/img/header/2.png" alt=""></a>
+            <a (click)="closeNav()" href="#projects">{{ ts.t('Projekte') }} <img src="../../../assets/img/header/4.png" alt=""></a>
+            <a (click)="closeNav()" href="#contact_me">{{ ts.t('Kontakt') }} <img src="../../../assets/img/header/3.png" alt=""></a>
         </div>
         <div class="language-switch">
             <span [class.active]="!isGerman" (click)="toggleLanguage()">
@@ -38,7 +38,7 @@
 
     <!-- MOBILE TOGGLE MENU -->
     @if (isMobile() && isMenuOpen()) {
-    <div class="mobile-menu " [class.open]="isMenuOpen() && !isClosing()" [class.closing]="isClosing()">
+    <div class="mobile-menu" [class.open]="isMenuOpen() && !isClosing()" [class.closing]="isClosing()">
         <div class="mobile-menu-header">
             <a class="nav-logo" href="#portfolio-page">
                 <img src="../../../assets/img/header/portfolio-logo (2) (1).png" alt="Logo">
@@ -50,13 +50,10 @@
 
         <div class="mobile-menu-content">
             <div class="mobile-nav-links">
-                <a (click)="closeNav()" href="#about_me">About me <img src="../../../assets/img/header/1.png"
-                        alt=""></a>
-                <a (click)="closeNav()" href="#skill_set">Skills <img src="../../../assets/img/header/2.png" alt=""></a>
-                <a (click)="closeNav()" href="#projects">Projects <img src="../../../assets/img/header/4.png"
-                        alt=""></a>
-                <a (click)="closeNav()" href="#contact_me">Contact <img src="../../../assets/img/header/3.png"
-                        alt=""></a>
+                <a (click)="closeNav()" href="#about_me">{{ ts.t('Über mich') }} <img src="../../../assets/img/header/1.png" alt=""></a>
+                <a (click)="closeNav()" href="#skill_set">{{ ts.t('Fähigkeiten') }} <img src="../../../assets/img/header/2.png" alt=""></a>
+                <a (click)="closeNav()" href="#projects">{{ ts.t('Projekte') }} <img src="../../../assets/img/header/4.png" alt=""></a>
+                <a (click)="closeNav()" href="#contact_me">{{ ts.t('Kontakt') }} <img src="../../../assets/img/header/3.png" alt=""></a>
             </div>
 
             <div class="language-switch">

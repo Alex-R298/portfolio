@@ -190,11 +190,10 @@
             content: '';
             position: absolute;
             bottom: 6px;
-            right: 226px;
             width: 152px;
             height: 20px;
             background-image: url('../../../assets/img/contact-me/Color option 1.png');
-            background-size: 152px auto;
+            background-size: 114px auto;
             background-repeat: no-repeat;
             background-position: left center;
             @include reveal-animation();
@@ -242,12 +241,12 @@
             content: '';
             position: absolute;
             bottom: 19px;
-            left: -14%;
+            left: -26%;
             transform: translateX(50%);
             width: 180px;
             height: 24px;
             background-image: url('../../../assets/img/contact-me/Color option 1.png');
-            background-size: 180px auto;
+            background-size: 130px auto;
             background-repeat: no-repeat;
             background-position: center;
             @include reveal-animation();

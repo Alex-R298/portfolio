@@ -219,6 +219,7 @@ section {
     }
 }
 
+
 // RESPONSIVE: 375px - 768px (Mobile & Tablet)
 @media (max-width: 768px) {
     section {
@@ -323,6 +324,7 @@ section {
             .right-content {
                 width: 100%;
                 margin-bottom: 2rem;
+                align-items: center;
 
                 .project-image {
                     width: 100% !important;
@@ -366,6 +368,14 @@ section {
             &:hover {
                 color: #F87A55 !important;
             }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .project-card {
+        > img {
+            width: 69rem !important;
         }
     }
 }
@@ -431,15 +441,15 @@ section {
             .left-content {
                 margin-left: 0 !important;
                 width: 100%;
-                gap: 1rem !important;
+                gap: 0.25rem !important;
 
                 h1 {
-                    font-size: 44px !important;
+                    font-size: 48px !important;
                 }
 
                 > img {
                     position: relative !important;
-                    top: 0 !important;
+                    top: -10px !important;
                     max-width: 100%;
                 }
 
@@ -448,7 +458,7 @@ section {
                 }
 
                 p {
-                    font-size: 16px !important;
+                    font-size: 18px !important;
                     width: 100% !important;
                     max-width: 100%;
                 }
@@ -485,7 +495,7 @@ section {
                 .project-image {
                     width: 100% !important;
                     max-width: 500px;
-                    height: 282px !important;
+                    height: 338px !important;
                     object-fit: cover;
                     border-radius: 8px;
                 }
@@ -538,8 +548,7 @@ section {
     .project-card {
         width: 1200px !important; // ← Aufgerundet von 1195px
         height: 750px !important; // ← Aufgerundet von 747px
-        max-width: calc(100vw - 3rem);
-        max-height: calc(100vh - 3rem);
+        max-width: calc(100vw - 3rem) !important;
         padding: 1.5rem 3.5rem !important; // ← Aufgerundet von 1.66rem 3.32rem
         overflow-y: auto !important;
 

@@ -1,25 +1,28 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component'; // ← NEU: Pfad anpassen!
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [NavbarComponent, CommonModule],
+  imports: [CommonModule, NavbarComponent], // ← NEU: NavbarComponent hinzugefügt
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {
-
-
   @Input() projectData: any;
-  @Output() close = new EventEmitter<void>(); // ← Event zum Parent senden
+  @Output() close = new EventEmitter<void>();
   @Output() next = new EventEmitter<void>();
-
   
+  screenWidth: number = window.innerWidth;
+
+  @HostListener('window:resize')
+  onResize() {
+    this.screenWidth = window.innerWidth;
+  }
 
   closeCard() {
-    this.close.emit(); // ← Sagt dem Parent: "Schließ mich!"
+    this.close.emit();
   }
 
   nextProject() {

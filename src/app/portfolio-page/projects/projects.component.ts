@@ -27,7 +27,8 @@ export class ProjectsComponent {
       skillsNames: ['CSS', 'HTML', 'JavaScript', 'Firebase'],
       img: 'join.png',
       lineWidth: 120,
-      lineHeight: 20
+      lineHeight: 20,
+      lineWidthTablet: 88
     },
     {
       name: 'Pixel Quest',
@@ -38,7 +39,8 @@ export class ProjectsComponent {
       skillsNames: ['CSS', 'HTML', 'JavaScript'],
       img: 'pixel-game.png',
       lineWidth: 340,
-      lineHeight: 20
+      lineHeight: 20,
+      lineWidthTablet: 264
     },
     // {
     // name: 'DABubble',

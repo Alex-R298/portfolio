@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../services/translation-service/translation-service.component';
 
 @Component({
   selector: 'app-navbar',
@@ -14,8 +15,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   isMobile = signal(false);
   isMenuOpen = signal(false);
-  isClosing = signal(false); // Neues Signal für Schließ-Animation
-  isGerman: boolean = true;
+  isClosing = signal(false);
+
+  constructor(public ts: TranslationService) {}
+
+  get isGerman(): boolean {
+    return this.ts.currentLang() === 'de';
+  }
 
   ngOnInit() {
     this.checkScreenSize();
@@ -45,7 +51,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   closeMenuWithAnimation() {
     this.isClosing.set(true);
-
     setTimeout(() => {
       this.isMenuOpen.set(false);
       this.isClosing.set(false);
@@ -58,6 +63,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   toggleLanguage() {
-    this.isGerman = !this.isGerman;
+    this.ts.toggleLanguage();
   }
 }
+
