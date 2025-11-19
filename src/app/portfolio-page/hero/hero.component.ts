@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, signal } from '@angular/core';
+import { TranslationService } from '../../services/translation-service/translation-service.component';
 
 
 @Component({
@@ -10,6 +11,9 @@ import { Component, OnInit, OnDestroy, signal } from '@angular/core';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent implements OnInit, OnDestroy {
+
+  constructor(public ts: TranslationService) {}
+
 
   isMobile = signal(false);
   frontendLetters: { char: string, original: string }[] = [];

@@ -13,6 +13,11 @@ export class TranslationService {
     'Projekte': 'Projects',
     'Kontakt': 'Contact',
 
+    // Hero Section
+    'Hallo Welt': 'Hello World',
+    'ICH BIN ALEX REITZ': "I'M ALEX REITZ",
+    'Schreib mir': 'Get in Touch',
+
     // Buttons
     'Zurück': 'Go Back',
     'Nächstes Projekt': 'Next Project',
@@ -44,6 +49,6 @@ export class TranslationService {
     if (this.currentLang() === 'en' && this.english[text]) {
       return this.english[text];
     }
-    return text; // Gibt den deutschen Text zurück
+    return text;
   }
 }
