@@ -1,7 +1,7 @@
 section {
-    width: 1440px;
+    width: 100%; // ← Geändert von 1440px
     height: 439px;
-    max-width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
 
     background-image: url('/assets/img/legal/legal.png');
@@ -11,27 +11,27 @@ section {
 
     display: flex;
     align-items: center;
-    padding: 40px 20px;
+    padding: 40px 8rem;
 
     h1 {
         font-size: 64px;
         color: #FFFFFF;
-        margin-left: 7rem;
+        margin-left: 0;
     }
 }
 
 .legal-content {
-    width: 1024px;
+    max-width: 1440px;
     color: #000000;
-    padding: 4rem 2rem 16rem; 
+    padding: 4rem 8rem 16rem 8rem; // ← Gleiche padding-left wie section
     background-color: white;
-    margin-left: 9.3rem;
+    margin: 0 auto;
     position: relative;
 
     .go-back {
         position: absolute;
         top: 2rem;
-        left: 2rem;
+        left: 8rem; // ← Gleich wie padding
         color: black;
         border: none;
         cursor: pointer;
@@ -73,7 +73,7 @@ section {
     }
 }
 
-// RESPONSIVE
+// RESPONSIVE: 375px - 425px (Mobile)
 @media (max-width: 425px) {
     section {
         height: 271px;
@@ -86,9 +86,7 @@ section {
     }
 
     .legal-content {
-        width: 100%;
-        padding: 4rem 1rem 14rem;
-        margin-left: 0;
+        padding: 4rem 1rem 14rem 1rem;
 
         .go-back {
             display: flex;
@@ -104,6 +102,110 @@ section {
         h3 {
             font-size: 18px;
             margin-top: 1.5rem;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+// RESPONSIVE: 426px - 768px (Tablet)
+@media (min-width: 426px) and (max-width: 768px) {
+    section {
+        height: 320px;
+        padding: 3rem 2rem;
+
+        h1 {
+            font-size: 56px;
+            margin-left: 0;
+        }
+    }
+
+    .legal-content {
+        padding: 4rem 2rem 14rem 2rem;
+
+        .go-back {
+            display: flex;
+            top: 1.5rem;
+            left: 2rem;
+
+            img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        height: 360px;
+        padding: 3rem 2rem;
+
+        h1 {
+            font-size: 60px;
+            margin-left: 0;
+        }
+    }
+
+    .legal-content {
+        padding: 4rem 2rem 15rem 2rem;
+
+        .go-back {
+            display: flex;
+            top: 1.5rem;
+            left: 2rem;
+
+            img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+// RESPONSIVE: 1025px - 1440px (Small Desktop)
+@media (min-width: 1025px) and (max-width: 1440px) {
+    section {
+        height: 400px;
+        padding: 3rem 8rem;
+
+        h1 {
+            font-size: 62px;
+            margin-left: 0;
+        }
+    }
+
+    .legal-content {
+        padding: 4rem 8rem 15rem 8rem;
+
+        .go-back {
+            display: none;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 2rem;
         }
 
         p {

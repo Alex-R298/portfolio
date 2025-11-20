@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'
 })
-export class LegalNoticeComponent implements OnInit {
+export class LegalNoticeComponent implements OnInit, OnDestroy {
   constructor(
     private location: Location,
     private router: Router
@@ -18,6 +18,11 @@ export class LegalNoticeComponent implements OnInit {
 
   ngOnInit() {
     window.scrollTo(0, 0);
+    document.body.classList.add('legal-page');
+  }
+
+  ngOnDestroy() {
+    document.body.classList.remove('legal-page');
   }
 
   goBack() {

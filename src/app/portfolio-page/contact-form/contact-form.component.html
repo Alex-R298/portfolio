@@ -62,14 +62,13 @@
                     [(ngModel)]="privacyAccepted"
                     (ngModelChange)="onPrivacyChange()">
                 <span for="privacyPolicy"> 
-                    Ich habe die <a href="">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.
+                    Ich habe die <a href="/privacy-policy">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.
                 </span>
             </div>
             @if (showPrivacyError) {
                 <div class="privacy-error">Please accept the privacy policy</div>
             }
-
-            <button type="submit" [disabled]="!privacyAccepted">Senden</button>
+            <button  type="submit" [disabled]="!privacyAccepted">Senden</button>
         </form>
     </div>
 </section>

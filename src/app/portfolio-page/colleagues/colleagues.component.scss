@@ -70,13 +70,98 @@ section {
     position: absolute;
     transition: all 125ms ease;
 
-    img {
+    > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         transition: all 125ms ease;
+
+        &.hover-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 125ms ease;
+        }
+    }
+
+    &:hover > img.hover-img {
+        opacity: 1;
+    }
+
+    .coming-soon {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        font-size: 24px;
+        color: black;
+        pointer-events: none;
+    }
+
+    .person-info {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        pointer-events: none;
+
+        .name {
+            font-size: 22px;
+            font-weight: bold;
+            color: black;
+            transition: color 125ms ease;
+        }
+
+        .role {
+            font-size: 18px;
+            color: black;
+            transition: color 125ms ease;
+        }
+    }
+
+    .profile-link {
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        cursor: pointer;
+
+        img {
+            width: 24px;
+            height: 24px;
+            transition: filter 125ms ease;
+            filter: brightness(0);
+        }
+
+        span {
+            font-size: 20px;
+            color: black;
+            transition: color 125ms ease;
+        }
+
+        &:hover {
+            img {
+                filter: brightness(0) invert(1);
+            }
+
+            span {
+                color: white;
+            }
+        }
+    }
+
+    // Hover-Effekt für person-info wenn hover-img aktiv
+    &:hover {
+        .person-info .name,
+        .person-info .role {
+            color: white;
+        }
     }
 
     &.card-1 {
@@ -140,8 +225,8 @@ section {
             width: 80px;
             height: 28px;
             position: absolute;
-        transform: none;
-        right: 11rem;
+            transform: none;
+            right: 11rem;
         }
     }
 
@@ -159,11 +244,56 @@ section {
         left: 0;
         top: 0;
         transform: none;
-        pointer-events: none;
 
-        img {
+        > img {
             width: 327px;
             height: 343px;
+            position: relative;
+
+            &.hover-img {
+                display: none;
+            }
+        }
+
+        .coming-soon {
+            font-size: 24px;
+            top: 24px;
+            left: 24px;
+        }
+
+        .person-info {
+            bottom: 24px;
+            left: 24px;
+
+            .name {
+                font-size: 22px;
+            }
+
+            .role {
+                font-size: 18px;
+            }
+        }
+
+        .profile-link {
+            bottom: 24px;
+            right: 24px;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+
+            span {
+                font-size: 20px;
+            }
+        }
+
+        // Kein Hover-Effekt für person-info bei Mobile
+        &:hover {
+            .person-info .name,
+            .person-info .role {
+                color: black;
+            }
         }
 
         &.card-1 {
@@ -200,8 +330,8 @@ section {
     }
 }
 
-// RESPONSIVE: 426px - 1024px (Tablet) - Kommt jetzt schon bei 1024px!
-@media (min-width: 426px) and (max-width: 1024px) {
+// RESPONSIVE: 426px - 768px (Tablet)
+@media (min-width: 426px) and (max-width: 768px) {
     section {
         padding: 0 2rem;
     }
@@ -227,8 +357,7 @@ section {
             width: 90px;
             height: 32px;
             position: absolute;
-            right: 12rem;
-        transform: translateX(-1rem);
+            transform: translateX(-11rem);
         }
     }
 
@@ -247,12 +376,57 @@ section {
         left: 0;
         top: 0;
         transform: none;
-        pointer-events: none;
 
-        img {
+        > img {
             width: 100%;
             height: auto;
             aspect-ratio: 512 / 320;
+            position: relative;
+
+            &.hover-img {
+                display: none;
+            }
+        }
+
+        .coming-soon {
+            font-size: 24px;
+            top: 24px;
+            left: 24px;
+        }
+
+        .person-info {
+            bottom: 24px;
+            left: 24px;
+
+            .name {
+                font-size: 22px;
+            }
+
+            .role {
+                font-size: 18px;
+            }
+        }
+
+        .profile-link {
+            bottom: 24px;
+            right: 24px;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+
+            span {
+                font-size: 20px;
+            }
+        }
+
+        // Kein Hover-Effekt für person-info
+        &:hover {
+            .person-info .name,
+            .person-info .role {
+                color: black;
+            }
         }
 
         &.card-1 {
@@ -271,6 +445,141 @@ section {
             z-index: 2;
             top: -20px;
             left: 0;
+
+            &:hover {
+                transform: rotate(4deg) !important;
+            }
+        }
+
+        &.card-3 {
+            transform: rotate(-3deg);
+            z-index: 4;
+            top: 0;
+            left: 0;
+
+            &:hover {
+                transform: rotate(-3deg) !important;
+            }
+        }
+    }
+}
+
+// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        padding: 0 2rem;
+    }
+
+    .section-wrapper {
+        gap: 50px;
+        margin-bottom: 7rem;
+        align-items: center;
+    }
+
+    .text-content {
+
+        p {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 56px;
+        }
+
+        img {
+            width: 90px;
+            height: 32px;
+            position: absolute;
+            transform: translateX(-11rem);
+        }
+    }
+
+    .cards-container {
+        flex-direction: column;
+        height: auto;
+        gap: 0;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 520px;
+        height: auto;
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+
+        > img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 512 / 320;
+            position: relative;
+
+            &.hover-img {
+                display: none;
+            }
+        }
+
+        .coming-soon {
+            font-size: 24px;
+            top: 24px;
+            left: 24px;
+        }
+
+        .person-info {
+            bottom: 24px;
+            left: 24px;
+
+            .name {
+                font-size: 22px;
+            }
+
+            .role {
+                font-size: 18px;
+            }
+        }
+
+        .profile-link {
+            bottom: 24px;
+            right: 24px;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+
+            span {
+                font-size: 20px;
+            }
+        }
+
+        // Kein Hover-Effekt für person-info
+        &:hover {
+            .person-info .name,
+            .person-info .role {
+                color: black;
+            }
+        }
+
+        &.card-1 {
+            transform: rotate(2deg);
+            z-index: 3;
+            top: -10px;
+            left: 0;
+
+            &:hover {
+                transform: rotate(2deg) !important;
+            }
+        }
+
+        &.card-2 {
+            transform: rotate(4deg);
+            z-index: 2;
+            top: -20px;
+            left: 0;
+
             &:hover {
                 transform: rotate(4deg) !important;
             }
@@ -322,15 +631,48 @@ section {
     }
 
     .card {
-        width: 420px; // Kleiner gemacht
-        height: 262px; // Proportional angepasst
+        width: 420px;
+        height: 262px;
 
-        img {
+        > img {
             width: 100%;
         }
 
+        .coming-soon {
+            font-size: 22px;
+            top: 20px;
+            left: 20px;
+        }
+
+        .person-info {
+            bottom: 20px;
+            left: 20px;
+
+            .name {
+                font-size: 20px;
+            }
+
+            .role {
+                font-size: 16px;
+            }
+        }
+
+        .profile-link {
+            bottom: 20px;
+            right: 20px;
+
+            img {
+                width: 22px;
+                height: 22px;
+            }
+
+            span {
+                font-size: 18px;
+            }
+        }
+
         &.card-1 {
-            transform: translateX(-460px) rotate(-4deg); // Angepasst
+            transform: translateX(-460px) rotate(-4deg);
 
             &:hover {
                 transform: translateX(-460px) rotate(-4deg) scale(1.01);
@@ -338,7 +680,7 @@ section {
         }
 
         &.card-2 {
-            transform: translateX(-210px); // Angepasst
+            transform: translateX(-210px);
 
             &:hover {
                 transform: translateX(-210px) scale(1.01);
@@ -346,7 +688,7 @@ section {
         }
 
         &.card-3 {
-            transform: translateX(50px) rotate(4deg); // Viel weniger nach rechts
+            transform: translateX(50px) rotate(4deg);
 
             &:hover {
                 transform: translateX(50px) rotate(4deg) scale(1.01);
@@ -361,10 +703,43 @@ section {
         .card {
             width: 260px;
 
-            img {
-            width: 256px;
-            height: 300px;
-        }
+            > img {
+                width: 256px;
+                height: 300px;
+            }
+
+            .coming-soon {
+                font-size: 20px;
+                top: 20px;
+                left: 20px;
+            }
+
+            .person-info {
+                bottom: 20px;
+                left: 20px;
+
+                .name {
+                    font-size: 18px;
+                }
+
+                .role {
+                    font-size: 16px;
+                }
+            }
+
+            .profile-link {
+                bottom: 20px;
+                right: 20px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                span {
+                    font-size: 18px;
+                }
+            }
         }
     }
 }

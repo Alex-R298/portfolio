@@ -10,11 +10,9 @@
             <!-- Linke Seite: Text Content -->
             <div class="left-content">
                 <h1 #titleRef>{{ projectData?.name }}</h1>
-                <img 
-  [style.width.px]="screenWidth <= 1024 ? projectData?.lineWidthTablet : projectData?.lineWidth" 
-  [style.height.px]="projectData?.lineHeight"
-  src="../../../assets/img/about-me/Color option 1.png" 
-  alt="">
+                <img [style.width.px]="screenWidth <= 1024 ? projectData?.lineWidthTablet : projectData?.lineWidth"
+                    [style.height.px]="projectData?.lineHeight" src="../../../assets/img/about-me/Color option 1.png"
+                    alt="">
 
                 <h2>Description</h2>
                 <p>{{ projectData?.description }}</p>
@@ -41,8 +39,8 @@
                 <img class="project-image" [src]="'../../../assets/img/projects/' + projectData?.img" alt="">
 
                 <div class="action-buttons">
-                    <button class="github-btn">GitHub</button>
-                    <button class="live-test-btn">Live Test</button>
+                    <a [href]="projectData?.githubLink" target="_blank" class="github-btn">GitHub</a>
+                    <a [href]="projectData?.liveLink" target="_blank" class="live-test-btn">Live Test</a>
                 </div>
             </div>
         </div>
@@ -53,4 +51,3 @@
         </button>
     </div>
 </section>
-

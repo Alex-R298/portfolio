@@ -117,7 +117,7 @@ nav {
                 &.active {
                     color: #F87A55;
                     pointer-events: none;
-                    
+
                     img {
                         display: none !important;
                     }
@@ -128,7 +128,7 @@ nav {
                 }
 
                 &:nth-child(1):not(.active) img {
-                    top: -8px;
+                    top: -5px;
                     left: 50%;
                     transform: translateX(-50%);
                     clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
@@ -204,7 +204,7 @@ nav {
 
         .menu-icon {
             cursor: pointer;
-            
+
             img {
                 width: 30px;
                 height: 30px;
@@ -254,6 +254,10 @@ nav {
                 img {
                     width: 30px;
                     height: 30px;
+
+                    &:hover {
+                        filter: brightness(0) saturate(100%) invert(26%) sepia(89%) saturate(2186%) hue-rotate(222deg) brightness(101%) contrast(105%);
+                    }
                 }
             }
         }
@@ -355,7 +359,7 @@ nav {
                     &.active {
                         color: #F87A55;
                         pointer-events: none;
-                        
+
                         img {
                             display: none !important;
                         }
@@ -462,8 +466,21 @@ nav {
 
 // Nur die ersten zwei Links schwarz im dark-mode
 nav.dark-mode .nav-links {
+
     a:nth-child(1),
     a:nth-child(2) {
+        color: black !important;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav.dark-mode .nav-links a {
+        color: black !important;
+        font-weight: 600;
+    }
+
+    nav.dark-mode .language-switch span {
         color: black !important;
         font-weight: 600;
     }
@@ -496,6 +513,9 @@ nav.dark-mode .nav-links {
                 img {
                     width: 30px;
                     height: 30px;
+                    &:hover {
+                        filter: brightness(0) saturate(100%) invert(26%) sepia(89%) saturate(2186%) hue-rotate(222deg) brightness(101%) contrast(105%);
+                    }
                 }
             }
         }
@@ -654,6 +674,7 @@ nav.dark-mode .nav-links {
         transform: translateY(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -665,6 +686,7 @@ nav.dark-mode .nav-links {
         transform: translateY(0);
         opacity: 1;
     }
+
     to {
         transform: translateY(-100%);
         opacity: 0;

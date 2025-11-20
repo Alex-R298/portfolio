@@ -1,0 +1,215 @@
+section {
+    width: 100%; // ← Geändert von 1440px
+    height: 439px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    background-image: url('/assets/img/legal/legal.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    padding: 40px 8rem;
+
+    h1 {
+        font-size: 64px;
+        color: #FFFFFF;
+        margin-left: 0;
+    }
+}
+
+.legal-content {
+    max-width: 1440px;
+    color: #000000;
+    padding: 4rem 8rem 16rem 8rem; // ← Gleiche padding-left wie section
+    background-color: white;
+    margin: 0 auto;
+    position: relative;
+
+    .go-back {
+        position: absolute;
+        top: 2rem;
+        left: 8rem; // ← Gleich wie padding
+        color: black;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        background-color: transparent;
+        font-weight: bold;
+        transition: all 0.125s ease;
+        display: none;
+        align-items: center;
+        z-index: 10;
+
+        img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        &:hover {
+            color: #F87A55;
+        }
+    }
+
+    h3 {
+        font-size: 18px;
+        color: #3355FF;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+}
+
+// RESPONSIVE: 375px - 425px (Mobile)
+@media (max-width: 425px) {
+    section {
+        height: 271px;
+        padding: 3rem 1rem;
+
+        h1 {
+            font-size: 48px;
+            margin-left: 0;
+        }
+    }
+
+    .legal-content {
+        padding: 4rem 1rem 14rem 1rem;
+
+        .go-back {
+            display: flex;
+            top: 1rem;
+            left: 1rem;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+// RESPONSIVE: 426px - 768px (Tablet)
+@media (min-width: 426px) and (max-width: 768px) {
+    section {
+        height: 320px;
+        padding: 3rem 2rem;
+
+        h1 {
+            font-size: 56px;
+            margin-left: 0;
+        }
+    }
+
+    .legal-content {
+        padding: 4rem 2rem 14rem 2rem;
+
+        .go-back {
+            display: flex;
+            top: 1.5rem;
+            left: 2rem;
+
+            img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        height: 360px;
+        padding: 3rem 2rem;
+
+        h1 {
+            font-size: 60px;
+            margin-left: 0;
+        }
+    }
+
+    .legal-content {
+        padding: 4rem 2rem 15rem 2rem;
+
+        .go-back {
+            display: flex;
+            top: 1.5rem;
+            left: 2rem;
+
+            img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+// RESPONSIVE: 1025px - 1440px (Small Desktop)
+@media (min-width: 1025px) and (max-width: 1440px) {
+    section {
+        height: 400px;
+        padding: 3rem 8rem;
+
+        h1 {
+            font-size: 62px;
+            margin-left: 0;
+        }
+    }
+
+    .legal-content {
+        padding: 4rem 8rem 15rem 8rem;
+
+        .go-back {
+            display: none;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 2rem;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+}

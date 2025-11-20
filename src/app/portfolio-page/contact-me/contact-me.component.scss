@@ -22,7 +22,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 60px;
+    gap: 9rem;
     padding: 0 8rem;
     margin-bottom: 100px;
 }
@@ -71,14 +71,14 @@ app-contact-form {
     section {
         height: auto;
         min-height: 1300px;
-        padding: 2rem 0;
+        padding: 6rem 0;
     }
 
     .content-wrapper {
         flex-direction: column;
         gap: 40px;
         padding: 0 1rem;
-        margin-bottom: 12rem;
+        margin-bottom: 8rem;
     }
 
     .text-content {
@@ -107,7 +107,7 @@ app-contact-form {
     section {
         height: auto;
         min-height: 1200px;
-        padding: 3rem 0;
+        padding: 6rem 0;
     }
 
     .content-wrapper {
@@ -156,28 +156,27 @@ app-contact-form {
         }
 
         img {
-            width: 180px;
-            height: 28px;
+            display: none;
         }
     }
 }
 
-// RESPONSIVE: 901px - 1024px (Tablet Landscape)
-@media (min-width: 901px) and (max-width: 1024px) {
+// RESPONSIVE: 901px - 1046px (Tablet Landscape)
+@media (min-width: 901px) and (max-width: 1046px) {
     section {
         height: 850px;
     }
 
     .content-wrapper {
-        gap: 30px; // Reduziert von 40px
-        padding: 0 2rem; // Reduziert von 3rem
+        gap: 30px;
+        padding: 0 2rem;
         margin-bottom: 80px;
-        flex-direction: row; // Explizit gesetzt
+        flex-direction: row;
     }
 
     .text-content {
-        width: auto; // Geändert
-        flex: 1; // Hinzugefügt
+        width: auto;
+        flex: 1;
         max-width: 450px;
 
         p {
@@ -185,13 +184,11 @@ app-contact-form {
         }
 
         h1 {
-            font-size: 52px; // Etwas kleiner
+            font-size: 52px;
         }
 
         img {
-            width: 200px; // Kleiner
-            height: 32px;
-            margin-top: 22px;
+            display: none;
         }
     }
 
@@ -207,8 +204,8 @@ app-contact-form {
     }
 
     .content-wrapper {
-        gap: 50px;
         margin-bottom: 90px;
+        gap: 50px;
     }
 
     .text-content {
@@ -224,9 +221,7 @@ app-contact-form {
         }
 
         img {
-            width: 260px;
-            height: 42px;
-            margin-top: 24px;
+            display: none;
         }
     }
 

@@ -141,6 +141,10 @@
                 color: #3355FF;
                 text-decoration: none;
                 cursor: pointer;
+
+                &:hover {
+                    color: #F7C518;
+                }
             }
         }
 
@@ -241,12 +245,12 @@
             content: '';
             position: absolute;
             bottom: 19px;
-            left: -26%;
+            left: -8%;
             transform: translateX(50%);
-            width: 180px;
+            width: 122px;
             height: 24px;
             background-image: url('../../../assets/img/contact-me/Color option 1.png');
-            background-size: 130px auto;
+            background-size: 122px auto;
             background-repeat: no-repeat;
             background-position: center;
             @include reveal-animation();
@@ -289,6 +293,21 @@
     .form-wrapper {
         padding: 15px;
         margin-top: 5rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 14px;
+            left: 10px;
+            width: 140px;
+            height: 32px;
+            background-image: url('../../../assets/img/contact-me/Color option 1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left center;
+            @include reveal-animation();
+        }
 
         form {
             width: 100%;
@@ -326,6 +345,21 @@
     .form-wrapper {
         padding: 18px;
         margin-top: 6.5rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 12px;
+            left: 14px;
+            width: 180px;
+            height: 42px;
+            background-image: url('../../../assets/img/contact-me/Color option 1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left center;
+            @include reveal-animation();
+        }
 
         form {
             width: 100%;
