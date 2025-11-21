@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component'; // ← NEU: Pfad anpassen!
+import { TranslationService } from '../../services/translation-service/translation-service.component';
 
 @Component({
   selector: 'app-project-card',
@@ -10,6 +11,7 @@ import { NavbarComponent } from '../navbar/navbar.component'; // ← NEU: Pfad a
   styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {
+  constructor(public ts: TranslationService) {}
   @Input() projectData: any;
   @Output() close = new EventEmitter<void>();
   @Output() next = new EventEmitter<void>();

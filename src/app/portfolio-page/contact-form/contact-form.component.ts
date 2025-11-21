@@ -1,15 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { TranslationService } from '../../services/translation-service/translation-service.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent {
+  constructor(public ts: TranslationService) { }
 
   http = inject(HttpClient);
 
@@ -30,7 +33,7 @@ export class ContactFormComponent {
   mailTest = true;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://alex-reitz.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -44,7 +47,11 @@ export class ContactFormComponent {
     this.formSubmitted = true;
     this.validateName();
     this.validateEmail();
-    
+
+    if (!this.privacyAccepted) {
+      this.showPrivacyError = true;
+    }
+
     if (this.isFormValid(ngForm)) {
       this.submitForm(ngForm);
     }
@@ -90,10 +97,10 @@ export class ContactFormComponent {
   validateName() {
     const nameParts = this.contactData.name.trim().split(/\s+/);
     if (this.contactData.name.trim() === '') {
-      this.namePlaceholderError = 'Oops! it seems your name is missing';
+      this.namePlaceholderError = 'Bitte Namen eingeben';
       this.nameError = '';
     } else if (nameParts.length < 2) {
-      this.nameError = 'Please enter your first and last name';
+      this.nameError = 'Vor- und Nachname eingeben';
       this.namePlaceholderError = '';
     } else {
       this.nameError = '';
@@ -104,22 +111,14 @@ export class ContactFormComponent {
   validateEmail() {
     const emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
     if (this.contactData.email.trim() === '') {
-      this.emailPlaceholderError = 'Hoppla! your email is required';
+      this.emailPlaceholderError = 'Bitte E-Mail eingeben';
       this.emailError = '';
     } else if (!emailPattern.test(this.contactData.email)) {
-      this.emailError = 'Please enter a valid email address';
+      this.emailError = 'Gültige E-Mail eingeben';
       this.emailPlaceholderError = '';
     } else {
       this.emailError = '';
       this.emailPlaceholderError = '';
-    }
-  }
-
-  onInputChange() {
-    if (!this.privacyAccepted && (this.contactData.name || this.contactData.email || this.contactData.message)) {
-      this.showPrivacyError = true;
-    } else {
-      this.showPrivacyError = false;
     }
   }
 
@@ -127,22 +126,22 @@ export class ContactFormComponent {
     this.nameError = '';
     this.namePlaceholderError = '';
     this.formSubmitted = false;
-    this.onInputChange();
   }
 
   onEmailChange() {
     this.emailError = '';
     this.emailPlaceholderError = '';
     this.formSubmitted = false;
-    this.onInputChange();
   }
 
   onMessageChange() {
-    this.onInputChange();
+    // No action needed during typing
   }
 
   onPrivacyChange() {
-    this.showPrivacyError = false;
+    if (this.privacyAccepted) {
+      this.showPrivacyError = false;
+    }
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
+import { TranslationService } from '../../services/translation-service/translation-service.component';
 
 @Component({
   selector: 'app-skill-set',
@@ -10,6 +11,7 @@ import { FormsModule } from "@angular/forms";
   styleUrl: './skill-set.component.scss'
 })
 export class SkillSetComponent {
+  constructor(public ts: TranslationService) {}
 
   isPeeled = false;
 

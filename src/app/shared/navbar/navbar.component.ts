@@ -1,11 +1,12 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { TranslationService } from '../../services/translation-service/translation-service.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })

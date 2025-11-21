@@ -1,5 +1,5 @@
 section {
-    width: 100%; // ← Geändert von 1440px
+    width: 100%;
     height: 439px;
     max-width: 1440px;
     margin: 0 auto;
@@ -23,7 +23,7 @@ section {
 .legal-content {
     max-width: 1440px;
     color: #000000;
-    padding: 4rem 8rem 16rem 8rem; // ← Gleiche padding-left wie section
+    padding: 4rem 8rem 16rem 8rem;
     background-color: white;
     margin: 0 auto;
     position: relative;
@@ -31,7 +31,7 @@ section {
     .go-back {
         position: absolute;
         top: 2rem;
-        left: 8rem; // ← Gleich wie padding
+        left: 8rem;
         color: black;
         border: none;
         cursor: pointer;
@@ -55,7 +55,7 @@ section {
     }
 
     h3 {
-        font-size: 18px;
+        font-size: 26px;
         color: #3355FF;
         margin-top: 2rem;
         margin-bottom: 1rem;
@@ -64,6 +64,14 @@ section {
         &:first-of-type {
             margin-top: 0;
         }
+    }
+
+    h4 {
+        font-size: 22px;
+        color: #3355FF;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
     }
 
     p {
@@ -80,8 +88,11 @@ section {
         padding: 3rem 1rem;
 
         h1 {
-            font-size: 48px;
+            font-size: 32px;
             margin-left: 0;
+            word-break: break-word;
+            hyphens: auto;
+            line-height: 1.2;
         }
     }
 
@@ -100,8 +111,15 @@ section {
         }
 
         h3 {
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 1.5rem;
+            color: #3355FF;
+        }
+
+        h4 {
+            font-size: 18px;
+            margin-top: 1.2rem;
+            color: #3355FF;
         }
 
         p {
@@ -117,8 +135,11 @@ section {
         padding: 3rem 2rem;
 
         h1 {
-            font-size: 56px;
+            font-size: 42px;
             margin-left: 0;
+            word-break: break-word;
+            hyphens: auto;
+            line-height: 1.2;
         }
     }
 
@@ -137,8 +158,15 @@ section {
         }
 
         h3 {
-            font-size: 18px;
+            font-size: 22px;
             margin-top: 1.5rem;
+            color: #3355FF;
+        }
+
+        h4 {
+            font-size: 19px;
+            margin-top: 1.2rem;
+            color: #3355FF;
         }
 
         p {
@@ -154,7 +182,7 @@ section {
         padding: 3rem 2rem;
 
         h1 {
-            font-size: 60px;
+            font-size: 52px;
             margin-left: 0;
         }
     }
@@ -174,8 +202,15 @@ section {
         }
 
         h3 {
-            font-size: 18px;
+            font-size: 24px;
             margin-top: 1.5rem;
+            color: #3355FF;
+        }
+
+        h4 {
+            font-size: 20px;
+            margin-top: 1.2rem;
+            color: #3355FF;
         }
 
         p {
@@ -204,8 +239,15 @@ section {
         }
 
         h3 {
-            font-size: 18px;
+            font-size: 26px;
             margin-top: 2rem;
+            color: #3355FF;
+        }
+
+        h4 {
+            font-size: 22px;
+            margin-top: 1.5rem;
+            color: #3355FF;
         }
 
         p {

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { TranslationService } from '../services/translation-service/translation-service.component';
 
 @Component({
   selector: 'app-legal-notice',
@@ -13,7 +14,8 @@ import { Router } from '@angular/router';
 export class LegalNoticeComponent implements OnInit, OnDestroy {
   constructor(
     private location: Location,
-    private router: Router
+    private router: Router,
+    public ts: TranslationService
   ) {}
 
   ngOnInit() {
@@ -30,4 +32,8 @@ export class LegalNoticeComponent implements OnInit, OnDestroy {
       window.scrollTo(0, 0);
     });
   }
+
+  t(text: string): string {
+  return this.ts.t(text);
+}
 }

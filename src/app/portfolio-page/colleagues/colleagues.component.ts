@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslationService } from '../../services/translation-service/translation-service.component';
 
 @Component({
   selector: 'app-colleagues',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './colleagues.component.scss'
 })
 export class ColleaguesComponent {
-
+  constructor
+    (public ts: TranslationService) {}
 }

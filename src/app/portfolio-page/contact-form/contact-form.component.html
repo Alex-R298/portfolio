@@ -2,73 +2,52 @@
     <div class="form-wrapper">
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div class="form-group">
-                <label for="name">Wie heißt du?</label>
+                <label for="name">{{ ts.t('Wie heißt du?') }}</label>
                 <div class="input-wrapper">
-                    <input 
-                        #nameField="ngModel"
-                        [(ngModel)]="contactData.name" 
-                        (ngModelChange)="onNameChange()"
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        required 
+                    <input #nameField="ngModel" [(ngModel)]="contactData.name" (ngModelChange)="onNameChange()"
+                        type="text" id="name" name="name" required
                         [class.error-input]="namePlaceholderError && formSubmitted"
-                        [placeholder]="(namePlaceholderError && formSubmitted) ? namePlaceholderError : 'Dein Name'">
+                        [placeholder]="(namePlaceholderError && formSubmitted) ? ts.t(namePlaceholderError) : ts.t('Dein Name')">
                     @if (nameError && formSubmitted) {
-                        <span class="error-message">{{ nameError }}</span>
+                    <span class="error-message">{{ ts.t(nameError) }}</span>
                     }
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="email">Wie lautet deine E-Mail?</label>
+                <label for="email">{{ ts.t('Wie lautet deine E-Mail?') }}</label>
                 <div class="input-wrapper">
-                    <input 
-                        #emailField="ngModel"
-                        [(ngModel)]="contactData.email" 
-                        (ngModelChange)="onEmailChange()"
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        required 
+                    <input #emailField="ngModel" [(ngModel)]="contactData.email" (ngModelChange)="onEmailChange()"
+                        type="email" id="email" name="email" required
                         [class.error-input]="emailPlaceholderError && formSubmitted"
-                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" 
-                        [placeholder]="(emailPlaceholderError && formSubmitted) ? emailPlaceholderError : 'deineemail@email.com'">
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                        [placeholder]="(emailPlaceholderError && formSubmitted) ? ts.t(emailPlaceholderError) : ts.t('deineemail@email.com')">
                     @if (emailError && formSubmitted) {
-                        <span class="error-message">{{ emailError }}</span>
+                    <span class="error-message">{{ ts.t(emailError) }}</span>
                     }
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="message">Wie kann ich dir helfen?</label>
-                <textarea 
-                    #messageField="ngModel" 
-                    minlength="4" 
-                    [(ngModel)]="contactData.message" 
-                    (ngModelChange)="onMessageChange()"
-                    id="message" 
-                    name="message" 
-                    required 
+                <label for="message">{{ ts.t('Wie kann ich dir helfen?') }}</label>
+                <textarea #messageField="ngModel" minlength="4" [(ngModel)]="contactData.message"
+                    (ngModelChange)="onMessageChange()" id="message" name="message" required
                     [class.error-input]="messageField.invalid && formSubmitted && contactData.message === ''"
-                    [placeholder]="(messageField.invalid && formSubmitted && contactData.message === '') ? 'What do you need to develop?' : 'Hallo Alex, ich interessiere mich für...'"></textarea>
+                    [placeholder]="(messageField.invalid && formSubmitted && contactData.message === '') ? ts.t('Was möchtest du umsetzen?') : ts.t('Hallo Alex, ich interessiere mich für...')"></textarea>
             </div>
 
             <div class="checkbox">
-                <input 
-                    type="checkbox" 
-                    id="privacyPolicy" 
-                    name="privacyPolicy" 
-                    [(ngModel)]="privacyAccepted"
+                <input type="checkbox" id="privacyPolicy" name="privacyPolicy" [(ngModel)]="privacyAccepted"
                     (ngModelChange)="onPrivacyChange()">
-                <span for="privacyPolicy"> 
-                    Ich habe die <a href="/privacy-policy">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.
+                <span for="privacyPolicy">
+                    {{ ts.t('Ich habe die') }} <a routerLink="/privacy-policy">{{ ts.t('Datenschutzerklärung') }}</a> {{
+                    ts.t('gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.') }}
                 </span>
             </div>
             @if (showPrivacyError) {
-                <div class="privacy-error">Please accept the privacy policy</div>
+            <div class="privacy-error">{{ ts.t('Bitte Datenschutzerklärung akzeptieren') }}</div>
             }
-            <button  type="submit" [disabled]="!privacyAccepted">Senden</button>
+            <button type="submit" [class.button-disabled]="!privacyAccepted">{{ ts.t('Senden') }}</button>
         </form>
     </div>
 </section>

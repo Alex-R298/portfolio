@@ -1,6 +1,7 @@
 import { Component, Renderer2 } from '@angular/core';
 import { ProjectCardComponent } from '../../shared/project-card/project-card.component';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../services/translation-service/translation-service.component';
 
 
 @Component({
@@ -15,37 +16,39 @@ export class ProjectsComponent {
   selectedProject: any = null;
   currentProjectIndex = 0;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2,
+    public ts: TranslationService
+  ) { }
 
   projects = [
     {
-      name: 'Join',
-      description: 'Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.',
-      implementation: 'In diesem Gruppenprojekt haben wir die Aufgaben aufgeteilt. Mein Fokus lag auf der Frontend-Entwicklung, wo ich die Drag-and-Drop-Funktionalität und das responsive Design umgesetzt habe.',
-      duration: '5 Wochen',
-      imgSkills: ['CSS.png', 'HTML.png', 'Js.png', 'Firebase.png'],
-      skillsNames: ['CSS', 'HTML', 'JavaScript', 'Firebase'],
-      img: 'join.png',
-      lineWidth: 120,
-      lineHeight: 20,
-      lineWidthTablet: 88,
-      githubLink: 'https://github.com/Alex-R298/Join.git',
-      liveLink: 'https://join.alexreitz.com' // Falls du eine Live-Demo hast
-    },
-    {
-      name: 'Pixel Quest',
-      description: 'Ein 2D-Plattformspiel mit objektorientierter Programmierung. Steuere den Helden, sammle Münzen und bekämpfe gefährliche Pilze auf deinem Weg zum Endboss.',
-      implementation: 'Ich habe das Spiel mit objektorientiertem JavaScript und HTML5 Canvas entwickelt. Meine Aufgaben umfassten Spiellogik, Kollisionserkennung und Sprite-Animationen. Der Code ist modular aufgebaut.',
-      duration: '3 Wochen',
-      imgSkills: ['CSS.png', 'HTML.png', 'Js.png'],
-      skillsNames: ['CSS', 'HTML', 'JavaScript'],
-      img: 'pixel-game.png',
-      lineWidth: 340,
-      lineHeight: 20,
-      lineWidthTablet: 264,
-      githubLink: 'https://github.com/Alex-R298/Pixel-Quest.git',
-      liveLink: 'https://pixelquest.alexreitz.com' // Falls du eine Live-Demo hast
-    },
+    name: 'Join',
+    description: 'Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.',
+    implementation: 'In diesem Gruppenprojekt haben wir die Aufgaben aufgeteilt. Mein Fokus lag auf der Frontend-Entwicklung, wo ich die Drag-and-Drop-Funktionalität und das responsive Design umgesetzt habe.',
+    duration: '5 Wochen',
+    imgSkills: ['CSS.png', 'HTML.png', 'Js.png', 'Firebase.png'],
+    skillsNames: ['CSS', 'HTML', 'JavaScript', 'Firebase'],
+    img: 'join.png',
+    lineWidth: 120,
+    lineHeight: 20,
+    lineWidthTablet: 88,
+    githubLink: 'https://github.com/Alex-R298/Join.git',
+    liveLink: 'http://join.alex-reitz.de/'
+  },
+  {
+    name: 'Pixel Quest',
+    description: 'Ein 2D-Plattformspiel mit objektorientierter Programmierung. Steuere den Helden, sammle Münzen und bekämpfe gefährliche Pilze auf deinem Weg zum Endboss.',
+    implementation: 'Ich habe das Spiel mit objektorientiertem JavaScript und HTML5 Canvas entwickelt. Meine Aufgaben umfassten Spiellogik, Kollisionserkennung und Sprite-Animationen. Der Code ist modular aufgebaut.',
+    duration: '3 Wochen',
+    imgSkills: ['CSS.png', 'HTML.png', 'Js.png'],
+    skillsNames: ['CSS', 'HTML', 'JavaScript'],
+    img: 'pixel-game.png',
+    lineWidth: 340,
+    lineHeight: 20,
+    lineWidthTablet: 264,
+    githubLink: 'https://github.com/Alex-R298/Pixel-Quest.git',
+    liveLink: 'http://pixel-quest.alex-reitz.de/'
+  },
     // {
     // name: 'DABubble',
     // description: 'Diese App ist ein Slack-Clone. Sie revolutioniert Team-Kommunikation und Zusammenarbeit mit ihrer intuitiven Oberfläche, Echtzeit-Messaging und robuster Channel-Organisation.',
@@ -53,7 +56,7 @@ export class ProjectsComponent {
     // imgSkills: ['CSS.png','HTML.png','Ts.png','Angular.png'],
     // img: 'Component 30.png'
     // },
-  ]
+  ];
 
   projectDetails(project: any) {
     this.showProjectCard = true;

@@ -6,23 +6,20 @@
             <p>MY CRAFT</p>
             <h1>Projects</h1>
             <img src="../../../assets/img/projects/Color option 1.png" alt="">
-            <p>Entdecke meine Projekte und probiere sie selbst aus. Ich zeige, wie ich responsive und nutzerfreundliche
-                Anwendungen mit sauberem Code baue.
-
-            </p>
+            <p>{{ ts.t('Entdecke meine Projekte und probiere sie selbst aus. Ich zeige, wie ich responsive und nutzerfreundliche Anwendungen mit sauberem Code baue.') }}</p>
         </div>
 
         <div class="image-card">
             <div class="image-wrapper">
                 <img class="img-bounce" src="../../../assets/img/projects/29_Join thumbnail.png" alt="Bild 1">
                 <div class="project-button">
-                    <button (click)="projectDetails(projects[0])">Projektdetails</button>
+                    <button (click)="projectDetails(projects[0])">{{ ts.t('Projektdetails') }}</button>
                 </div>
             </div>
             <h3>{{ projects[0].name }}</h3>
-            <p>{{ projects[0].description }}</p>
+            <p>{{ ts.t(projects[0].description) }}</p>
             <div class="project-button-mobile">
-                <button (click)="projectDetails(projects[0])">Projektdetails</button>
+                <button (click)="projectDetails(projects[0])">{{ ts.t('Projektdetails') }}</button>
             </div>
         </div>
 
@@ -30,13 +27,13 @@
             <div class="image-wrapper">
                 <img src="../../../assets/img/projects/pixel-quest.png" alt="Bild 2">
                 <div class="project-button">
-                    <button (click)="projectDetails(projects[1])">Projektdetails</button>
+                    <button (click)="projectDetails(projects[1])">{{ ts.t('Projektdetails') }}</button>
                 </div>
             </div>
             <h3>{{ projects[1].name }}</h3>
-            <p>{{ projects[1].description }}</p>
+            <p>{{ ts.t(projects[1].description) }}</p>
             <div class="project-button-mobile">
-                <button (click)="projectDetails(projects[1])">Projektdetails</button>
+                <button (click)="projectDetails(projects[1])">{{ ts.t('Projektdetails') }}</button>
             </div>
         </div>
 
@@ -44,14 +41,14 @@
             <div class="image-wrapper">
                 <img src="../../../assets/img/projects/Component 30.png" alt="Bild 3">
                 <div class="project-button">
-                    <button [disabled]="true">Demnächst</button>
+                    <button [disabled]="true">{{ ts.t('Demnächst') }}</button>
                 </div>
             </div>
             <h3>DABubble</h3>
-            <p>Diese App ist ein Slack-Clone. Sie revolutioniert Team-Kommunikation und Zusammenarbeit mit ihrer
-                intuitiven Oberfläche, Echtzeit-Messaging und robuster Channel-Organisation.</p>
+            <p>{{ ts.t('Diese App ist ein Slack-Clone. Sie revolutioniert Team-Kommunikation und Zusammenarbeit mit ihrer intuitiven Oberfläche, Echtzeit-Messaging und robuster Channel-Organisation.') }}</p>
+
             <div class="project-button-mobile">
-                <button [disabled]="true">Demnächst</button>
+                <button [disabled]="true">{{ ts.t('Demnächst') }}</button>
             </div>
         </div>
     </div>
