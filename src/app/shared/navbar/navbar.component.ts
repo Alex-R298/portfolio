@@ -106,5 +106,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
   toggleLanguage() {
     this.ts.toggleLanguage();
   }
+
+  /**
+   * Handles logo click to close any open modals and scroll to top
+   */
+  onLogoClick() {
+    this.closeMenuWithAnimation();
+    this.navClose.emit();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 

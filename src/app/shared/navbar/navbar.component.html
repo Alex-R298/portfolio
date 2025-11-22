@@ -1,6 +1,6 @@
 <nav [class.dark-mode]="darkMode" class="fontBricolageGrotesque">
     <div class="nav-container">
-        <a class="nav-logo" routerLink="/">
+        <a class="nav-logo" routerLink="/" (click)="onLogoClick()">
     <img src="../../../assets/img/header/portfolio-logo (2) (1).png" alt="Logo">
 </a>
 
@@ -40,7 +40,7 @@
     @if (isMobile() && isMenuOpen()) {
     <div class="mobile-menu" [class.open]="isMenuOpen() && !isClosing()" [class.closing]="isClosing()">
         <div class="mobile-menu-header">
-            <a class="nav-logo" href="/">
+            <a class="nav-logo" routerLink="/" (click)="onLogoClick()">
                 <img src="../../../assets/img/header/portfolio-logo (2) (1).png" alt="Logo">
             </a>
             <div class="close-icon" (click)="toggleMenu()">
