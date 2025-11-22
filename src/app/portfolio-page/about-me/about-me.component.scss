@@ -131,7 +131,7 @@ section {
     }
 }
 
-// RESPONSIVE: bis 798px (Mobile)
+
 @media (max-width: 798px) {
     section {
         flex-direction: column-reverse;
@@ -240,7 +240,7 @@ section {
 
 
 
-// Noch kleinere Handys (320px)
+
 @media (max-width: 372px) {
     .image-card {
         width: 100% !important;
@@ -264,7 +264,7 @@ section {
     }
 }
 
-// RESPONSIVE: 799px - 1024px (Tablet Landscape)
+
 @media (min-width: 799px) and (max-width: 1024px) {
     section {
         height: 720px;
@@ -337,7 +337,7 @@ section {
     }
 }
 
-// RESPONSIVE: 1025px - 1440px (Small Desktop)
+
 @media (min-width: 1025px) and (max-width: 1440px) {
     section {
         height: 680px;

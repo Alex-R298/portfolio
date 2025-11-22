@@ -191,7 +191,6 @@ export class TranslationService {
 
   toggleLanguage() {
     this.currentLang.set(this.currentLang() === 'de' ? 'en' : 'de');
-    // Kein Storage mehr!
   }
 
   t(text: string): string {

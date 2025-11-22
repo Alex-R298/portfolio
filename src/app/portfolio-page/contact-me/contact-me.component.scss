@@ -66,7 +66,7 @@ app-contact-form {
     flex: 1;
 }
 
-// RESPONSIVE: 375px - 425px (Mobile)
+
 @media (max-width: 425px) {
     section {
         height: auto;
@@ -102,7 +102,7 @@ app-contact-form {
     }
 }
 
-// RESPONSIVE: 426px - 768px (Tablet)
+
 @media (min-width: 426px) and (max-width: 768px) {
     section {
         height: auto;
@@ -141,7 +141,7 @@ app-contact-form {
     }
 }
 
-// RESPONSIVE: 769px - 900px (Tablet Landscape - Small)
+
 @media (min-width: 769px) and (max-width: 900px) {
     .content-wrapper {
         padding: 0 2rem;
@@ -161,7 +161,7 @@ app-contact-form {
     }
 }
 
-// RESPONSIVE: 901px - 1046px (Tablet Landscape)
+
 @media (min-width: 901px) and (max-width: 1046px) {
     section {
         height: 850px;
@@ -197,7 +197,7 @@ app-contact-form {
     }
 }
 
-// RESPONSIVE: 1025px - 1440px (Small Desktop)
+
 @media (min-width: 1025px) and (max-width: 1440px) {
     section {
         height: 880px;

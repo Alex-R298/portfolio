@@ -264,7 +264,7 @@ section {
 }
 
 
-// RESPONSIVE: 375px - 425px (Mobile)
+
 @media (max-width: 425px) {
     section {
         height: 812px;
@@ -407,7 +407,7 @@ section {
     }
 }
 
-// RESPONSIVE: 426px - 768px (Tablet)
+
 @media (min-width: 426px) and (max-width: 768px) {
     section {
         height: 1024px;
@@ -538,7 +538,7 @@ section {
     
 }
 
-// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+
 @media (min-width: 769px) and (max-width: 1024px) {
     section {
         height: 900px;
@@ -589,7 +589,7 @@ section {
     }
 }
 
-// RESPONSIVE: 1025px - 1440px (Small Desktop)
+
 @media (min-width: 1025px) and (max-width: 1440px) {
     section {
         height: 900px;
@@ -641,7 +641,7 @@ section {
 }
 
 @media (max-width: 398px) {
-    .hl-font {  // ← War .h1-font - FALSCH!
+    .hl-font { 
         font-size: 50px !important;
     }
 }

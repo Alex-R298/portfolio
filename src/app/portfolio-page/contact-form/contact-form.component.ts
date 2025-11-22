@@ -4,6 +4,9 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { TranslationService } from '../../services/translation-service/translation-service.component';
 import { RouterLink } from '@angular/router';
 
+/**
+ * Contact form component with validation and email sending functionality
+ */
 @Component({
   selector: 'app-contact-form',
   standalone: true,
@@ -16,22 +19,41 @@ export class ContactFormComponent {
 
   http = inject(HttpClient);
 
+  /** Contact form data object */
   contactData = {
     name: "",
     email: "",
     message: ""
   };
 
+  /** Indicates if privacy policy has been accepted */
   privacyAccepted = false;
+  
+  /** Shows privacy policy error message */
   showPrivacyError = false;
+  
+  /** Indicates if form has been submitted */
   formSubmitted = false;
+  
+  /** Name validation error message */
   nameError = '';
+  
+  /** Name placeholder error message */
   namePlaceholderError = '';
+  
+  /** Email validation error message */
   emailError = '';
+  
+  /** Email placeholder error message */
   emailPlaceholderError = '';
+  
+  /** Message validation error message */
   messageError = '';
+  
+  /** Test mode flag to skip actual email sending */
   mailTest = false;
 
+  /** Configuration for the HTTP POST request */
   post = {
     endPoint: 'https://alex-reitz.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -43,6 +65,10 @@ export class ContactFormComponent {
     },
   };
 
+  /**
+   * Handles form submission with validation
+   * @param {NgForm} ngForm - The Angular form instance
+   */
   onSubmit(ngForm: NgForm) {
     this.formSubmitted = true;
     this.validateName();
@@ -57,10 +83,19 @@ export class ContactFormComponent {
     }
   }
 
+  /**
+   * Checks if the form is valid and ready for submission
+   * @param {NgForm} ngForm - The Angular form instance
+   * @returns {boolean} True if form is valid
+   */
   isFormValid(ngForm: NgForm): boolean {
     return ngForm.form.valid && this.privacyAccepted && !this.nameError && !this.emailError;
   }
 
+  /**
+   * Submits the form if validation passes
+   * @param {NgForm} ngForm - The Angular form instance
+   */
   submitForm(ngForm: NgForm) {
     if (!this.mailTest) {
       this.sendEmail(ngForm);
@@ -69,6 +104,10 @@ export class ContactFormComponent {
     }
   }
 
+  /**
+   * Sends the contact form data via HTTP POST
+   * @param {NgForm} ngForm - The Angular form instance
+   */
   sendEmail(ngForm: NgForm) {
     this.http.post(this.post.endPoint, this.post.body(this.contactData))
       .subscribe({
@@ -82,6 +121,10 @@ export class ContactFormComponent {
       });
   }
 
+  /**
+   * Resets the form and all validation states
+   * @param {NgForm} ngForm - The Angular form instance
+   */
   resetFormData(ngForm: NgForm) {
     ngForm.resetForm();
     this.privacyAccepted = false;
@@ -94,6 +137,10 @@ export class ContactFormComponent {
     this.messageError = '';
   }
 
+  /**
+   * Validates the name field
+   * Checks if name is not empty and contains both first and last name
+   */
   validateName() {
     const nameParts = this.contactData.name.trim().split(/\s+/);
     if (this.contactData.name.trim() === '') {
@@ -108,6 +155,10 @@ export class ContactFormComponent {
     }
   }
 
+  /**
+   * Validates the email field
+   * Checks if email is not empty and matches a valid email pattern
+   */
   validateEmail() {
     const emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
     if (this.contactData.email.trim() === '') {
@@ -122,22 +173,35 @@ export class ContactFormComponent {
     }
   }
 
+  /**
+   * Clears name validation errors when user starts typing
+   */
   onNameChange() {
     this.nameError = '';
     this.namePlaceholderError = '';
     this.formSubmitted = false;
   }
 
+  /**
+   * Clears email validation errors when user starts typing
+   */
   onEmailChange() {
     this.emailError = '';
     this.emailPlaceholderError = '';
     this.formSubmitted = false;
   }
 
+  /**
+   * Handler for message field changes
+   * No validation needed during typing
+   */
   onMessageChange() {
-    // No action needed during typing
+    
   }
 
+  /**
+   * Clears privacy policy error when checkbox is checked
+   */
   onPrivacyChange() {
     if (this.privacyAccepted) {
       this.showPrivacyError = false;

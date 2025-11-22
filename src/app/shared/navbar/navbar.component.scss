@@ -472,7 +472,7 @@ nav {
     }
 }
 
-// Nur die ersten zwei Links schwarz im dark-mode
+
 nav.dark-mode .nav-links {
 
     a:nth-child(1),
@@ -501,7 +501,7 @@ nav.dark-mode .nav-links {
     }
 }
 
-// RESPONSIVE: bis 820px (Mobile Menu aktiv)
+
 @media (max-width: 820px) {
     nav {
         padding: 20px 1rem;
@@ -585,7 +585,7 @@ nav.dark-mode .nav-links {
     }
 }
 
-// RESPONSIVE: 821px - 1024px (Tablet Landscape - Desktop Menu)
+
 @media (min-width: 821px) and (max-width: 1024px) {
     nav {
         padding: 20px 3rem;
@@ -641,7 +641,7 @@ nav.dark-mode .nav-links {
     }
 }
 
-// RESPONSIVE: 1025px - 1440px (Small Desktop)
+
 @media (min-width: 1025px) and (max-width: 1440px) {
     nav {
         padding: 20px 4rem;

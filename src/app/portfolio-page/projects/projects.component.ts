@@ -3,7 +3,9 @@ import { ProjectCardComponent } from '../../shared/project-card/project-card.com
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../services/translation-service/translation-service.component';
 
-
+/**
+ * Component that displays a portfolio of projects with detailed views
+ */
 @Component({
   selector: 'app-projects',
   standalone: true,
@@ -12,14 +14,20 @@ import { TranslationService } from '../../services/translation-service/translati
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
+  /** Indicates whether the project detail card is visible */
   showProjectCard = false;
+  
+  /** Currently selected project for detailed view */
   selectedProject: any = null;
+  
+  /** Index of the currently displayed project */
   currentProjectIndex = 0;
 
   constructor(private renderer: Renderer2,
     public ts: TranslationService
   ) { }
 
+  /** Array of portfolio projects with their details */
   projects = [
     {
     name: 'Join',
@@ -58,22 +66,31 @@ export class ProjectsComponent {
     // },
   ];
 
+  /**
+   * Opens the project detail card for the selected project
+   * @param {any} project - The project object to display in detail view
+   */
   projectDetails(project: any) {
     this.showProjectCard = true;
     this.selectedProject = project;
     this.currentProjectIndex = this.projects.indexOf(project);
-    // Scrollen verhindern
     this.renderer.setStyle(document.body, 'overflow', 'hidden');
   }
 
+  /**
+   * Navigates to the next project in the portfolio
+   * Cycles back to the first project after the last one
+   */
   nextProject() {
     this.currentProjectIndex = (this.currentProjectIndex + 1) % this.projects.length;
     this.selectedProject = this.projects[this.currentProjectIndex];
   }
 
+  /**
+   * Closes the project detail card and restores page scrolling
+   */
   closeProjectCard() {
     this.showProjectCard = false;
-    // Scrollen wieder erlauben
     this.renderer.setStyle(document.body, 'overflow', 'auto');
   }
 }

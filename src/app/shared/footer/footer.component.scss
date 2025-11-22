@@ -69,7 +69,7 @@
     font-weight: 600 !important;
 }
 
-// Footer Breite anpassen für legal-page und privacy-policy
+
 :host-context(body.legal-page) footer,
 :host-context(body.privacy-policy) footer {
     max-width: 1440px;
@@ -296,7 +296,7 @@ footer {
     }
 }
 
-// RESPONSIVE: 375px - 425px (Mobile)
+
 @media (max-width: 425px) {
     footer {
         padding: 0 1rem 40px;
@@ -373,7 +373,7 @@ footer {
     }
 }
 
-// RESPONSIVE: 426px - 768px (Tablet)
+
 @media (min-width: 426px) and (max-width: 768px) {
     footer {
         padding: 0 2rem 40px;
@@ -455,7 +455,7 @@ footer {
     }
 }
 
-// RESPONSIVE: 769px - 1024px (Tablet Landscape)
+
 @media (min-width: 769px) and (max-width: 1024px) {
     footer {
         padding: 0 2rem 55px;
@@ -509,7 +509,7 @@ footer {
     }
 }
 
-// RESPONSIVE: 1025px - 1440px (Small Desktop)
+
 @media (min-width: 1025px) and (max-width: 1440px) {
     footer {
         padding: 0 8rem 58px;
