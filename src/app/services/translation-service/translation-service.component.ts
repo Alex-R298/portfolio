@@ -182,9 +182,14 @@ export class TranslationService {
     'Gültige E-Mail eingeben': 'Please enter a valid email',
 
     'Senden': 'Send',
+
+    // Location Info
+    'Wohnhaft in Welzheim': 'Based in Welzheim',
+    'Offen für Umzug': 'Open to relocate',
+    'Offen für Remote-Arbeit': 'Open to work remote',
   };
 
-   toggleLanguage() {
+  toggleLanguage() {
     this.currentLang.set(this.currentLang() === 'de' ? 'en' : 'de');
     // Kein Storage mehr!
   }

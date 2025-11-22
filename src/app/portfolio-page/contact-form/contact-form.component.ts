@@ -30,7 +30,7 @@ export class ContactFormComponent {
   emailError = '';
   emailPlaceholderError = '';
   messageError = '';
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: 'https://alex-reitz.de/sendMail.php',
