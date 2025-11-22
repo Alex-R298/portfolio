@@ -376,6 +376,10 @@ section {
 
 @media (max-width: 400px) {
     .project-card {
+        >img {
+            width: 69rem !important;
+        }
+
         .content {
             .right-content {
                 .project-image {
