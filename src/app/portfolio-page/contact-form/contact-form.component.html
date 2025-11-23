@@ -51,3 +51,9 @@
         </form>
     </div>
 </section>
+
+@if (showSuccessMessage) {
+<div class="success-overlay fontBricolageGrotesque">
+    <div class="success-message">{{ ts.t('Nachricht erfolgreich versendet') }} ✓</div>
+</div>
+}

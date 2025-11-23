@@ -9,7 +9,7 @@ export class TranslationService {
   private english: { [key: string]: string } = {
     // Navigation
     'Über mich': 'About me',
-    'Fähigkeiten': 'Skills',
+    'Fähigkeiten': 'Skills, Skill set',
     'Projekte': 'Projects',
     'Kontakt': 'Contact',
 
@@ -187,6 +187,18 @@ export class TranslationService {
     'Wohnhaft in Welzheim': 'Based in Welzheim',
     'Offen für Umzug': 'Open to relocate',
     'Offen für Remote-Arbeit': 'Open to work remote',
+
+
+    'MEINE ARBEIT': 'MY CRAFT',
+    'WER IST ALEX': "WHO'S ALEX",
+
+    'KONTAKTIERE MICH': 'CONTACT ME',
+    'Bereit für neue Projekte?': 'Ready to work together?',
+
+    'WOMIT ICH ARBEITE': 'MY STACK',
+    'Können': 'Skill set',
+
+    'Nachricht erfolgreich versendet': 'Message sent successfully',
   };
 
   toggleLanguage() {

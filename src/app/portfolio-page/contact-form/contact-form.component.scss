@@ -187,6 +187,63 @@
 }
 
 
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: overlayFadeIn 125ms ease-in-out;
+
+    .success-message {
+        background-color: #1a1a1a;
+        color: #FFFFFF;
+        padding: 12px 28px;
+        border-radius: 40px;
+        width: 250px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        border: 1px solid white;
+        box-shadow: 4px 4px 0px 0px rgb(255, 255, 255);
+        animation: messageSlideDown 2.5s ease-in-out;
+    }
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes messageSlideDown {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+
 @media (max-width: 425px) {
     .form-wrapper {
         padding: 0;

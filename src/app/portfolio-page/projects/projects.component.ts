@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, Renderer2, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { ProjectCardComponent } from '../../shared/project-card/project-card.component';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../services/translation-service/translation-service.component';
@@ -13,7 +13,7 @@ import { TranslationService } from '../../services/translation-service/translati
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit, OnDestroy {
   /** Indicates whether the project detail card is visible */
   showProjectCard = false;
   
@@ -23,8 +23,13 @@ export class ProjectsComponent {
   /** Index of the currently displayed project */
   currentProjectIndex = 0;
 
-  constructor(private renderer: Renderer2,
-    public ts: TranslationService
+  /** Intersection Observer for scroll animations */
+  private observer?: IntersectionObserver;
+
+  constructor(
+    private renderer: Renderer2,
+    public ts: TranslationService,
+    private elementRef: ElementRef
   ) { }
 
   /** Array of portfolio projects with their details */
@@ -92,5 +97,72 @@ export class ProjectsComponent {
   closeProjectCard() {
     this.showProjectCard = false;
     this.renderer.setStyle(document.body, 'overflow', 'auto');
+  }
+
+  /**
+   * Initializes the intersection observer for scroll animations
+   */
+  ngOnInit() {
+    this.setupScrollObserver();
+  }
+
+  /**
+   * Cleans up the intersection observer
+   */
+  ngOnDestroy() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  }
+
+  /**
+   * Sets up the intersection observer to trigger pulse animation on scroll
+   */
+  private setupScrollObserver() {
+    const options = {
+      threshold: 0.3,
+      rootMargin: '0px'
+    };
+
+    this.observer = new IntersectionObserver((entries) => {
+      this.handleIntersection(entries);
+    }, options);
+
+    this.observeProjectImages();
+  }
+
+  /**
+   * Handles intersection observer entries
+   */
+  private handleIntersection(entries: IntersectionObserverEntry[]) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        this.triggerPulseAnimation(entry.target as HTMLImageElement);
+      }
+    });
+  }
+
+  /**
+   * Triggers pulse animation on an image
+   */
+  private triggerPulseAnimation(img: HTMLImageElement) {
+    if (!img.classList.contains('img-bounce')) {
+      this.renderer.addClass(img, 'img-pulse');
+      setTimeout(() => {
+        this.renderer.removeClass(img, 'img-pulse');
+      }, 600);
+    }
+  }
+
+  /**
+   * Observes all project images for scroll animations
+   */
+  private observeProjectImages() {
+    setTimeout(() => {
+      const images = this.elementRef.nativeElement.querySelectorAll('.image-wrapper img:not(.img-bounce)');
+      images.forEach((img: HTMLImageElement) => {
+        this.observer?.observe(img);
+      });
+    }, 100);
   }
 }

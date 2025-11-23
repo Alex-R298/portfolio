@@ -53,6 +53,9 @@ export class ContactFormComponent {
   /** Test mode flag to skip actual email sending */
   mailTest = false;
 
+  /** Shows success message after form submission */
+  showSuccessMessage = false;
+
   /** Configuration for the HTTP POST request */
   post = {
     endPoint: 'https://alex-reitz.de/sendMail.php',
@@ -100,7 +103,7 @@ export class ContactFormComponent {
     if (!this.mailTest) {
       this.sendEmail(ngForm);
     } else {
-      this.resetFormData(ngForm);
+      this.showSuccessMessageWithAnimation(ngForm);
     }
   }
 
@@ -112,7 +115,7 @@ export class ContactFormComponent {
     this.http.post(this.post.endPoint, this.post.body(this.contactData))
       .subscribe({
         next: (response) => {
-          this.resetFormData(ngForm);
+          this.showSuccessMessageWithAnimation(ngForm);
         },
         error: (error) => {
           console.error(error);
@@ -122,11 +125,26 @@ export class ContactFormComponent {
   }
 
   /**
+   * Shows success message with fade animation and resets form after delay
+   * @param {NgForm} ngForm - The Angular form instance
+   */
+  showSuccessMessageWithAnimation(ngForm: NgForm) {
+    this.showSuccessMessage = true;
+    
+    setTimeout(() => {
+      this.showSuccessMessage = false;
+      this.resetFormData(ngForm);
+    }, 2500);
+  }
+
+  /**
    * Resets the form and all validation states
    * @param {NgForm} ngForm - The Angular form instance
    */
   resetFormData(ngForm: NgForm) {
-    ngForm.resetForm();
+    this.contactData.name = "";
+    this.contactData.email = "";
+    this.contactData.message = "";
     this.privacyAccepted = false;
     this.showPrivacyError = false;
     this.formSubmitted = false;
@@ -179,7 +197,6 @@ export class ContactFormComponent {
   onNameChange() {
     this.nameError = '';
     this.namePlaceholderError = '';
-    this.formSubmitted = false;
   }
 
   /**
@@ -188,7 +205,6 @@ export class ContactFormComponent {
   onEmailChange() {
     this.emailError = '';
     this.emailPlaceholderError = '';
-    this.formSubmitted = false;
   }
 
   /**
