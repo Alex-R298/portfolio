@@ -9,7 +9,8 @@ export class TranslationService {
   private english: { [key: string]: string } = {
     // Navigation
     'Über mich': 'About me',
-    'Fähigkeiten': 'Skills',
+    'nav_Fähigkeiten': 'Skills',
+  'section_Fähigkeiten': 'Skill set',
     'Projekte': 'Projects',
     'Kontakt': 'Contact',
 
@@ -196,7 +197,6 @@ export class TranslationService {
     'Bereit für neue Projekte?': 'Ready to work together?',
 
     'WOMIT ICH ARBEITE': 'MY STACK',
-    'Können': 'Skill set',
 
     'Nachricht erfolgreich versendet': 'Message sent successfully',
   };
@@ -205,10 +205,12 @@ export class TranslationService {
     this.currentLang.set(this.currentLang() === 'de' ? 'en' : 'de');
   }
 
-  t(text: string): string {
-    if (this.currentLang() === 'en' && this.english[text]) {
-      return this.english[text];
-    }
-    return text;
+ t(text: string, context?: string): string {
+  const key = context ? `${context}_${text}` : text;
+  
+  if (this.currentLang() === 'en' && this.english[key]) {
+    return this.english[key];
   }
+  return text;
+}
 }

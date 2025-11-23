@@ -178,7 +178,7 @@ export class ContactFormComponent {
    * Checks if email is not empty and matches a valid email pattern
    */
   validateEmail() {
-    const emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+    const emailPattern = /^[a-zA-Z0-9_%+\-]+(\.[a-zA-Z0-9_%+\-]+)*@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)+$/;
     if (this.contactData.email.trim() === '') {
       this.emailPlaceholderError = 'Bitte E-Mail eingeben';
       this.emailError = '';
