@@ -9,7 +9,7 @@ export class TranslationService {
   private english: { [key: string]: string } = {
     // Navigation
     'Über mich': 'About me',
-    'Fähigkeiten': 'Skills, Skill set',
+    'Fähigkeiten': 'Skills',
     'Projekte': 'Projects',
     'Kontakt': 'Contact',
 
