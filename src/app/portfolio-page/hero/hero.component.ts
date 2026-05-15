@@ -20,7 +20,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   isMobile = signal(false);
   
   /** Array of letters for the "Frontend" text with hover state */
-  frontendLetters: { char: string, original: string }[] = [];
+  fullstackLetters: { char: string, original: string }[] = [];
   
   /** Array of letters for the "DEVELOPER" text with hover state */
   developerLetters: { char: string, original: string }[] = [];
@@ -30,7 +30,7 @@ export class HeroComponent implements OnInit, OnDestroy {
    * Splits text into individual letters and sets up resize listener
    */
   ngOnInit() {
-    this.frontendLetters = 'Frontend'.split('').map(char => ({ 
+    this.fullstackLetters = 'Fullstack'.split('').map(char => ({ 
       char: char, 
       original: char 
     }));
@@ -65,11 +65,11 @@ export class HeroComponent implements OnInit, OnDestroy {
   /**
    * Toggles the case of a letter when mouse hovers over it
    * @param {number} index - The index of the letter in the array
-   * @param {'frontend' | 'developer'} type - Which text array to modify
+   * @param {'fullstack' | 'developer'} type - Which text array to modify
    */
-  over(index: number, type: 'frontend' | 'developer') {
-    if (type === 'frontend') {
-      const item = this.frontendLetters[index];
+  over(index: number, type: 'fullstack' | 'developer') {
+    if (type === 'fullstack') {
+      const item = this.fullstackLetters[index];
       item.char = item.original === item.original.toUpperCase() 
         ? item.original.toLowerCase() 
         : item.original.toUpperCase();
@@ -84,11 +84,11 @@ export class HeroComponent implements OnInit, OnDestroy {
   /**
    * Restores the original case of a letter when mouse leaves
    * @param {number} index - The index of the letter in the array
-   * @param {'frontend' | 'developer'} type - Which text array to restore
+   * @param {'fullstack' | 'developer'} type - Which text array to restore
    */
-  out(index: number, type: 'frontend' | 'developer') {
-    if (type === 'frontend') {
-      this.frontendLetters[index].char = this.frontendLetters[index].original;
+  out(index: number, type: 'fullstack' | 'developer') {
+    if (type === 'fullstack') {
+      this.fullstackLetters[index].char = this.fullstackLetters[index].original;
     } else {
       this.developerLetters[index].char = this.developerLetters[index].original;
     }

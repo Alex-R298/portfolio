@@ -37,12 +37,42 @@ export class SkillSetComponent {
   { img: "Git.png",
     title: "Git",
   },
+  { img: "Rest-Api.png",
+    title: "REST API",
+  },
   { img: "Scrum.png",
     title: "Scrum",
   },
   { img: "Material-Design.png",
     title: "Material Design",
-  }
+  },
+  { img: "Python.png",
+    title: "Python",
+  },
+  { img: "Django.png",
+    title: "Django",
+  },
+  { img: "Linux.png",
+    title: "Linux",
+  },
+  { img: "Redis.png",
+    title: "Redis",
+  },
+  { img: "PostgreSQL.png",
+    title: "PostgreSQL",
+  },
+  { img: "SQL.png",
+    title: "SQL",
+  },
+  { img: "Docker.png",
+    title: "Docker",
+  },
+  // { img: "Cloud.png",
+  //   title: "Cloud",
+  // },
+
+
+
 ];
 
 pullToPeel() {

@@ -62,13 +62,19 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     githubLink: 'https://github.com/Alex-R298/Pixel-Quest.git',
     liveLink: 'http://pixel-quest.alex-reitz.de/'
   },
-    // {
-    // name: 'DABubble',
-    // description: 'Diese App ist ein Slack-Clone. Sie revolutioniert Team-Kommunikation und Zusammenarbeit mit ihrer intuitiven Oberfläche, Echtzeit-Messaging und robuster Channel-Organisation.',
-    // implementation: 'Kurzer Text, der deine Rolle oder den Workflow für dieses spezifische Projekt beschreibt. Lass einen Recruiter mehr über dein Wissen und deine Fähigkeit erfahren, eigenständig oder kollaborativ in einer strukturierten Weise zu arbeiten.'
-    // imgSkills: ['CSS.png','HTML.png','Ts.png','Angular.png'],
-    // img: 'Component 30.png'
-    // },
+    {
+    name: 'DABubble',
+    description: 'Diese App ist ein Slack-Clone. Sie revolutioniert Team-Kommunikation und Zusammenarbeit mit ihrer intuitiven Oberfläche, Echtzeit-Messaging und robuster Channel-Organisation.',
+    implementation: 'Kurzer Text, der deine Rolle oder den Workflow für dieses spezifische Projekt beschreibt. Lass einen Recruiter mehr über dein Wissen und deine Fähigkeit erfahren, eigenständig oder kollaborativ in einer strukturierten Weise zu arbeiten.',
+    imgSkills: ['CSS.png','HTML.png','Ts.png','Angular.png'],
+    skillsNames: ['CSS', 'HTML', 'TypeScript', 'Angular'],
+    img: 'Component 30.png',
+    lineWidth: 340,
+    lineHeight: 20,
+    lineWidthTablet: 264,
+    githubLink: 'https://github.com/Alex-R298/DA-Bubble/tree/feature/development',
+    liveLink: 'http://dabubble.alex-reitz.de/'
+    },
   ];
 
   /**
