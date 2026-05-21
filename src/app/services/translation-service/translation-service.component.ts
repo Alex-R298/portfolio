@@ -152,6 +152,9 @@ export class TranslationService {
     'Ich habe das Spiel mit objektorientiertem JavaScript und HTML5 Canvas entwickelt. Meine Aufgaben umfassten Spiellogik, Kollisionserkennung und Sprite-Animationen. Der Code ist modular aufgebaut.':
       'I developed the game with object-oriented JavaScript and HTML5 Canvas. My tasks included game logic, collision detection, and sprite animations. The code is modularly structured.',
 
+    'In diesem Gruppenprojekt habe ich die Backend-Services entwickelt sowie das Chat-Window und die Thread-Funktionalität implementiert. Dabei arbeitete ich eng mit dem Team zusammen und übernahm Verantwortung für die Echtzeit-Datenkommunikation mit Firebase.':
+      'In this group project, I developed the backend services and implemented the chat window and thread functionality. I worked closely with the team and took responsibility for real-time data communication with Firebase.',
+
     '5 Wochen': '5 Weeks',
     '3 Wochen': '3 Weeks',
 

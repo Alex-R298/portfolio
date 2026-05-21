@@ -65,7 +65,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     {
     name: 'DABubble',
     description: 'Diese App ist ein Slack-Clone. Sie revolutioniert Team-Kommunikation und Zusammenarbeit mit ihrer intuitiven Oberfläche, Echtzeit-Messaging und robuster Channel-Organisation.',
-    implementation: 'Kurzer Text, der deine Rolle oder den Workflow für dieses spezifische Projekt beschreibt. Lass einen Recruiter mehr über dein Wissen und deine Fähigkeit erfahren, eigenständig oder kollaborativ in einer strukturierten Weise zu arbeiten.',
+    implementation: 'In diesem Gruppenprojekt habe ich die Backend-Services entwickelt sowie das Chat-Window und die Thread-Funktionalität implementiert. Dabei arbeitete ich eng mit dem Team zusammen und übernahm Verantwortung für die Echtzeit-Datenkommunikation mit Firebase.',
     imgSkills: ['CSS.png','HTML.png','Ts.png','Angular.png'],
     skillsNames: ['CSS', 'HTML', 'TypeScript', 'Angular'],
     img: 'Component 30.png',
